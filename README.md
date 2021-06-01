@@ -1,6 +1,6 @@
 
 ## 
-<img width="auto" src="wireframe/wf-desktop/HolaMundo.jpg">
+<img width="auto" src="images/HolaMundo.jpg">
 
 ---
 # Hola Mundo!
