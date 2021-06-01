@@ -1,6 +1,6 @@
 
 ## 
-<img src="wireframes/wf-desktop/HolaMundo.jpg">
+<img width="auto" src="wireframe/wf-desktop/HolaMundo.jpg">
 
 ---
 # Grupo_12_HolaMundo 
