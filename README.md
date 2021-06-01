@@ -1,7 +1,7 @@
 
 ## 
+<img src="wireframes/wf-desktop/HolaMundo.jpg">
 
-![This is a alt text.](/wf-desktop/HolaMundo.jpg "This is a sample image.")
 ---
 # Grupo_12_HolaMundo 
 
