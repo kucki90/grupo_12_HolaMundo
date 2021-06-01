@@ -1,7 +1,7 @@
 
 ## 
 
-![This is a alt text.](/image/sample.png "This is a sample image.")
+![This is a alt text.](/wf-desktop/HolaMundo.jpg "This is a sample image.")
 ---
 # Grupo_12_HolaMundo 
 
@@ -21,9 +21,9 @@ Apuntamos a la innovación creando espacios enventa digital  funcionales
 que potencien tanto el flujo de ventas, como la experiencia de compras.<br>
 
  ## Integrantes:
-* apellido, Jenifer<br>
-* apellido, Cecilia<br>
-* Ruiz, David
+* Antunez,jennifer<br>
+* Kuckiewicz,Cecilia Noemi<br>
+* Ruiz,David
 ---
 Temática del sitio
 ---
@@ -32,7 +32,7 @@ Temática del sitio
 
 **Listado de 3 páginas de referencia**
   
-###### <www.fadabella.com.ar > < https://www.alparamis.com.ar > < https://www.morph.com.ar > < https://www.walmart.com.ar >
+###### <www.falabella.com.ar > < https://www.alparamis.com.ar > < https://www.morph.com.ar > < https://www.walmart.com.ar >
 ---
 *  Las páginas que utilizamos como referentes están vinculadas no sólo con la *temática del sitio y con el público objetivo, sino también por su diseño,  el frond-end que utilizan, la experiencia del usuario*. Recopilamos distintos elementos de cada una de las páginas.
 ---
@@ -45,10 +45,3 @@ Temática del sitio
 * ###### Formulario de registro
 * ###### Formulario de carga de producto
 ---
-
-
-## Repositorio
-
-```
-/git.com
-```
