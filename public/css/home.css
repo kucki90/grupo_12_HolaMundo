@@ -3,7 +3,18 @@ header{
     width: 100%;
     background-color: #1400ff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
+
+}
+li{
+    display: inline-block;
+    justify-content: left;
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }
