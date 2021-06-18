@@ -1,6 +1,6 @@
 
 ## 
-<img width="auto" src="images/HolaMundo.jpg">
+<img width="auto" src="design/HolaMundo.jpg">
 
 ---
 # Hola Mundo!
