@@ -1,14 +1,21 @@
 {
-  "name": "sprint2",
+  "name": "grupo_12_holamundo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "trabajo integrador",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kucki90/grupo_12_HolaMundo.git"
+  },
+  "author": "Grupo12. Antunez, Jennifer. Kuckiewicz, Cecilia Noemi. Ruiz, David.",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kucki90/grupo_12_HolaMundo/issues"
+  },
+  "homepage": "https://github.com/kucki90/grupo_12_HolaMundo#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
