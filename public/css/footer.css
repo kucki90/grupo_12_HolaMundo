@@ -1,0 +1,74 @@
+footer{
+    height: auto;
+    width: auto;
+    background-color: #1400ff;
+    display: flex;
+    justify-content:center;
+    align-items: stretch;
+    padding: 1em;
+}
+
+footer .logo img{
+    width: 7em;
+    
+}
+
+footer h4{
+    color:white;
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+footer ul{
+    font-size: 1em;
+    color: white; 
+    text-transform: capitalize;
+    padding-top: 1em;
+    padding-left: .9em;
+}
+
+/* footer .contacto div{
+    padding-top: 3px;
+} */
+.contacto .redes2{
+    font-size: 1.4em;
+}
+.qr img{
+    width: 6em;
+}
+
+.navega{
+    display:flex;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+.contacto{
+    font-size: 1.1em;
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+
+}
+
+.fa-instagram , .fa-infinity , .fa-youtube {
+    color: #1400ff;
+    background-color: white;
+    border-radius: 50%;
+    font-size: .6em;
+    padding: 4px;
+}
+
+.fa-twitter{
+    background-color: #1400ff;
+    border-radius: 50%;
+    font-size: .7em;
+    padding: 1px;
+}
+
+.fa-facebook{
+    background-color: #1400ff;
+    border-radius: 50%;
+    font-size: .7em;
+    padding: 1px;
+}
