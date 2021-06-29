@@ -18,6 +18,12 @@ a{
     color: white;
     text-decoration: none;
 }
+ main section input{
+    margin: 30px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 12px 326px;
+}
 /* slider */
 body{
     background-color: lightgrey;
