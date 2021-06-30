@@ -19,12 +19,17 @@ footer h4{
     font-size: 1.5em;
 }
 
-footer ul{
+footer .lista{
     font-size: 1em;
     color: white; 
     text-transform: capitalize;
     padding-top: 1em;
-    padding-left: .9em;
+}
+
+.fa-circle{
+    display: flex;
+    font-size: .2em;
+    padding: 2em;
 }
 
 /* footer .contacto div{
@@ -41,6 +46,10 @@ footer ul{
     display:flex;
     width: 40vw;
     justify-content: space-evenly;
+}
+
+.navega h4{
+    padding-left: .5em;
 }
 
 .contacto{
