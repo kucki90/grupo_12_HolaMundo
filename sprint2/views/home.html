@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hola Mundo!</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -31,44 +32,88 @@
             <li><a href="">ico-carrito</a></li>
         </nav>
     </header>
+    <!--buscador-->
+        <div class="box">
+            <input type="text" name="seach" placeholder="Buscador..." class="src" autocomplete="off">
+        </div>
+    <!--banner-->
 
     <main>
-        <!--buscador-->
-        <section>
-            <input type="search" name="ico-buscador" placeholder="Buscador...">
-        </section>
-        <!--banner-->
-        <section>
-            <div>
-                <ul class="slider">
-                    <li id="slide1">
-                    <img src="/images/slider.jpg"/>
-                    </li>
-                    <li id="slide2">
-                    <img src=""/>
-                    </li>
-                    <li id="slide3">
-                    <h1>Ejemplo con otros elementos</h1>
-                    <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en el slider</p>
-                    <a href="https://holamundoc6.com/">¡Corre a mi web para más contenido!</a>
-                    </li>
-                </ul>
-                <ul class="menu">
-                    <li>
-                    <a href="#slide1">.</a>
-                    </li>
-                    <li>
-                    <a href="#slide2">.</a>
-                    </li>
-                    <li>
-                    <a href="#slide3">.</a>
-                    </li>
-                </ul>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="1">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="2">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="3">
+              </div>
             </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="4">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="5">
+              </div>
+              <div class="carousel-item">
+                <img src="/images/slider.jpg" class="d-block w-100" alt="6">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        
         <!-- products -->
         <section>
             <h2>ofertas de la semana</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/images/producto.jpg" class="d-block w-100" alt="a1">
+                    <img src="/images/producto.jpg" class="d-block w-100" alt="a2">
+                    <img src="/images/producto.jpg" class="d-block w-100" alt="a3">
+                    <img src="/images/producto.jpg" class="d-block w-100" alt="a4">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/images/producto.jpg" class="d-block w-25" alt="p2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/images/producto.jpg" class="d-block w-25" alt="p3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             <article>
                 <img src="/images/producto.jpg" alt="oferta1">
                 <img src="" alt="descuento">
@@ -131,10 +176,7 @@
                 <img src="/images/targetas.jpg" alt="">
                 <img src="/images/targetas.jpg" alt="">
                 <img src="/images/targetas.jpg" alt="">
-                <img src="/images/targetas.jpg" alt="">
-                <img src="/images/targetas.jpg" alt="">
             </div>
-
         </section>
     </main>
     <!-- footer -->
@@ -173,7 +215,7 @@
         <img src="" alt="codigoQR">
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

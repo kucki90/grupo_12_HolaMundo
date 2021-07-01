@@ -1,30 +1,29 @@
-header{
-    height: 9em;
-    width: 100%;
-    background-color: #1400ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input.src{
+    padding: 9px 10px 9px 32px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 15px;
+    color:#444;
+    border: 3px solid #a50559;
+    background: #fff url("/images/search-icon.png")no-repeat 9px center;
+    width: 100px;
+    transition:all .5s;
+}
+input.src:hover{
+    width:300px;
+    background-color: #fff;
+    border-color: #8c10b3;
+    box-shadow: 0 0 5px #6dcff680;
+}
 
-}
-li{
-    display: inline-block;
-    justify-content: left;
-    
-}
-
-a{
-    color: white;
-    text-decoration: none;
-}
- main section input{
-    margin: 30px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 12px 326px;
-}
-/* slider */
+/* slider 
 body{
     background-color: lightgrey;
     font-family: sans-serif;
@@ -61,11 +60,11 @@ ul.slider li img{
     object-fit: cover;
 }
 ul.slider li:first-child {
-opacity: 1; /*Mostramos el primer <li>*/
+opacity: 1; /*Mostramos el primer <li>
 }
 
 ul.slider li:target {
-opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+opacity: 1; /*Mostramos el <li> del enlace que pulsemos
 }
 .menu{
     text-align: center;
