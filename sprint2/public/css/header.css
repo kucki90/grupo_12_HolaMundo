@@ -6,32 +6,96 @@ header{
     align-items: flex-end;
     padding: .3em 2em;
     font-size: 1.5em;
+    justify-content: space-between;
 }
 
 header section{
-    width: 33.33%;
+    width: 30%;
 }
-.iconos{
-    display:flex;
-    justify-content: flex-end;
+
+.menu-hamb{
+    color: white;
+    padding-left: 15px;
+    align-items: center;
+    display: none;
 }
-.logo{
-    display:flex;
+
+header .logo{
+    display: flex;
     justify-content: center;
 }
+
 header .logo img{
+    display: flex;
+    justify-content: center;
     width: 5em;
 }
 
 .categorias{
     display:flex;
-    justify-content: flex-start;
 }
+
 .categorias li a{
-    margin-right: 2em;
+    padding: 0 5px;
+    display: flex;   
     text-transform: capitalize;
 }
 
+.iconos{
+    display:flex;
+    justify-content: flex-end;
+}
+
 .iconos li a{
-    margin-left: 2em;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 769px) and (min-width: 361px) {
+
+    header{
+        align-items: center;
+        padding: .3em .5em;
+    }
+
+    .menu-hamb{
+        display: flex;
+    }
+
+    .categorias{
+        display:none;
+    }
+
+    header .logo img{
+        width: 3em;
+    }
+}
+
+@media (max-width: 360px) {
+
+    header{
+        align-items: center;
+        padding: .3em .3em;
+    }
+
+    .menu-hamb{
+        display: flex;
+    }
+
+    .categorias{
+        display:none;
+    }
+
+    header .logo img{
+        width: 3em;
+    }
+
+    .iconos{
+        margin-right: .3em;
+    }
+
+    .iconos ul{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
 }
