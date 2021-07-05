@@ -7,5 +7,6 @@ const port = 3000;
 app.use(express.static('public'));
 
 app.get('/', (req,res) => res.sendFile(path.join(views, 'home.html')));
+app.get('/login', (req,res) => res.sendFile(path.join(views, 'login.html')));
 
 app.listen(port, () => console.log('Server running in port ' + port))
