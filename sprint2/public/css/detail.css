@@ -1,0 +1,111 @@
+main{
+    text-transform: capitalize;
+}
+
+.search form input{
+    width: 1100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    padding: .3em 1.5em;
+    font-size: 2em;
+    border-radius: 10px;
+    border: 1px solid #B2DAFF;
+    background-color: #B2DAFF;
+    position: relative;
+}
+
+.search .fa-search{
+    font-size: 1.4em;
+    color: #5C7FFC;
+    top: 26vh;
+    left: 4%;
+    position: absolute;
+}
+
+.descrip{
+    display: flex;
+}
+
+.fotos{
+    width: 30vw;
+    padding: 20px 40px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mini{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.mini img{
+    padding: 10px;
+}
+
+.info-product{
+    width: 70vw;
+    padding: 40px;
+}
+
+.titular{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 35px;
+}
+
+.info-product p{
+    font-size: 1.2em;
+    text-align: center;
+    padding: 1em;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 40px;
+}
+
+.botones input{
+    width: 2.5em;
+    height: auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+button{
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+.btn{
+    background-color: #5C7FFC;
+    border: 1px solid #5C7FFC;
+    width: 190px;
+    height: 1.5em;
+    border-radius: 10px;
+}
+
+.pago{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pago h2{
+    padding-right: 1em;
+}
+
+.pago ul{
+    display: flex;
+}
+
+.pago ul li{
+    list-style: none;
+    padding: .5em;
+    display: flex;
+}
