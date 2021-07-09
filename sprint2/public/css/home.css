@@ -5,43 +5,15 @@
   box-sizing: border-box;
 }
 
-/* Comienzo cuerpo de la pagina + elementos generales*/
-
 
 a {
   text-decoration: none;
-  /* sacamos subrayado de las palabras linkeadas*/
 }
 
 ul li {
   font-size: 0.8em;
   list-style: none;
 }
-
-a:hover {
-  color: rgb(43, 220, 20);
-}
-
-/* Fin comienzo cuerpo de la pagina + elementos generales*/
-
-/* Comienzo de Cabecera */
-header {
-  height: 100px;
-  /* height es el alto */
-  width: 100%;
-  /* Ancho del header */
-  background-color: #1400ff;
-  display: flex;
-  /* se hace flexible para poder modificarlo como quieras*/
-  justify-content: space-between;
-  /* le da una ubicacion ordenada a los elementos que esten dentro */
-  align-items: center;
-  /*centra los elementos*/
-  text-transform: uppercase;
-  box-shadow: 0px 0px 18px 0px rgba(124, 223, 253, 0.7);
-}
-
-
 
 .logo {
   height: 5em;
@@ -51,45 +23,12 @@ header {
 a {
   color: rgb(255, 255, 255);
 }
-.home header i.fas {
-  color: white;
-}
-.home header i.far {
-  color: white;
-}
-
 .padre {  
   margin: 1rem;
   padding: 1rem;
   border: 2px solid #ccc;
   /* IMPORTANTE */
   text-align: center;
-}
-
-
-.buscador {  /*el buscador*/
-  width: 23em;
-  height: auto;
-  border-radius: 0.5em 0 0 0.5em;
-  padding-left: 2.5em;
-  margin-left: 50px;
-}
-
-.formsearch { /*el buscador*/
-  height: 3em;
-  display: flex;
-  align-items: center;
-  border-color: transparent;
-  justify-content: center;
-}
-
-.botonbuscar { /*boton buscador*/
-  height: 3em;
-  padding: 0 0.8em;
-  background-color: #1400ff;
-  color: whitesmoke;
-  border-radius: 0 0.5em 0.5em 0;
-  border-color: transparent;
 }
 
 /*seader*/
@@ -112,8 +51,9 @@ a {
   flex-direction: column;
   align-items: center;
 }
-.home main .minitargetas{
+.minitargetas{
 text-align: center;
+margin-bottom: 40px;
 }
 
 
@@ -149,10 +89,10 @@ footer section a , i{
 .footer_a_teleinfo{
   font-size: 11px;
 }
-.hijo{
+.hijo{     
   flex: 1;
 }
-.hijo4{
+.hijo4{   
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,14 +127,9 @@ order: 4;
   font-size: 1.2em;
 }
 
-.navegacion ul li {
-  margin: 0px;
-  border-right: 1px solid #07c900;
-}
 
-.navegacion ul li:last-child {
-  border-right: none;
-}
+
+
 
 .navegacion ul li a {
   font-family: "Roboto", sans-serif;
@@ -210,18 +145,17 @@ h3 {
   margin-left: 6px;
 }
 
-
+.credit-card{ /*tar de crédito*/
+  font-size: 30px;
+}
 
 
 
 /* @media(max-width: 360px)
 @media(max-winth: 769 min width 361)
 de destok a mobile */
-@media (min-width: 320px) and (max-width: 425px) {
-  .buscador {
-    width: 17em;
-    padding: 0;
-  }
+@media (min-width: 320px) and (max-width: 425px) {/*320-425*/
+
   .mobile{
     display: none;    
   }
@@ -232,23 +166,21 @@ de destok a mobile */
       width: 280px; 
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 360px) { /*425*/
   h1 {
     font-size: 0.7em;
   }
   /* .logo {
     height: 2.5em;
   } */
-  .buscador {
-    width: 8em;
-  }
+
   .contenedor {
     display: flex;
   }
 
 }
   
-  @media (min-width: 425px)and (max-width: 768px) {
+  @media (min-width: 361px)and (max-width: 769px) {/*425-768*/
     .desktop{
       display: none;}
 
@@ -264,10 +196,10 @@ de destok a mobile */
       order:3;
       }
       .hijo:nth-child(3) {
-        order:4;
+      order:4;
       }
       .hijo:nth-child(4) {
-          order:2;
+      order:2;
       }
   }
   @media (min-width: 769px)and (max-width: 1024px) {
