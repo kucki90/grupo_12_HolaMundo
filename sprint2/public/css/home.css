@@ -1,90 +1,305 @@
-
-.box{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-input.src{
-    padding: 9px 10px 9px 32px;
-    outline: none;
-    font-size: 18px;
-    border-radius: 15px;
-    color:#444;
-    border: 3px solid #a50559;
-    background: #fff url("/images/search-icon.png")no-repeat 9px center;
-    width: 100px;
-    transition:all .5s;
-}
-input.src:hover{
-    width:300px;
-    background-color: #fff;
-    border-color: #8c10b3;
-    box-shadow: 0 0 5px #6dcff680;
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'Rancho',cursive;
+  box-sizing: border-box;
 }
 
-/* slider 
-body{
-    background-color: lightgrey;
-    font-family: sans-serif;
+/* Comienzo cuerpo de la pagina + elementos generales*/
+
+
+a {
+  text-decoration: none;
+  /* sacamos subrayado de las palabras linkeadas*/
 }
-.container{
-    margin: auto;
-    background-color: white;
-    width: 800px;
-    padding: 30px;
+
+ul li {
+  font-size: 0.8em;
+  list-style: none;
 }
-ul, li {
+
+a:hover {
+  color: rgb(43, 220, 20);
+}
+
+/* Fin comienzo cuerpo de la pagina + elementos generales*/
+
+/* Comienzo de Cabecera */
+header {
+  height: 100px;
+  /* height es el alto */
+  width: 100%;
+  /* Ancho del header */
+  background-color: #1400ff;
+  display: flex;
+  /* se hace flexible para poder modificarlo como quieras*/
+  justify-content: space-between;
+  /* le da una ubicacion ordenada a los elementos que esten dentro */
+  align-items: center;
+  /*centra los elementos*/
+  text-transform: uppercase;
+  box-shadow: 0px 0px 18px 0px rgba(124, 223, 253, 0.7);
+}
+
+
+
+.logo {
+  height: 5em;
+  width: auto;
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+.home header i.fas {
+  color: white;
+}
+.home header i.far {
+  color: white;
+}
+
+.padre {  
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  /* IMPORTANTE */
+  text-align: center;
+}
+
+
+.buscador {  /*el buscador*/
+  width: 23em;
+  height: auto;
+  border-radius: 0.5em 0 0 0.5em;
+  padding-left: 2.5em;
+  margin-left: 50px;
+}
+
+.formsearch { /*el buscador*/
+  height: 3em;
+  display: flex;
+  align-items: center;
+  border-color: transparent;
+  justify-content: center;
+}
+
+.botonbuscar { /*boton buscador*/
+  height: 3em;
+  padding: 0 0.8em;
+  background-color: #1400ff;
+  color: whitesmoke;
+  border-radius: 0 0.5em 0.5em 0;
+  border-color: transparent;
+}
+
+/*seader*/
+.home main .fotos{
+  width: 30vw;
+  padding: 20px 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home main .mini{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+.home main .fotostargetas{
+  width: 50vw;
+  padding: 20px 40px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home main .minitargetas{
+text-align: center;
+}
+
+
+/*footer*/
+footer {
+  height: auto;
+  /* height es el alto */
+  width: 100%;
+  /* Ancho del header */
+  background-color: #1400ff;
+  display: flex;
+  /* se hace flexible para poder modificarlo como quieras*/
+
+  align-items: center;
+  /*centra los elementos*/
+  text-transform: uppercase;
+  box-shadow: 0px 0px 18px 0px rgba(124, 223, 253, 0.7);
+  padding: 10px;
+  padding-top: 20px;
+}
+.footer ,.contenedor-padre{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+.footer_h4{
+  font-size: 15px;
+  color: white;
+}
+footer section a , i{
+  font-size: 10px;
+}
+.footer_a_teleinfo{
+  font-size: 11px;
+}
+.hijo{
+  flex: 1;
+}
+.hijo4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+.logo{
+  width: 100px;
+}
+
+.hijo:first-child {
+order: 1;
+}
+.hijo:nth-child(2) {
+order: 2;
+}
+.hijo:nth-child(3) {
+order: 3;
+}
+.hijo:nth-child(4) {
+order: 4;
+}
+
+
+/*fin footer*/
+.titulo a,
+.navegacion ul {
+  display: flex;
+  align-items: center;
+}
+
+.navegacion ul {
+  font-size: 1.2em;
+}
+
+.navegacion ul li {
+  margin: 0px;
+  border-right: 1px solid #07c900;
+}
+
+.navegacion ul li:last-child {
+  border-right: none;
+}
+
+.navegacion ul li a {
+  font-family: "Roboto", sans-serif;
+  padding: 0px;
+}
+h2{/* este h2 es solo para los titulos en main*/
+  text-align: center;
+  margin: 90px 0 30px 0;
+}
+h3 {  
+  font-size: 1.0em;
+  margin: 3px;
+  margin-left: 6px;
+}
+
+
+
+
+
+/* @media(max-width: 360px)
+@media(max-winth: 769 min width 361)
+de destok a mobile */
+@media (min-width: 320px) and (max-width: 425px) {
+  .buscador {
+    width: 17em;
     padding: 0;
-    margin: 0;
-    list-style: none;
+  }
+  .mobile{
+    display: none;    
+  }
+  .desktop{
+    display: none;}
+  
+  img{
+      width: 280px; 
+  }
 }
-ul.slider{
-    position: relative;
-    width: 800px;
-    height: 300px;
-}
-ul.slider li {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    transition: opacity .5s;
-    background:#fff;
-}
-ul.slider li img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-ul.slider li:first-child {
-opacity: 1; /*Mostramos el primer <li>
-}
+@media (max-width: 425px) {
+  h1 {
+    font-size: 0.7em;
+  }
+  /* .logo {
+    height: 2.5em;
+  } */
+  .buscador {
+    width: 8em;
+  }
+  .contenedor {
+    display: flex;
+  }
 
-ul.slider li:target {
-opacity: 1; /*Mostramos el <li> del enlace que pulsemos
 }
-.menu{
-    text-align: center;
-    margin: 20px;
-  }
   
-  .menu li{
-    display: inline-block;
-    text-align: center;
+  @media (min-width: 425px)and (max-width: 768px) {
+    .desktop{
+      display: none;}
+
+      img{
+        width: 224px; 
+    }
+    /*1-categoria 2-empresa 3-contactenos  oculto 4-logo-img*/
+    .hijo:first-child {
+      order:1;
+      }
+      /*la posicion osea el 2 va tener la posicion 4 */
+      .hijo:nth-child(2) {
+      order:3;
+      }
+      .hijo:nth-child(3) {
+        order:4;
+      }
+      .hijo:nth-child(4) {
+          order:2;
+      }
   }
+  @media (min-width: 769px)and (max-width: 1024px) {
+    
+      img{
+        width: 238px; 
+    }
+
+    /*footer*/
+    .hijo:first-child {
+      order:1;
+      }
+      /*la posicion osea el 2 va tener la posicion 4 */
+      .hijo:nth-child(2) {
+      order:2;
+      }
+      .hijo:nth-child(3) {
+        order:4;
+      }
+      .hijo:nth-child(4) {
+          order:2;
+      }
+    
   
-  .menu li a{
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    background-color: grey;
-    padding: 10px;
-    width: 20px;
-    height: 20px;
-    font-size: 20px;
-    border-radius: 100%;
   }
-/* fin slider */
+  @media (min-width: 1024px) {
+    .buscador {
+      width: 55em;
+    }
+    img {
+      width: 241px;
+  }
+    
+  }
+
