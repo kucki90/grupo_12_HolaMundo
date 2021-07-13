@@ -1,0 +1,171 @@
+footer{
+    height: auto;
+    width: auto;
+    background-color: #1400ff;
+    display: flex;
+    justify-content:center;
+    align-items: stretch;
+    padding: 1em;
+}
+
+footer .logo img{
+    width: 7em;
+    
+}
+
+footer h4{
+    color:white;
+    text-transform: capitalize;
+    font-size: 1.5em;
+}
+
+footer .lista{
+    font-size: 1em;
+    color: white; 
+    text-transform: capitalize;
+    padding-top: 1em;
+}
+
+.fa-circle{
+    display: flex;
+    font-size: .2em;
+    padding: 2em;
+}
+
+footer .contacto div{
+    padding-top: 3px;
+}
+
+.contacto .redes2{
+    font-size: 1.4em;
+}
+.qr img{
+    width: 6em;
+}
+
+.navega{
+    display:flex;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+.navega h4{
+    padding-left: .5em;
+}
+
+.contacto{
+    font-size: 1.1em;
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+
+}
+
+.fa-instagram , .fa-infinity , .fa-youtube {
+    color: #1400ff;
+    background-color: white;
+    border-radius: 50%;
+    font-size: .6em;
+    padding: 4px;
+}
+
+.fa-twitter{
+    background-color: #1400ff;
+    border-radius: 50%;
+    font-size: .7em;
+    padding: 1px;
+}
+
+.fa-facebook{
+    background-color: #1400ff;
+    border-radius: 50%;
+    font-size: .7em;
+    padding: 1px;
+}
+
+/* footer {
+    height: auto; // height es el alto 
+    width: 100%; // Ancho del header 
+    background-color: #1400ff; 
+    display: flex; // se hace flexible para poder modificarlo como quieras
+    align-items: center; //centra los elementos
+    text-transform: uppercase;
+    box-shadow: 0px 0px 18px 0px rgba(124, 223, 253, 0.7);
+    padding: 10px;
+    padding-top: 20px;
+  }
+
+  .footer ,.contenedor-padre{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  }
+
+  .footer_h4{
+    font-size: 15px;
+    color: white;
+  }
+  footer section a , i{
+    font-size: 10px;
+  }
+  .footer_a_teleinfo{
+    font-size: 11px;
+  }
+  .hijo{     
+    flex: 1;
+  }
+  .hijo4{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+  }
+  .logo{
+    width: 100px;
+  }
+  
+  .hijo:first-child {
+  order: 1;
+  }
+  .hijo:nth-child(2) {
+  order: 2;
+  }
+  .hijo:nth-child(3) {
+  order: 3;
+  }
+  .hijo:nth-child(4) {
+  order: 4;
+  }
+  
+  @media (min-width: 361px)and (max-width: 769px) {
+      //1-categoria 2-empresa 3-contactenos  oculto 4-logo-img
+    .hijo:first-child {
+        order:1;
+        }
+        //la posicion osea el 2 va tener la posicion 4 
+        .hijo:nth-child(2) {
+        order:3;
+        }
+        .hijo:nth-child(3) {
+        order:4;
+        }
+        .hijo:nth-child(4) {
+        order:2;
+        }
+  }
+
+  @media (min-width: 769px)and (max-width: 1024px) {
+    .hijo:first-child {
+        order:1;
+        }
+        //la posicion osea el 2 va tener la posicion 4
+        .hijo:nth-child(2) {
+        order:2;
+        }
+        .hijo:nth-child(3) {
+          order:4;
+        }
+        .hijo:nth-child(4) {
+            order:2;
+        }
+  } */
