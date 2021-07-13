@@ -34,6 +34,11 @@ header section{
     display: none;
 }
 
+.navbar-dark .navbar-toggler {
+    color: white;
+    border-color: white;
+}
+
 header .logo{
     display: flex;
     justify-content: center;
@@ -121,4 +126,5 @@ header .logo img{
         align-items: flex-end;
         flex-direction: column;
     }
+ 
 }
