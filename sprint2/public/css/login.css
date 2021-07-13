@@ -49,6 +49,7 @@
     width: 630px;
 }
 .controladorinput{
+    position: relative;
     width: 100%;
     display: flex;
     margin-bottom: .5rem;
@@ -74,7 +75,7 @@ display: block;
     text-decoration:inherit;
     display: block;
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: 769px){
    .separador{
     width:calc(100% - 40px) ;
     height:1px;

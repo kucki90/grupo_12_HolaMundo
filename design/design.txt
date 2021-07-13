@@ -4,7 +4,7 @@ Tipografía :
 
 Colores :
 
-#1400FF
-#B2DAFF
-#5C7FFC
-#000000
+#1400FF:azul
+#B2DAFF :celeste
+#5C7FFC: azul clarito
+#000000:negre
