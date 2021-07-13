@@ -20,17 +20,9 @@ header section{
     display: none;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: white;
-}
-
 .navbar-dark .navbar-toggler {
     color: white;
     border-color: white;
-}
-
-.navbar-toggler-icon{
-    color: white;
 }
 
 header .logo{
@@ -111,4 +103,5 @@ header .logo img{
         align-items: flex-end;
         flex-direction: column;
     }
+ 
 }
