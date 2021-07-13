@@ -1,82 +1,83 @@
 /*footer*/
 .footer{
-    height: auto;
+    height:auto;
     /* height es el alto */
-    width: 100%;
+    width:100%;
     /* Ancho del header */
-    background-color: #1400ff;
-    display: flex;
+    background-color:#1400ff;
+    display:flex;
     /* se hace flexible para poder modificarlo como quieras*/
-    align-items: center;
+    align-items:center;
     /*centra los elementos*/
     
-    box-shadow: 0px 0px 18px 0px rgba(124, 223, 253, 0.7);
-    padding: 10px;
-    padding-top: 20px;
+    box-shadow:0px 0px 18px 0px rgba(124, 223, 253, 0.7);
+    padding:10px;
+    padding-top:20px;
   }
-  .footer ,.contenedor-padre{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  .footer,.contenedor-padre{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
   }
   .footer .footer_h4{
-    font-size: 26px;
-    color: white;
+    font-size:26px;
+    color:white;
   }
   .footer section a , i{
-    font-size: 16px;
+    font-size:16px;
   }
   .footer .footer_a_teleinfo{
-    font-size: 15px;
+    font-size:15px;
   }
   .footer .hijo{     
-    flex: 1;
-    padding: 16px;
-  }
-  .footer .hijo4{   
-
+    flex:1;
+    padding:16px;
   }
   .footer .logo{
-    width: 100px;
+    width:100px;
   }  
-  .footer .hijo:first-child {
-  order: 1;
+  .footer .hijo:first-child{
+  order:1;
   }
-  .footer .hijo:nth-child(2) {
-  order: 2;
+  .footer .hijo:nth-child(2){
+  order:2;
   }
-  .footer .hijo:nth-child(3) {
-  order: 3;
+  .footer .hijo:nth-child(3){
+  order:3;
   }
-  .footer .hijo:nth-child(4) {
-  order: 4;
-  }  
-.footer .fa, .fas {    
-    color: white;
+  .footer .hijo:nth-child(4){
+  order:4;
+  }
+  .footer .hijo:nth-child(5){
+    order:5; 
+  } 
+
+.footer .fa, .fas{    
+    color:white;
 }
 /* redes socialeeess...*/
 .footer .fa-circle{
-  font-size: .2em;
-  padding: 2em;
+  font-size:0.2em;
+  padding:2em;
 }
 .footer .fa-instagram , .fa-infinity , .fa-youtube {
-    color: #1400ff;
-    background-color: white;
-    border-radius: 50%;
-    font-size: 0,7em;
-    padding: 4px;
+  color: #1400ff;
+  background-color: white;
+  border-radius: 50%;
+  font-size: small;
+  padding: 4px;
 }
 .footer .fa-twitter{
-    background-color: #1400ff;
-    border-radius: 50%;
-    font-size: 1.0em;
-    padding: 1px;
+  background-color: #1400ff;
+  border-radius: 50%;
+  font-size: 1.0em;
+  padding: 1px;
 }
 .footer .fa-facebook{
-    background-color: #1400ff;
-    border-radius: 50%;
-    font-size: 1.0em;
-    padding: 1px;
+  background-color: #1400ff;
+  border-radius: 50%;
+  font-size: 1.0em;
+  padding: 1px;
 }
 /* @media(max-width: 360px) @media(max-winth: 769 min width 361)de destok a mobile */
 @media (min-width: 320px) and (max-width: 425px) {/*320-425*/
@@ -93,34 +94,61 @@
   }    
 @media (min-width: 361px)and (max-width: 769px) {/*425-768*/
 /*1-categoria 2-empresa 3-contactenos  oculto 4-logo-img*/
-  .hijo:first-child {
+  .footer .hijo:first-child {
    order:1;
    }
 /*la posicion osea el 2 va tener la posicion 4 */
-  .hijo:nth-child(2) {
+  .footer .hijo:nth-child(2) {
    order:3;
    }
-  .hijo:nth-child(3) {
+  .footer .hijo:nth-child(3) {
    order:4;
    }
-  .hijo:nth-child(4) {
+   .footer .hijo:nth-child(4) {
    order:2;
    }
   }
 @media (min-width: 769px)and (max-width: 1024px) { 
-   .hijo:first-child {
+  .footer .hijo:first-child {
     order:1;
    }
 /*la posicion osea el 2 va tener la posicion 4 */
-   .hijo:nth-child(2) {
+   .footer .hijo:nth-child(2) {
     order:2;
    }
-   .hijo:nth-child(3) {
+   .footer .hijo:nth-child(3) {
     order:4;
    }
-   .hijo:nth-child(4) {
+   .footer .hijo:nth-child(4) {
    order:2;
-   }    
+   }  
+   .footer .hijo:nth-child(5){
+     order:5;
+   }   
+.footer .hijo {
+    flex: 1;
+    padding: 50px;
+}
   }
-/* @media (min-width: 1024px) { 
-    } */
+ @media (min-width: 1024px) { 
+  .footer .footer_a_teleinfo {
+    font-size: 12px;
+  }
+  .footer .footer_a_teleinfo {
+    font-size: 12px;
+}
+.footer {
+ margin: 0px 30px;
+}
+.footer .hijo {
+  flex: 1;
+  padding: 0 47px;
+}
+.footer section a, i {
+  font-size: 10px;
+}
+.footer .fa-instagram, .fa-infinity, .fa-youtube {
+ 
+  padding: 2px;
+}
+    }

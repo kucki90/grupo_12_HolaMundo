@@ -68,6 +68,10 @@ margin-bottom: 40px;
 .home section .credit-card{ /*tar de crédito*/
   font-size: 30px;
   color:black;
+} 
+/* las flechas*/
+.home main section i {
+  color: black;
 }
 
 
@@ -76,14 +80,14 @@ margin-bottom: 40px;
 de destok a mobile */
 @media (min-width: 320px) and (max-width: 425px) {/*320-425*/
 
-  .home .mobile{
+  .home .mobile {
     display: none;    
   }
   .home .desktop{
     display: none;}
   
   .home img{
-      width: 280px; 
+      width: 248px; 
   }
 }
 @media (max-width: 360px) { /*425*/
@@ -99,14 +103,17 @@ de destok a mobile */
 }  
   @media (min-width: 361px)and (max-width: 769px) {/*425-768*/
     .home .desktop{
-      display: none;}
+      display: none;
+    }
     .home img{
-        width: 224px; 
+        width: 228px;
+        padding: 0 5px; 
     }
      }
   @media (min-width: 769px)and (max-width: 1024px) {
     .home img{
-        width: 238px; 
+        width: 242px;
+        padding: 0 5px; 
     }  
   }
   @media (min-width: 1024px) {
@@ -114,6 +121,10 @@ de destok a mobile */
       width: 55em;
     }
     .home img {
-      width: 241px;
+      width: 221px;
+      padding: 0 5px;
   }    
+  .home .fotos {
+    width: 100%;
+}
   }
