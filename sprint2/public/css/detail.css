@@ -1,341 +1,116 @@
-main{
-    display: flex;
-    text-transform: capitalize;
-}
-
-.contenedor{
-    display: flex;
-    flex-direction: column;
-}
-
-.search form input{
-    width: 90vw;
-    margin: 20px 5vw;
-    display: flex;
-    justify-content: center;
-    padding: .3em 1.5em;
-    font-size: 1.5em;
+.detail .card{
     border-radius: 20px;
-    border: 1px solid #B2DAFF;
-    background-color: #B2DAFF;
-    position: relative;
+    padding: 20px;
 }
-
-.search .fa-search{
-    font-size: 1.4em;
-    color: #5C7FFC;
-    top: 33%;
-    left: 6%;
-    position: absolute;
-} 
-
-.descrip{
+.detail .contenido{
     display: flex;
+    flex-wrap: wrap;
 }
-
-.titulo-mb{
-    display: none;
+.detail  h2{
+    text-align: center;
+    font-size: 48px;
 }
+.detail .fotos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-.fa-chevron-up{
-    display: none;
 }
-
-.fotos{
-    width: 30vw;
-    padding: 20px 40px 10px;
+.detail  .maxi{
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.detail  .mini{
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.mini{
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.mini img{
-    padding: 10px;
-}
-
-.fa-chevron-down{
-    display: none;
-}
-
-.info-product{
-    width: 70vw;
-    padding: 40px;
-}
-
-.titular{
-    list-style: none;
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 35px;
 }
-
-.titular h1{
-    margin-bottom: 0;
+.detail .mini img{
+    width: 100%;
 }
-
-.precio{
-    padding-right: 5%;
-}
-
-.titular input{
-    width: 1.5em;
-    height: 1em;
-    font-size: 1.2em;
+.detail .fa-chevron-left, .detail .fa-chevron-right{
     display: none;
 }
 
-.info-product .descr{
-    font-size: 1.2em;
+.detail h3{
     text-align: center;
-    padding: 1em;
+    font-size: 36px;
 }
 
-.botones{
+.detail .botones{
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    padding: 10px 0 40px;
 }
 
-.botones input{
-    width: 2.5em;
-    height: auto;
-    font-size: 1.5em;
+.detail .btn{
+    border-radius: 20px;
 }
 
-button{
-    font-size: 1.5em;
-    text-transform: capitalize;
-}
-
-.btn{
-    background-color: #5C7FFC;
-    border: 1px solid #5C7FFC;
-    width: 190px;
-    height: 1.5em;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.descr-mb{
-    font-size: 1.2em;
+.detail h4{
+    font-size: 32px;
     text-align: center;
-    padding: 0;
-    display: none;
-    font-weight: 600;
 }
 
-.pago{
+.detail .pago{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.detail .pago i{
+    font-size: 36px;
 }
 
-.pago h2{
-    padding-right: 1em;
-}
 
-.pago ul{
-    display: flex;
-}
+@media (min-width:768px) {
 
-.pago ul li{
-    list-style: none;
-    padding: .5em;
-    display: flex;
-}
-
-@media screen and (max-width: 769px) and (min-width: 361px){
-    .search .fa-search{
-        top: 14%;
-        left: 7%;
-    }     
-
-    .fotos{
-        margin-left: 4vw;
+    .detail .fa-chevron-left, .detail .fa-chevron-right{
+        display: block;
     }
-
-    .info-product{
-        width: 65vw;
-        padding: 25px;
-        margin-right: 20vw;
+    .detail .fa-chevron-up, .detail .fa-chevron-down{
+        display: none;
     }
-
-    .titular{
-    font-size: 40px;
+     .detail .contenido{
+        width: 100%;
     }
-
-    .precio{
-    padding-right: 0;
-    text-transform: lowercase;
+    .detail .fotos{
+        flex-direction: column;
+        width: 50%;
+        order: 2;
     }
-
-    .info-product .descr{
-        padding: 0;
-        font-size: 1.5em;
+    .detail  .maxi{
+        width: 100%;
+        padding: 20px;
     }
-
-    ul{
-        margin-bottom: 0;
-        padding-left: 0;
-    }
-
-    .btn{
-        width: auto;
-        height: 2em;
-    }
-
-    .pago:first-child{
-        order: 1;
-    }
-
-    .pago {
-        display: flex;
+    
+    .detail .mini{
+        width: 100%;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
-
-    .pago ul li{
-        font-size: 1.5em;
-        justify-content: space-around;
+  
+    .detail .info{
+       
+        align-items: center;
+        width: 50%;
+        order:3;
+        padding: 20px;
     }
+
 }
 
-@media (max-width: 360px) {
-    .contenedor{
+@media (min-width:1024px) {
+    .detail .maxi, .detail .mini{
+        width: 90%;
+    }
+    .detail  .maxi img{
+        width: 60%;
         margin: 0 auto;
-        justify-content: center;
-        align-items: center;
     }
-
-    .search .fa-search{
-        top: 17.5%;
-        left: 9%;
-    } 
-
-    .descrip{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .titulo-mb{
-        display: flex;
-        justify-content: center;
-    }
-
-    .fotos{
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .fotos img{
-        width: 60vw;
-    }
-
-    .fa-chevron-left{
-        display: none;
-    }
-
-    .fa-chevron-up{
-        display: flex;
-    }
-
-    .mini{
-        flex-direction: column;
-        padding-top: 10px;
-    }
-    
-    .mini img{
-        width: 17vw;
-        padding: 5px;
-        margin: 0 7vw;
-    }
-
-    .fa-chevron-right{
-        display: none;
-    }
-
-    .fa-chevron-down{
-        display: flex;
-    }
-
-    .precio{
-        font-size: 25px;
-        text-transform: lowercase;
-    }
-    .titular h1{
-        display: none;
-    }
-
-    ul{
-        padding-left: 0;
-        padding-top: 15px;
-    }
-
-    .titular input{
-        display: flex;
-    }
-
-    .botones input{
-        display: none;
-    }
-
-    .info-product{
-        width: 90vw;
-        padding: 0;
-    }
-
-    .info-product .descr{
-        display: none;
-    }
-
-    .botones{
-        padding: 10px 0;
-    }
-    
-    .btn{
-        width: auto;
-        height: 1.5em;
-        margin-bottom: 30px;
-        border-radius: 15px;
-        font-weight: 600;
-        font-size: 1.5em;
-    }
-
-    .descr-mb{
-        display: flex;
-    }
-
-    .pago{
-        flex-direction: column;
-        text-align: center;
-        padding: 0 auto;
-        font-size: 24px;
-    }
-
-    .pago h2{
-        padding-right: 0;
-        margin-bottom: 0;
-        font-size: 30px;
-    }
-
-    .pago ul{
-        flex-direction: row;
-        padding-left: 0;
-        padding-top: 0;
-    }
-
-    .pago ul li{
-        padding: 0.3em;
+    .detail .mini img{
+        width: 20%;
     }
 }
