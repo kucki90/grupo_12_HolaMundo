@@ -1,0 +1,9 @@
+.home .banner{
+  display: none;
+}
+
+@media (min-width:1024px) {
+  .home .banner{
+    display: block;
+  }
+}
