@@ -1,0 +1,39 @@
+.carrito {
+    font-size: 18px;
+}
+.carrito .botones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.carrito h4.price{
+    margin-top: 50px;
+}
+
+.carrito .botones input{
+    width: 40px;
+}
+
+.carrito li{
+    font-size: 24px;
+}
+
+.carrito button{
+    font-size: 28px;
+}
+
+@media (min-width:768px) {
+    .carrito {
+        font-size: 28px;
+    }
+    .carrito h4.price{
+        margin-top: 100px;
+    }
+}
+@media (min-width:1024px) {
+    .carrito img{
+        width: 50%;
+    }
+}

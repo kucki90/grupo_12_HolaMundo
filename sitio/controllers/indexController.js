@@ -1,14 +1,14 @@
-const productos = require('../data/productos_db');
+const productos = require('../data/products_db');
 
 module.exports = {
-    index: (req,res) => {
-        return res.render('home',{
+    home: (req,res) => {
+        return res.render('home'/* ,{
             productos,
             title:"Hola mundo"
-        })
+        } */)
     },
     carrito: (req,res) => {
-        return res.send('carrito', {
+        return res.render('carrito', {
             productos
         })
     }

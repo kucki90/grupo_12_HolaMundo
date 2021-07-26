@@ -1,0 +1,105 @@
+/*footer*/
+.footer{
+  width:100%;
+  /* Ancho del header */
+  background-color:#1400ff;
+  padding:15px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer h4{
+font-size: 1.8rem;
+margin-left: 25px;
+}
+.footer ul{
+padding: 16px;
+}
+.footer li{
+list-style:disc;
+}
+.footer .redes{
+font-size: 1.5rem;
+}
+.footer section{
+padding: 12px;
+}
+.footer .categorias{
+width: 50%;
+}
+.footer .empresa{
+width: 50%;
+}
+
+.footer .contacto{
+width: 50%;
+}
+
+.footer .logo{
+width: 50%;
+}
+
+.footer .qr{
+padding: 20px;
+}
+
+@media (min-width:768px) {
+.footer{
+  padding: 30px
+}
+.footer .categorias{
+  width: 33%;
+  order: 1;
+}
+.footer .empresa{
+  width: 33%;
+  order: 3;
+  padding-left: 30px;
+}
+
+.footer .logo{
+  width: 33%;
+  order: 2;
+}
+.footer .contacto{
+  width: 33%;
+  order: 4;;
+  
+}
+.footer .qr{
+  width: 33%;
+  padding: 20px;
+  order: 5;
+}
+}
+@media (min-width:1024px) {
+.footer{
+  padding: 30px
+}
+.footer .categorias{
+  width: 20%;
+  order: 1;
+}
+.footer .empresa{
+  width: 20%;
+  order: 2;
+  padding-left: 30px;
+}
+
+.footer .logo{
+  width: 20%;
+  order: 3;
+}
+.footer .contacto{
+  width: 20%;
+  order: 4;;
+  
+}
+.footer .qr{
+  width: 20%;
+  padding: 20px;
+  order: 5;
+}
+}
