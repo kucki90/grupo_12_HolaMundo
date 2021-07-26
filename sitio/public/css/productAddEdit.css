@@ -5,11 +5,10 @@
     width: 100%;
     font-size: 1.5rem;
 }
-
-/* .charge .formulario{
-
-} */
-
+.charge .formulario{
+   position: relative;
+   height: 100%;
+}
 .charge .formulario button{
     border-radius: 8px;
     font-size: 1.3rem;
@@ -32,7 +31,7 @@
 
 .charge .formulario input{
     width: 82vw;
-    position: absolute;
+    position: absolute; 
     right: 3vw;
     border: none;
     background-color: #B2DAFF;
@@ -46,7 +45,7 @@
     width: 30vw;
     position:absolute;
     right: 30vw;
-    bottom: 15vw;
+    bottom: -150px;
 }
 @media(max-width : 320px) {
     .charge .formulario .btn-fotos{
@@ -74,6 +73,12 @@
     width: 50vw;
     position:absolute;
     right: 25vw;
-    bottom: 15vw;
+    bottom: -50px;
 }
+}
+
+@media(min-width : 1024px){
+    .charge .formulario .btn-charge{
+        bottom: -200px;
+    }
 }
