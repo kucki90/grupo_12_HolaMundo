@@ -1,3 +1,3 @@
 const fs= require('fs');
-path = require ('path');
+const path = require ('path');
 module.exports = JSON.parse(fs.readFileSync(path.join(__dirname,"products.json") ,'utf-8'));
