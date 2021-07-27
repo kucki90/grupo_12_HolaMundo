@@ -1,4 +1,3 @@
-const products_db = require('../data/products_db');
 const productos = require('../data/products_db');
 
 module.exports = {
