@@ -13,26 +13,26 @@
         <div class="container">
 
             <div class="card border rounded shadow my-5">
-                <h2>Nombre del producto</h2>
+                <h2><%= producto.title %> </h2>
                 <div class="contenido">
                   <section class="fotos">
                     <div class="maxi">
-                        <img class="img-fluid" src="/images/productos/product-01.webp" alt="" >
+                        <img class="img-fluid" src="/images/productos/<%= producto.images %>" alt="" >
                     </div>
                 
                     <div class="mini">
                         <i class="fas fa-chevron-left"></i>
                         <i class="fas fa-chevron-up"></i>
-                        <img src="/images/productos/product-01.webp" alt="">
-                        <img src="/images/productos/product-02.webp" alt="">
-                        <img src="/images/productos/product-03.webp" alt="">
+                        <img src="/images/productos/<%= producto.images %>" alt="">
+                        <img src="/images/productos/<%= producto.images %>" alt="">
+                        <img src="/images/productos/<%= producto.images %>" alt="">
                         <i class="fas fa-chevron-right"></i>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                 </section>
                 <section class="info">
-                    <h3>$ 100,00</h3>
-                    <p class="mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque similique ex in aut provident quam repellat exercitationem numquam beatae, culpa, voluptatum consequatur unde, illo magni. Dolorum repudiandae molestias quo odit quos non.</p>
+                    <h3>$ <%= producto.price %> </h3>
+                    <p class="mt-3"><%= producto.description %></p>
                     <div class="botones mt-4">
                         <a href="" class="btn btn-primary">Agregar al carrito</a>
                         <a href="" class="btn btn-primary">Comprar</a>

@@ -15,6 +15,7 @@ module.exports = {
         return res.render('productDetail',{
             producto,
             productos
-        })
+        },
+        console.log(producto))
     }
 }
