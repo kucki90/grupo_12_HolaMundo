@@ -1,206 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Nombre de la página-->
-    <title>Hola Mundo</title>
+<%-include('./partials/head') %>
 
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/76d25d6fff.js" crossorigin="anonymous"></script>
-
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet" />
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-
-    <!-- iconos -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
-
-    <!-- Vincular hoja  de estilos -->
-    <link rel="stylesheet" href="/css/styles.css" />
-</head>
-
-<body>
+  <body>
     <!-- encabezado -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span><i class="fas fa-bars"></i></span>
-                </button>
-                <a href="/"><img class="logo" src="/images/Logo.jpg" alt="" /></a>
-
-                <ul class="logos">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/login"><i class="far fa-user-circle"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Deco</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Muebles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Ofertas</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <form class="form-search">
-            <input type="search" />
-            <button class="btn-search" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-    </header>
-    <main class="detail">
+    <%-include('./partials/header') %>
+      <main class="detail">
         <div class="container">
 
-            <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto">
-                <div class="row">
-                <div class="register col-12 col-lg-6 mt-5">
-                    <h2>¿Sos nuevo?</h2>
-                    <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                    <form action="">
-                        <div class="mb-3">
-                            <label for="name">Nombre </label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="apellido">Apellido </label>
-                            <input type="text" class="form-control" id="apellido">
-                        </div>
-                        <div class="mb-3">
-                            <label for="fechadenacimiento">Fecha de nacimiento </label>
-                            <input type="date" class="form-control fechainput" id="fechadenacimiento">
-                        </div>
-                        <div class="mb-3 itemmail">
-                            <label for="email">Direccion de correo electronico </label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pass">Contraseña </label>
-                            <input type="password" class="form-control" id="pass">
-                        </div>
-                        <div class="mb-3">
-                            <label><input type="checkbox"> Acepto las condiciones generales y la politica de
-                                confidencialidad</label>
-                        <label><input type="checkbox"> Quiero recibir notificaciones </label>
-                        </div>
-                        <button class="btn btn-primary w-100 mt-4">Crear cuenta</button>
-                    </form>
-                </div>
-                <div class="register col-12 col-lg-6 mt-5">
-                    <h2 class="mb-5">Si ya estas registrado</h2>
-                    <form action="">
-                        <div class="mb-3">
-                            <label for="email">Direccion de correo electronico </label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pass">Contraseña </label>
-                            <input type="password" class="form-control" id="pass">
-                        </div>
-                        <div class="mb-3">
-                            <a href="#" class="text-secondary">¿Te olvidaste la contraseña?</a>
-                        </div>
-                        
-                        <button class="btn btn-primary w-100 mt-4">Iniciar Sesión</button>
-                    </form>
-                </div>
-            </div>
-            </div>
-        </div>
-    </main>
-    
-    <main>
-        
-            </div> <div class="separador"> </div>
-            <div class="info2">
-               
-              
-            </div>
-        </div>
-    
-    </main>
-     <!-- Pie de la página -->
-  <footer class="footer">
-    <div class="categorias">
-      <h4 class="footer_h4">Categorías</h4>
-      <section class="lista">
-        <ul>
-          <li><a href=""></a>Deco</li>
-          <li><a href=""></a>Muebles</li>
-          <li><a href=""></a>Ofertas!</li>
-        </ul>
-      </section>
-    </div>
-    <div class="empresa">
-      <h4 class="footer_h4">Empresa</h4>
-      <section class="lista">
-        <ul>
-          <li><a href=""></a>¿Quiénes somos?</li>
-          <li><a href=""></a>Nuestra historia...</li>
-          <li><a href=""></a>Trabajá con nosotros</li>
-        </ul>
-      </section>
-    </div>
+          <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto">
+            <div class="row">
+              <div class="register col-12 col-lg-6 mt-5">
+                <h2>¿Sos nuevo?</h2>
+                <h4 class="mb-5">Registrate en pocos pasos...</h4>
+                <form action="">
+                  <div class="mb-3">
+                    <label for="name">Nombre </label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="apellido">Apellido </label>
+                    <input type="text" class="form-control" id="apellido">
+                  </div>
+                  <div class="mb-3">
+                    <label for="fechadenacimiento">Fecha de nacimiento </label>
+                    <input type="date" class="form-control fechainput" id="fechadenacimiento">
+                  </div>
+                  <div class="mb-3 itemmail">
+                    <label for="email">Direccion de correo electronico </label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pass">Contraseña </label>
+                    <input type="password" class="form-control" id="pass">
+                  </div>
+                  <div class="mb-3">
+                    <label><input type="checkbox"> Acepto las condiciones generales y la politica de
+                      confidencialidad</label>
+                    <label><input type="checkbox"> Quiero recibir notificaciones </label>
+                  </div>
+                  <button class="btn btn-primary w-100 mt-4">Crear cuenta</button>
+                </form>
+              </div>
+              <div class="register col-12 col-lg-6 mt-5">
+                <h2 class="mb-5">Si ya estas registrado</h2>
+                <form action="">
+                  <div class="mb-3">
+                    <label for="email">Direccion de correo electronico </label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pass">Contraseña </label>
+                    <input type="password" class="form-control" id="pass">
+                  </div>
+                  <div class="mb-3">
+                    <a href="#" class="text-secondary">¿Te olvidaste la contraseña?</a>
+                  </div>
 
-    <div class="contacto">
-      <article>
-        <h4 class="footer_h4">Contactanos...</h4>
-        <div>
-          <div>
-            <a class="footer_a_teleinfo" href=""
-              ><i class="fas fa-mobile-alt"></i> +54 9 11 2233-4455</a
-            >
-          </div>
-          <div>
-            <a class="footer_a_teleinfo" href=""
-              ><i class="fas fa-at"></i> info@hola.mundo.com</a
-            >
-          </div>
-          <div class="redes d-flex justify-content-around">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-            <a href=""><i class="fas fa-infinity"></i></a>
-            <a href=""><i class="fab fa-youtube"></i></a>
+                  <button class="btn btn-primary w-100 mt-4">Iniciar Sesión</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-      </article>
-    </div>
-    <div class="logo">
-      <section class="d-flex justify-content-center">
-        <img class="img-fluid" src="/images/Logo.jpg" />
-      </section>
-    </div>
-    <div class="qr">
-      <img class="img-fluid" src="/images/qr.jpg" alt="" />
-    </div>
-  </footer>
+      </main>
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-</body>
+      <main>
+
+        </div>
+        <div class="separador"> </div>
+        <div class="info2">
+
+
+        </div>
+        </div>
+
+      </main>
+      <!-- Pie de la página -->
+      <%-include('./partials/footer') %>
+        <%-include('./partials/scripts') %>
+
+  </body>
 
 </html>
