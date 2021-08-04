@@ -1,9 +1,12 @@
 const productos = require('../data/products_db');
+const categorias = require('../data/categories_db');
+
 
 module.exports = {
     add : (req,res) => {
         return res.render('productAdd',{
-           productos
+            categorias,
+            productos
         })
     },
     edit : (req,res) => {
@@ -17,6 +20,7 @@ module.exports = {
         return res.render('productDetail',{
             producto,
             productos
-        })
+        },
+        console.log(producto))
     }
 }
