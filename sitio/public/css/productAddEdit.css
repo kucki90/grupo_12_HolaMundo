@@ -1,0 +1,84 @@
+.charge{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.5rem;
+}
+.charge .formulario{
+   position: relative;
+   height: 100%;
+}
+.charge .formulario button{
+    border-radius: 8px;
+    font-size: 1.3rem;
+    background-color: #5C7FFC;
+    border: none;
+    margin-top: 10px;
+}
+
+.charge .formulario .btn-fotos{
+    width: 94vw;
+    height: 20vw;
+    margin-left: 3vw;
+}
+
+.charge .formulario label{
+    width: 100vw;
+    margin-top: 10px;
+    margin-left: 3vw;
+}
+
+.charge .formulario input{
+    width: 82vw;
+    position: absolute; 
+    right: 3vw;
+    border: none;
+    background-color: #B2DAFF;
+}
+
+.charge .formulario .description{
+    height: 15vw;
+}
+
+.charge .formulario .btn-charge{
+    width: 30vw;
+    position:absolute;
+    right: 30vw;
+    bottom: -150px;
+}
+@media(max-width : 320px) {
+    .charge .formulario .btn-fotos{
+       height: 30vw;
+    }
+    .charge .formulario .colum{
+       display: flex;
+       flex-direction: column;
+       width: 94vw;
+   }
+   .charge .formulario input{
+       width: 94%;
+       right: 0;
+       height: 3rem;
+       position: relative;
+   }
+   .charge .formulario label{
+       width: 100%;
+       text-align: center;
+   }
+   .charge .formulario .description{
+    height: 55vw;
+   }
+   .charge .formulario .btn-charge{
+    width: 50vw;
+    position:absolute;
+    right: 25vw;
+    bottom: -50px;
+}
+}
+
+@media(min-width : 1024px){
+    .charge .formulario .btn-charge{
+        bottom: -200px;
+    }
+}

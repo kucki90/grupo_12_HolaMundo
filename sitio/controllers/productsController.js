@@ -9,6 +9,11 @@ module.exports = {
             productos
         })
     },
+    edit : (req,res) => {
+        return res.render('productEdit',{
+           productos
+        })
+    },
     detail : (req,res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
 
