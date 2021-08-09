@@ -9,11 +9,7 @@ module.exports = {
             productos
         })
     },
-    edit : (req,res) => {
-        return res.render('productEdit',{
-           productos
-        })
-    },
+    
     detail : (req,res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
 
@@ -23,7 +19,7 @@ module.exports = {
         })
     },
     edit : (req, res) => {
-        let producto = productos.find(producto => prodicto.id === +req.params.id);
+        let producto = productos.find(producto => producto.id === +req.params.id);
 
         return res.render('productEdit',{
             categorias,
