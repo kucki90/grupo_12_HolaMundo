@@ -20,7 +20,18 @@ module.exports = {
         return res.render('productDetail',{
             producto,
             productos
-        },
-        console.log(producto))
+        })
+    },
+    edit : (req, res) => {
+        let producto = productos.find(producto => prodicto.id === +req.params.id);
+
+        return res.render('productEdit',{
+            categorias,
+            productos,
+            producto
+        })
+    },
+    update : (req, res) => {
+        res.send(req.body)
     }
 }

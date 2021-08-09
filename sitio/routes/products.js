@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const {add,detail,edit} = require('../controllers/productsController');
+const {add,detail,edit,update} = require('../controllers/productsController');
+// const multer =require('multer');
+// const path = require('path');
+
 
 
 router.get('/add',add);
