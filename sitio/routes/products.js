@@ -9,7 +9,8 @@ const {add,detail,edit,update} = require('../controllers/productsController');
 
 router.get('/add',add);
 router.get('/detail/:id',detail);
-router.get('/edit',edit);
+router.get('/edit/:id',edit);
+router.put('/edit/:id',update);
 
 
 module.exports = router;
