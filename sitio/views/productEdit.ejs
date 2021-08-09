@@ -3,12 +3,12 @@
     <form action="" class="formulario">
         <button class="btn-fotos">Agregar fotos</button>
         <div class="colum">
-        <label for="">Título<input type="text" name="" id=""></label>
-        <label for="">Precio<input type="text" name="" id=""></label>
+        <label for="">Título<input type="text" name="" id="" value="<%= producto.title %>"></label>
+        <label for="">Precio<input type="text" name="" id="" value="<%= producto.price %>"></label>
         <label for="">Código<input type="text" name="" id=""></label>
-        <label for="">Descripción<input type="text" name="" id="" class="description"></label>
+        <label for="">Descripción<input type="text" name="" id="" class="description" value="<%= producto.description %>"></label>
     </div>
-        <button type="submit" class="btn-charge">Editar producto</button>
+        <button type="submit" class="btn-charge">Guardar</button>
     </form>
     
 </main>
