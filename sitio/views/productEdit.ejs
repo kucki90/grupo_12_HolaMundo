@@ -1,12 +1,21 @@
 <%-include('./partials/head') %>
 <main class="charge">
-    <form action="" class="formulario">
+    <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" class="formulario">
         <button class="btn-fotos">Agregar fotos</button>
         <div class="colum">
-        <label for="">Título<input type="text" name="" id="" value="<%= producto.title %>"></label>
-        <label for="">Precio<input type="text" name="" id="" value="<%= producto.price %>"></label>
+        <label for="">Título<input type="text" name="title" id="" value="<%= producto.title %>"></label>
+        <label for="">Precio<input type="text" name="price" id="" value="<%= producto.price %>"></label>
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoría</label>
+            <select id="category" class="form-select" name="category">
+                <% categorias.forEach(categoria => { %>
+                 <option value="<%= categoria %>" <%= categoria == producto.category ? 'selected' : null %> ><%= categoria %></option>
+                <% }) %>
+              </select>
+          </div>
         <label for="">Código<input type="text" name="" id=""></label>
-        <label for="">Descripción<input type="text" name="" id="" class="description" value="<%= producto.description %>"></label>
+        <label for="">Descripción<input type="text" name="description" id="" class="description" value="<%= producto.description %>"></label>
+        
     </div>
         <button type="submit" class="btn-charge">Guardar</button>
     </form>
