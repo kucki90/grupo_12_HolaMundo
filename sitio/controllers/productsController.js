@@ -1,7 +1,8 @@
-let productos = require('../data/products_db');
-const categorias = require('../data/categories_db');
 const fs = require('fs');
 const path = require('path');
+let productos = require('../data/products_db');
+const categorias = require('../data/categories_db');
+
 
 
 module.exports = {
@@ -26,9 +27,11 @@ module.exports = {
         console.log(producto))
     },
     destroy :(req,res) => {
-         productos = productos.filter(pr => pr.id!== +req.params.id)
-       fs.writeFileSync(path.join(__dirname , '..' , 'data', 'products.json'),JSON.stringify(productos,null, 2), 'utf-8');
-     
-       res.redirect('/')
+         /* productos = productos.filter(pr => pr.id!== +req.params.id)
+       fs.writeFileSync(path.join(__dirname , '..' , 'data', 'products.json'),JSON.stringify(productos,null, 2), 'utf-8'); */
+     /* res.redirect('/') */
+       
+       res.send(req.params.id)
+
     }
 }
