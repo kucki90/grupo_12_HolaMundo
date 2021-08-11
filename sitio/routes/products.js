@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-<<<<<<< HEAD
-const {create, store, detail,edit} = require('../controllers/productsController');
-=======
-const {add,detail,edit,destroy} = require('../controllers/productsController');
->>>>>>> develop
+const {create,store,detail,edit,destroy} = require('../controllers/productsController');
 
 
 /* router.get('/add',add); */
