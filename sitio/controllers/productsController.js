@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const productos = require('../data/products_db');
+let productos = require('../data/products_db');
 const categorias = require('../data/categories_db');
-
+const eliminar = id => productos = productos.filter(pr=>pr.id!==id);
+const guardar = () => 	fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos, null, 4),'utf-8')
 
 
 module.exports = {
@@ -40,11 +41,11 @@ module.exports = {
         console.log(producto))
     },
     destroy :(req,res) => {
-         /* productos = productos.filter(pr => pr.id!== +req.params.id)
-       fs.writeFileSync(path.join(__dirname , '..' , 'data', 'products.json'),JSON.stringify(productos,null, 2), 'utf-8'); */
-     /* res.redirect('/') */
+        eliminar(Number(req.params.id))
+       guardar()
+     res.redirect('/')
        
-       res.send(req.params.id)
+      
 
     }
 }
