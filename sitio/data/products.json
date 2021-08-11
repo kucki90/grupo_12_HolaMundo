@@ -8,6 +8,22 @@
         "category": "oferta"
     },
     {
+        "id": 2,
+        "title": "caja de cars",
+        "description": "Caja Guardatodo 23 Litros Cars",
+        "price": 250,
+        "images": "product-02.webp",
+        "category": "oferta"
+    },
+    {
+        "id": 3,
+        "title": "Caja de Frozen",
+        "description": "Caja Guardatodo 23 Litros Frozen",
+        "price": 250,
+        "images": "product-03.webp",
+        "category": "oferta"
+    },
+    {
         "id": 4,
         "title": "Canasto Tejido",
         "description": "Canasto Tejido Entrance Blanco 17x22cm ",
