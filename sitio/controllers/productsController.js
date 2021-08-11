@@ -4,6 +4,7 @@ const productos = require('../data/products_db');
 const categorias = require('../data/categories_db');
 
 
+
 module.exports = {
     create : (req,res) => {
         return res.render('productAdd',{
@@ -37,5 +38,13 @@ module.exports = {
             productos
         },
         console.log(producto))
+    },
+    destroy :(req,res) => {
+         /* productos = productos.filter(pr => pr.id!== +req.params.id)
+       fs.writeFileSync(path.join(__dirname , '..' , 'data', 'products.json'),JSON.stringify(productos,null, 2), 'utf-8'); */
+     /* res.redirect('/') */
+       
+       res.send(req.params.id)
+
     }
 }

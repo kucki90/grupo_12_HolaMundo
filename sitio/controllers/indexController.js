@@ -1,4 +1,4 @@
-const productos = require('../data/products_db');
+let productos = require('../data/products_db');
 
 module.exports = {
     home: (req, res) => {

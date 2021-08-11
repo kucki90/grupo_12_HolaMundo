@@ -1,14 +1,27 @@
 <%-include('./partials/head') %>
 <main class="charge">
-    <form action="" class="formulario">
-        <button class="btn-fotos">Agregar fotos</button>
-        <div class="colum">
-        <label for="">Título<input type="text" name="" id=""></label>
-        <label for="">Precio<input type="text" name="" id=""></label>
-        <label for="">Código<input type="text" name="" id=""></label>
-        <label for="">Descripción<input type="text" name="" id="" class="description"></label>
-    </div>
-        <button type="submit" class="btn-charge">Editar producto</button>
+    <!-- AGREGAR AL ACTION EL ID DEL PRODUCTO -->
+    <form action="/?_method=PUT" class="formulario" enctype="multipart/form-data" method="POST">
+         <input type="file" class="btn-fotos" name="imagen">
+      <div class="ctrl-input"> 
+        <label for="titulo" class="items-label">Título</label>
+        <input type="text" name="titulo" class="items-input" id="titulo">
+      </div>
+      <div class="ctrl-input">
+        <label for="precio" class="items-label">Precio</label>
+        <input type="text" name="precio" class="items-input" id="precio">
+      </div>
+      <div class="ctrl-input">
+        <label for="codigo" class="items-label">Código</label>
+        <input type="text" name="codigo" class="items-input" id="codigo">
+      </div>
+      <div class="ctrl-input">
+        <label for="descripcion" class="items-label">Descripción</label>
+        <textarea name="descripcion" class="items-textarea" id="descripcion"></textarea>
+      </div>
+      <div class="ctrl-input">
+        <button type="submit" class="items-button">Cargar producto</button>
+      </div>
     </form>
     
 </main>
