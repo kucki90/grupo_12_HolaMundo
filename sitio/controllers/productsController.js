@@ -2,20 +2,35 @@ const fs = require('fs');
 const path = require('path')
 const {productos, guardar} = require('../data/products_db');
 const categorias = require('../data/categories_db');
+const eliminar = id => productos = productos.filter(pr=>pr.id!==id);
+/* const guardar = () => 	fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos, null, 4),'utf-8') */
 
 
 module.exports = {
-  
-    add : (req,res) => {
+    create : (req,res) => {
         return res.render('productAdd',{
             categorias,
             productos
         })
     },
-    // save :(req, res) =>{
-    //   res.send(req.body)
-    // },
-    
+    store : (req, res) => {
+		let producto = {
+			id:productos[productos.length-1].id+1,
+			title: req.body.title,
+			price: +req.body.price,
+			image: "default-image.png",
+			category: req.body.category,
+			description:req.body.description,
+		};
+		productos.push(producto)
+		fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos))
+		res.redirect('/')
+	},
+    edit : (req,res) => {
+        return res.render('productEdit',{
+           productos
+        })
+    },
     detail : (req,res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
 
@@ -51,5 +66,14 @@ module.exports = {
 
         guardar(productosModificados)
         res.redirect('/')
+        },
+
+    destroy :(req,res) => {
+        eliminar(Number(req.params.id))
+       guardar()
+     res.redirect('/')
+       
+      
+
     }
 }

@@ -2,6 +2,18 @@
   display: none;
 }
 
+.btn-add{
+  border-radius: 1rem;
+  border: none;
+  background-color:#5C7FFC ;
+  font-size: 2rem;
+  padding: 0em 1em;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
 @media (min-width:1024px) {
   .home .banner{
     display: block;
