@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const productos = require('../data/products_db');
 const categorias = require('../data/categories_db');
 

@@ -1,14 +1,14 @@
 <%-include('./partials/head') %>
 <main class="charge">
-    <form action="" class="formulario">
+    <form action="" class="formulario" method="POST">
         <button class="btn-fotos">Agregar fotos</button>
         <div class="colum">
-        <label for="">Título<input type="text" name="" id=""></label>
-        <label for="">Precio<input type="text" name="" id=""></label>
-        <label for="">Código<input type="text" name="" id=""></label>
-        <label for="">Descripción<input type="text" name="" id="" class="description"></label>
+        <label for="">Título<input type="text" name="title" id="" value="<%= locals.old && old.title ? old.title : null %>"></label>
+        <label for="">Precio<input type="text" name="price" id="" value="<%= locals.old && old.price ? old.price : null %>"></label>
+        <label for="">Código<input type="text" name="code" id="" value="<%= locals.old && old.code ? old.code : null %>"></label>
+        <label for="">Descripción<input type="text" name="description" id="" class="description" value="<%= locals.old && old.description ? old.description : null %>"></label>
     </div>
-        <button type="submit" class="btn-charge">Cargar producto</button>
+        <button type="submit" class="btn-charge">Guardar</button>
     </form>
     
 </main>
