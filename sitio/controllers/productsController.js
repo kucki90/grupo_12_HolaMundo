@@ -3,7 +3,7 @@ const path = require('path')
 const {productos, guardar} = require('../data/products_db');
 const categorias = require('../data/categories_db');
 const eliminar = id => productos = productos.filter(pr=>pr.id!==id);
-/* const guardar = () => 	fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos, null, 4),'utf-8') */
+const guardar = () => 	fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos, null, 4),'utf-8')
 
 
 module.exports = {
