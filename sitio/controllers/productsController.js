@@ -25,7 +25,7 @@ module.exports = {
 			id:productos[productos.length-1].id+1,
 			title: req.body.title,
 			price: +req.body.price,
-			image: imagenes,
+			images: imagenes,
 			category: req.body.category,
 			description:req.body.description,
 		};
