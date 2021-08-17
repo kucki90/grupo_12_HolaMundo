@@ -4,29 +4,36 @@
 <%-include('./partials/head') %>
 
     <body>
+        <!-- encabezado -->
+    <%-include('./partials/header') %>
+    
         <main class="charge">
             <div class="container">
-                <form action="/?_method=PUT" class="formulario" enctype="multipart/form-data" method="POST">
-                    <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar">Agregar fotos</label>
-                    <div class="ctrl-input">
-                        <label for="titulo" class="items-label">Título</label>
-                        <input type="text" name="titulo" class="items-input" id="titulo">
-                    </div>
-                    <div class="ctrl-input">
-                        <label for="precio" class="items-label">Precio</label>
-                        <input type="text" name="precio" class="items-input" id="precio">
-                    </div>
-                    <div class="ctrl-input">
-                        <label for="codigo" class="items-label">Código</label>
-                        <input type="text" name="codigo" class="items-input" id="codigo">
-                    </div>
-                    <div class="ctrl-input">
-                        <label for="descripcion" class="items-label">Descripción</label>
-                        <textarea name="descripcion" class="items-textarea" id="descripcion"></textarea>
-                    </div>
-                    <div class="ctrl-input">
-                        <button type="submit" class="items-button">Cargar producto</button>
-                    </div>
+                <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto p-5">
+                    <div class="row">
+        
+                        <form action="" class="formulario" enctype="multipart/form-data" method="POST">
+                        <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar" multiple>Agregar fotos</label>
+                        <div class="ctrl-input">
+                            <label for="titulo" class="items-label">Título</label>
+                            <input type="text" name="titulo" class="items-input" id="titulo">
+                        </div>
+                        <div class="ctrl-input">
+                            <label for="precio" class="items-label">Precio</label>
+                            <input type="text" name="precio" class="items-input" id="precio">
+                        </div>
+                        <div class="ctrl-input">
+                            <label for="codigo" class="items-label">Código</label>
+                            <input type="text" name="codigo" class="items-input" id="codigo">
+                        </div>
+                        <div class="ctrl-input">
+                            <label for="descripcion" class="items-label">Descripción</label>
+                            <textarea name="descripcion" class="items-textarea" id="descripcion"></textarea>
+                        </div>
+                        <div class="ctrl-input">
+                            <button type="submit" class="items-button">Cargar producto</button>
+                        </div>
+                    
 
                     <!-- 
             <button class="btn-fotos">Agregar fotos</button>
@@ -42,7 +49,9 @@
             </div>
             <button type="submit" class="btn-charge">Guardar</button> -->
 
-                </form>
+                        </form>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
