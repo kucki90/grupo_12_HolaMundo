@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path')
 const {productos, guardar} = require('../data/products_db');
 const categorias = require('../data/categories_db');
-const eliminar = id => productos = productos.filter(pr=>pr.id!==id);
+
 
 
 module.exports = {
@@ -33,11 +33,6 @@ module.exports = {
 		fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos))
 		res.redirect('/')
 	},
-    edit : (req,res) => {
-        return res.render('productEdit',{
-           productos
-        })
-    },
     detail : (req,res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
 
@@ -51,22 +46,22 @@ module.exports = {
 
         return res.render('productEdit',{
             categorias,
-            productos,
             producto
         })
     },
     update : (req, res) => {
-        //res.send(req.body)
-        const {title, description,price} = req.body;
+        // res.send(req.body)
+        const {title, description,price, category} = req.body;
 
         let producto = productos.find(producto => producto.id === +req.params.id)
         let productoEditado = {
             id : +req.params.id,
             title,
             description,
+            category,
             price : +price,
-            image : req.file ? req.file.filename : producto.image,
-            category
+            images : producto.images
+            
         }
 
         let productosModificados = productos.map(producto => producto.id === +req.params.id ? productoEditado : producto)
@@ -76,8 +71,8 @@ module.exports = {
         },
 
     destroy :(req,res) => {
-        eliminar(Number(req.params.id))
-       guardar()
+        let productoModificado = productos.filter(producto => producto.id != +req.params.id)
+        guardar(productoModificado)
      res.redirect('/')
        
       
