@@ -12,7 +12,9 @@ module.exports = {
             productos
         })
     },
+    
     store : (req, res) => {
+        return res.send(req.files)
 		let producto = {
 			id:productos[productos.length-1].id+1,
 			title: req.body.title,
