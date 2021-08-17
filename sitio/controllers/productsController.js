@@ -14,12 +14,18 @@ module.exports = {
     },
     
     store : (req, res) => {
-        return res.send(req.files)
+        let imagenes = [];
+        if (req.files){
+            req.files.forEach(imagen => {
+                imagenes.push(imagen.filename)
+            })
+        }
+        
 		let producto = {
 			id:productos[productos.length-1].id+1,
 			title: req.body.title,
 			price: +req.body.price,
-			image: "default-image.png",
+			image: imagenes,
 			category: req.body.category,
 			description:req.body.description,
 		};
