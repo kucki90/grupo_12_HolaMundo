@@ -18,7 +18,7 @@
                                 <% productos.forEach(producto=> { %>
                                     <section class="row p-4">
                                         <div class="col-6 col-lg-8"><img class="img-fluid"
-                                                src="/images/productos/<%= producto.images %>" alt=""></div>
+                                                src="/images/productos/<%= producto.images[0] %>" alt=""></div>
                                         <div class="col-6 col-lg-4">
                                             <h4 class="price">$ <%= producto.price.toFixed(2) %>
                                             </h4>
