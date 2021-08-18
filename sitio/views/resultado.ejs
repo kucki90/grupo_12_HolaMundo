@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%-include('./partials/head') %>
+
+  <body class="home">
+
+    <!-- Header -->
+    <%-include('./partials/header') %>
+
+      <main class="container">
+        <section class="ofertas" id="ofertas">
+            <% if (productos.length >0) {%> 
+            <h2 class="my-3 text-center">Resultados de busqueda</h2>
+            
+            <div class="row gx-2">
+              <% productos.forEach(producto=> { %>
+                <div class="col-12 col-md-4 col-lg-3 my-3">
+  
+                  <article class="p-3 mx-2 border rounded shadow">
+  
+                    <a href="/products/detail/<%= producto.id %>">
+                      <img src="/images/productos/<%= producto.images[0] %>" alt="" class="img-fluid" />
+                    </a>
+  
+                    <h3>
+                      <%= producto.title %>
+                    </h3>
+                    <p>$ <%= producto.price.toFixed(2) %>
+                    </p>
+                    <br>
+                    
+  
+                  </article>
+                </div>
+                <% }) %>
+            </div>
+
+            <% }else{ %> 
+                <h2 class="my-3 text-center">No hay resultado para la busqueda "<%= keywords %>" </h2>
+            <% } %>
+          </section>
+        </main>
+  
+          <!-- scripts -->
+          <%-include('./partials/scripts') %>
+    </body>
+  
+  </html>

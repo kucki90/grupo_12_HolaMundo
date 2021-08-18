@@ -74,8 +74,12 @@ module.exports = {
         let productoModificado = productos.filter(producto => producto.id != +req.params.id)
         guardar(productoModificado)
      res.redirect('/')
-       
-      
-
+    },
+    search : (req, res) => {
+        let resultado = productos.filter(producto => producto.title.toLowerCase().includes(req.query.keywords.toLowerCase())||producto.description.toLowerCase().includes(req.query.keywords.toLowerCase()))
+        return res.render('resultado',{
+            productos : resultado,
+            keywords : req.query.keywords
+        })
     }
 }
