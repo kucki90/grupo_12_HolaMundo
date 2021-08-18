@@ -5,62 +5,44 @@
 
     <body>
         <!-- encabezado -->
-    <%-include('./partials/header') %>
-    
-        <main class="charge">
-            <div class="container">
-                <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto p-5">
-                    <div class="row">
-        
-                        <form action="" class="formulario" enctype="multipart/form-data" method="POST">
-                        <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar" multiple>Agregar fotos</label>
-                        <div class="ctrl-input">
-                            <label for="titulo" class="items-label">Título</label>
-                            <input type="text" name="title" class="items-input" id="titulo">
+        <%-include('./partials/header') %>
+            <main class="charge">
+                <div class="container">
+                    <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto p-5">
+                        <div class="row">
+                            <form action="" class="formulario" enctype="multipart/form-data" method="POST">
+                                <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar"
+                                        multiple>Agregar fotos</label>
+                                <div class="ctrl-input">
+                                    <label for="titulo" class="items-label">Título</label>
+                                    <input type="text" name="title" class="items-input" id="titulo">
+                                </div>
+                                <div class="ctrl-input">
+                                    <label for="precio" class="items-label">Precio</label>
+                                    <input type="text" name="price" class="items-input" id="precio">
+                                </div>
+                                <div class="ctrl-input">
+                                    <select name="category" class="category" id="">
+                                        <option value="" hidden selected>Seleccione la categoría</option>
+                                        <% categorias.forEach(categoria=> { %>
+                                            <option value="<%= categoria%>">
+                                                <%= categoria %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <div class="ctrl-input">
+                                    <label for="descripcion" class="items-label">Descripción</label>
+                                    <textarea name="description" class="items-textarea" id="descripcion"></textarea>
+                                </div>
+                                <div class="ctrl-input">
+                                    <button type="submit" class="items-button">Cargar producto</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="ctrl-input">
-                            <label for="precio" class="items-label">Precio</label>
-                            <input type="text" name="price" class="items-input" id="precio">
-                        </div>
-                        <div class="ctrl-input">
-                            <select name="category" id="">
-                                <option value="" hidden selected>Seleccione la categoría</option>
-
-                                <% categorias.forEach(categoria => { %>
-                                    <option value="<%= categoria%> "><%= categoria %> </option>
-
-                                <% }) %>
-                            </select>
-                            
-                        </div>
-                        <div class="ctrl-input">
-                            <label for="descripcion" class="items-label">Descripción</label>
-                            <textarea name="description" class="items-textarea" id="descripcion"></textarea>
-                        </div>
-                        <div class="ctrl-input">
-                            <button type="submit" class="items-button">Cargar producto</button>
-                        </div>
-                    
-
-                    <!-- 
-            <button class="btn-fotos">Agregar fotos</button>
-            <div class="column">
-                <label for="">Título<input type="text" name="title" id=""
-                        value="<%# locals.old && old.title ? old.title : null %>"></label>
-                <label for="">Precio<input type="text" name="price" id=""
-                        value="<%# locals.old && old.price ? old.price : null %>"></label>
-                <label for="">Código<input type="text" name="code" id=""
-                        value="<%# locals.old && old.code ? old.code : null %>"></label>
-                <label for="">Descripción<input type="text" name="description" id="" class="description"
-                        value="<%# locals.old && old.description ? old.description : null %>"></label>
-            </div>
-            <button type="submit" class="btn-charge">Guardar</button> -->
-
-                        </form>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
     </body>
 
 </html>
