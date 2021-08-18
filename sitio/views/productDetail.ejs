@@ -23,9 +23,9 @@
                     <div class="mini">
                         <i class="fas fa-chevron-left"></i>
                         <i class="fas fa-chevron-up"></i>
-                        <img src="/images/productos/<%= producto.images[0] %>" alt="">
-                        <img src="/images/productos/<%= producto.images[0] %>" alt="">
-                        <img src="/images/productos/<%= producto.images[0] %>" alt="">
+                        <% producto.images.forEach(image => { %>
+                            <img src="/images/productos/<%= image %>" alt="">
+                        <% }) %>
                         <i class="fas fa-chevron-right"></i>
                         <i class="fas fa-chevron-down"></i>
                     </div>

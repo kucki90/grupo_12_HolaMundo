@@ -52,7 +52,10 @@ module.exports = {
     update : (req, res) => {
         // res.send(req.body)
         const {title, description,price, category} = req.body;
-
+        
+        if(req.files.length !=0){
+            var imagenes = req.files.map(imagen => imagen.filename)
+        }
         let producto = productos.find(producto => producto.id === +req.params.id)
         let productoEditado = {
             id : +req.params.id,
@@ -60,7 +63,7 @@ module.exports = {
             description,
             category,
             price : +price,
-            images : producto.images
+            images : req. files.length !=0 ? imagenes : producto.images
             
         }
 
