@@ -14,26 +14,26 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="">
+                <form action="/users/register" method="POST">
                   <div class="mb-3">
                     <label for="name">Nombre </label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" name="nombre" id="name">
                   </div>
                   <div class="mb-3">
                     <label for="apellido">Apellido </label>
-                    <input type="text" class="form-control" id="apellido">
+                    <input type="text" class="form-control" name="apellido" id="apellido">
                   </div>
                   <div class="mb-3">
                     <label for="fechadenacimiento">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" id="fechadenacimiento">
+                    <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechadenacimiento">
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="email">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" name="email" id="email">
                   </div>
                   <div class="mb-3">
                     <label for="pass">Contraseña </label>
-                    <input type="password" class="form-control" id="pass">
+                    <input type="password" class="form-control" name="password" id="pass">
                   </div>
                   <div class="mb-3">
                     <label><input type="checkbox"> Acepto las condiciones generales y la politica de
@@ -45,14 +45,14 @@
               </div>
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
-                <form action="">
+                <form action="/users/login" method="POST">
                   <div class="mb-3">
                     <label for="email">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" name="email"id="email">
                   </div>
                   <div class="mb-3">
                     <label for="pass">Contraseña </label>
-                    <input type="password" class="form-control" id="pass">
+                    <input type="password" class="form-control" name="password" id="pass">
                   </div>
                   <div class="mb-3">
                     <a href="#" class="text-secondary">¿Te olvidaste la contraseña?</a>
