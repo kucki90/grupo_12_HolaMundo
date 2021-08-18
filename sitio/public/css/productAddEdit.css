@@ -57,9 +57,10 @@
     position: relative;
 }
 .category{
-    
     border: solid 2px #5C7FFC;
     border-radius: 0.25rem;
+    width: 100%;
+    height: 2rem;
 }
 .examinar{
     display: flex;

@@ -24,6 +24,12 @@
                                         value="<%= producto.price %>">
                                 </div>
                                 <div class="ctrl-input">
+                                    <label for="descripcion" class="items-label">Descripción</label>
+                                    <textarea name="description" class="items-textarea"
+                                        id="descripcion"><%= producto.description %></textarea>
+                                </div>
+                                <div class="ctrl-input">
+                                    <label for="category" class="items-label">Categoría</label>
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
@@ -37,11 +43,6 @@
                                                 </option>
                                                 <% }) %>
                                     </select>
-                                </div>
-                                <div class="ctrl-input">
-                                    <label for="descripcion" class="items-label">Descripción</label>
-                                    <textarea name="description" class="items-textarea"
-                                        id="descripcion"><%= producto.description %></textarea>
                                 </div>
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Editar producto</button>

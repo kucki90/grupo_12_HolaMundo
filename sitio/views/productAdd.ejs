@@ -21,7 +21,13 @@
                                     <label for="precio" class="items-label">Precio</label>
                                     <input type="text" name="price" class="items-input" id="precio">
                                 </div>
+                                
                                 <div class="ctrl-input">
+                                    <label for="descripcion" class="items-label">Descripción</label>
+                                    <textarea name="description" class="items-textarea" id="descripcion"></textarea>
+                                </div>
+                                <div class="ctrl-input">
+                                    <label for="category" class="items-label">Categoría</label>
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
@@ -30,10 +36,6 @@
                                             </option>
                                             <% }) %>
                                     </select>
-                                </div>
-                                <div class="ctrl-input">
-                                    <label for="descripcion" class="items-label">Descripción</label>
-                                    <textarea name="description" class="items-textarea" id="descripcion"></textarea>
                                 </div>
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Cargar producto</button>
