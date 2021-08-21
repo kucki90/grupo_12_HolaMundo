@@ -14,10 +14,10 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="/users/register" method="POST">
+                <form action="/register" method="POST">
                   <div class="mb-3">
                     <label for="name">Nombre </label>
-                    <input type="text" class="form-control" name="nombre" id="name">
+                    <input type="text" class="form-control" name="nombre" id="nombre">
                   </div>
                   <div class="mb-3">
                     <label for="apellido">Apellido </label>
@@ -25,7 +25,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="fechadenacimiento">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechadenacimiento">
+                    <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechaDeNacimiento">
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="email">Direccion de correo electronico </label>
@@ -33,14 +33,14 @@
                   </div>
                   <div class="mb-3">
                     <label for="pass">Contraseña </label>
-                    <input type="password" class="form-control" name="password" id="pass">
+                    <input type="password" class="form-control" name="password" id="password">
                   </div>
                   <div class="mb-3">
-                    <label><input type="checkbox"> Acepto las condiciones generales y la politica de
+                    <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
-                    <label><input type="checkbox"> Quiero recibir notificaciones </label>
+                    <label><input type="checkbox" value="recibir" id="recibir" name="AceptoRecibir"> Quiero recibir notificaciones </label>
                   </div>
-                  <button class="btn btn-primary w-100 mt-4">Crear cuenta</button>
+                  <button class="btn btn-primary w-100 mt-4" type="submit">Crear cuenta</button>
                 </form>
               </div>
               <div class="register col-12 col-lg-6 mt-5">

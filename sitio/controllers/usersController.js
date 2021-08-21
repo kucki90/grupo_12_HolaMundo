@@ -1,4 +1,7 @@
 const productos = require('../data/products_db');
+const {usuarios,guardar} = require('../data/users_db');
+const {validationResult} = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
 
@@ -8,36 +11,32 @@ module.exports = {
         })
     },
     processRegister : (req,res) => {
-        return res.send(req.body)
+        
         let errors = validationResult(req);
-        let {nombre,apellido,email,contrasenia} = req.body;
-        if(typeof hobbies === "string"){
-            hobbies = hobbies.split()
+        let {nombre,apellido,email,AceptoRecibir,contrasenia} = req.body;
+        if(typeof AceptoRecibir === "string"){
+            AceptoRecibir = AceptoRecibir.split()
         }
         if(errors.isEmpty()){
             let usuario = {
                 id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
                 nombre,
+                apellido,
                 email,
                 contrasenia : bcrypt.hashSync(contrasenia,10),
-                pais,
-                genero,
-                hobbies : typeof hobbies === 'undefined' ? [] : hobbies,
-                rol : "user"
+                AceptoRecibir : typeof AceptoRecibir === 'undefined' ? [] : AceptoRecibir
             }
             usuarios.push(usuario);
             guardar(usuarios);
 
             req.session.userLogin = {
                 id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol
+                nombre : usuario.nombre
             }
             return res.redirect('/')
         }else{
             return res.render('register',{
                 productos,
-                paises,
                 old : req.body,
                 errores : errors.mapped()
             })
