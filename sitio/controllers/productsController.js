@@ -2,18 +2,30 @@ const fs = require('fs');
 const path = require('path')
 const {productos, guardar} = require('../data/products_db');
 const categorias = require('../data/categories_db');
+const {validationResult} = require('express-validator');
 
 
 
 module.exports = {
     create : (req,res) => {
-        return res.render('productAdd',{
-            categorias,
+       return res.render('productAdd',{
+            categorias, 
             productos
         })
     },
     
     store : (req, res) => {
+        const validacion = validationResult(req)
+        
+        if(validacion.errors.length>0){
+            const locals = {
+                categorias,
+                productos,
+                old:req.body,
+                errors:validacion.mapped()
+            }
+            return res.render('productAdd', locals)
+        } 
         let imagenes = [];
         if (req.files){
             req.files.forEach(imagen => {

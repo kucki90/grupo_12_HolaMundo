@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
+const {producValidator} = require('../validaciones/producValidato');
 
 const {create,store,detail,edit,update,destroy,search} = require('../controllers/productsController');
 
@@ -26,7 +27,7 @@ router.put('/edit/:id', upload.array('imagen'), update);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', create);
-router.post('/create', upload.array('imagen'), store);
+router.post('/create', upload.array('imagen'),producValidator, store);
 
 
 router.delete('/delete/:id',destroy);

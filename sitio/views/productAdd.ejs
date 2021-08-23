@@ -15,11 +15,11 @@
                                         multiple>Agregar fotos</label>
                                 <div class="ctrl-input">
                                     <label for="titulo" class="items-label">Título</label>
-                                    <input type="text" name="title" class="items-input" id="titulo">
+                                    <input type="text" name="title" value="<%= (locals && locals.errors) ? old.title :null %>" class="items-input" id="titulo">
                                 </div>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
-                                    <input type="text" name="price" class="items-input" id="precio">
+                                    <input type="text" name="price" value="<%=(locals && locals.errors) ? old.price : null %>" class="items-input" id="precio">
                                 </div>
                                 
                                 <div class="ctrl-input">
@@ -31,7 +31,8 @@
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria%>">
+                                            <option value="<%= categoria%>" <%=(locals && locals.errors && categoria === old.category) ? "selected" : null %>
+                                                >
                                                 <%= categoria %>
                                             </option>
                                             <% }) %>
