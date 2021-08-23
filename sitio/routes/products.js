@@ -23,7 +23,7 @@ const upload = multer({
 /* router.get('/add',add); */
 router.get('/detail/:id',detail);
 router.get('/edit/:id',edit);
-router.put('/edit/:id', upload.array('imagen'), update);
+router.put('/edit/:id', upload.array('imagen'),producValidator, update);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', create);

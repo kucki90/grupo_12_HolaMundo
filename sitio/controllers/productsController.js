@@ -62,13 +62,25 @@ module.exports = {
         })
     },
     update : (req, res) => {
+        const validacion = validationResult(req)
+        let producto = productos.find(producto => producto.id === +req.params.id)
+      
         // res.send(req.body)
         const {title, description,price, category} = req.body;
         
+        if(validacion.errors.length>0){
+            const locals = {
+                categorias,
+                producto,
+                old:req.body,
+                errors:validacion.mapped()
+            }
+            return res.send(validacion.errors)
+        } 
         if(req.files.length !=0){
             var imagenes = req.files.map(imagen => imagen.filename)
         }
-        let producto = productos.find(producto => producto.id === +req.params.id)
+       
         let productoEditado = {
             id : +req.params.id,
             title,
@@ -80,7 +92,7 @@ module.exports = {
         }
 
         let productosModificados = productos.map(producto => producto.id === +req.params.id ? productoEditado : producto)
-
+      
         guardar(productosModificados)
         res.redirect('/')
         },
