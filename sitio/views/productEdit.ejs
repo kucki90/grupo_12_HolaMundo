@@ -12,37 +12,34 @@
                             <form action="/products/edit/<%= producto.id%>?_method=PUT" class="formulario"
                                 method="POST" enctype="multipart/form-data">
                                 <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar"
-                                        multiple>Agregar fotos</label>
+                                        multiple><%=(locals && locals.errors && errors.imagen)?errors.imagen.msg:'Agregar fotos'%></label>
                                 <div class="ctrl-input">
-                                    <label for="titulo" class="items-label">Título</label>
+                                    <label for="titulo" class="items-label"><%=(locals && locals.errors && errors.title)?errors.title.msg:'Título'%></label>
                                     <input type="text" name="title" class="items-input" id="titulo"
-                                        value="<%= producto.title %>">
+                                        value=" <%=(locals && locals.errors && errors.title) ? old.title :producto.title%>">
+                                        
                                 </div>
                                 <div class="ctrl-input">
-                                    <label for="precio" class="items-label">Precio</label>
+                                    <label for="precio" class="items-label"><%=(locals && locals.errors && errors.price)?errors.price.msg:'Precio'%></label>
                                     <input type="text" name="price" class="items-input" id="precio"
-                                        value="<%= producto.price %>">
+                                        value="<%=(locals && locals.errors && errors.price) ? old.price :producto.price%>">
                                 </div>
                                 <div class="ctrl-input">
-                                    <label for="descripcion" class="items-label">Descripción</label>
+                                    <label for="descripcion" class="items-label"><%=(locals && locals.errors && errors.description)?errors.description.msg:'Descripción'%></label>
                                     <textarea name="description" class="items-textarea"
-                                        id="descripcion"><%= producto.description %></textarea>
+                                        id="descripcion"><%=(locals && locals.errors && errors.description) ? old.description :producto.description%></textarea>
                                 </div>
                                 <div class="ctrl-input">
-                                    <label for="category" class="items-label">Categoría</label>
-                                    <select name="category" class="category" id="">
-                                        <option value="" hidden selected>Seleccione la categoría</option>
-                                        <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria%> ">
-                                                <%= categoria %>
-                                                    <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria %>" <%=categoria==producto.category
-                                                ? 'selected' : null %> ><%= categoria %>
-                                            </option>
-                                            <% }) %>
-                                                </option>
-                                                <% }) %>
-                                    </select>
+                                    <label for="category" class="items-label"><%=(locals && locals.errors && errors.category)?errors.category.msg:'Categoria'%></label>
+                                   <select name="category" class="category" id="">
+                                    <option value="" hidden selected>Seleccione la categoría</option>
+                                    <% categorias.forEach(categoria=> { %>
+                                        <option value="<%= categoria%>" <%=(categoria === producto.category) ? "selected" : null %>
+                                            >
+                                            <%= categoria %>
+                                        </option>
+                                        <% }) %>
+                                </select>
                                 </div>
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Guardar cambios</button>

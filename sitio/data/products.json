@@ -130,37 +130,6 @@
       "imagen-1629331858046.jpg",
       "imagen-1629331858053.jpg"
     ]
-  },
-  {
-    "id": 12,
-    "title": "",
-    "price": 0,
-    "images": [],
-    "category": "",
-    "description": ""
-  },
-  {
-    "id": 13,
-    "title": "",
-    "price": 0,
-    "images": [],
-    "category": "",
-    "description": ""
-  },
-  {
-    "id": 14,
-    "title": "",
-    "price": 0,
-    "images": [],
-    "category": "",
-    "description": ""
-  },
-  {
-    "id": 15,
-    "title": "",
-    "price": 0,
-    "images": [],
-    "category": "",
-    "description": ""
   }
+
 ]

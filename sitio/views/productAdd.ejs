@@ -12,22 +12,22 @@
                         <div class="row">
                             <form action="" class="formulario" enctype="multipart/form-data" method="POST">
                                 <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar"
-                                        multiple>Agregar fotos</label>
+                                        multiple><%=(locals && locals.errors)?errors.imagen.msg:'Agregar fotos'%></label>
                                 <div class="ctrl-input">
-                                    <label for="titulo" class="items-label">Título</label>
+                                    <label for="titulo" class="items-label"><%=(locals && locals.errors)?errors.title.msg:'Título'%></label>
                                     <input type="text" name="title" value="<%= (locals && locals.errors) ? old.title :null %>" class="items-input" id="titulo">
                                 </div>
                                 <div class="ctrl-input">
-                                    <label for="precio" class="items-label">Precio</label>
+                                    <label for="precio" class="items-label"><%=(locals && locals.errors)?errors.price.msg:'Precio'%></label>
                                     <input type="text" name="price" value="<%=(locals && locals.errors) ? old.price : null %>" class="items-input" id="precio">
                                 </div>
                                 
                                 <div class="ctrl-input">
-                                    <label for="descripcion" class="items-label">Descripción</label>
+                                    <label for="descripcion" class="items-label"><%=(locals && locals.errors)?errors.description.msg:'Descripción'%></label>
                                     <textarea name="description" class="items-textarea" id="descripcion"></textarea>
                                 </div>
                                 <div class="ctrl-input">
-                                    <label for="category" class="items-label">Categoría</label>
+                                    <label for="category" class="items-label"><%=(locals && locals.errors)?errors.category.msg:'Categoria'%></label>
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
