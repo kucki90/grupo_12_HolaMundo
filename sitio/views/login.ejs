@@ -18,31 +18,35 @@
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                    name="nombre"value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
+                    name="nombre" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
                     <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
                   </div>
                   <div class="mb-3">
-                    <label for="apellido">Apellido </label>
-                    <input type="text" class="form-control" name="apellido" id="apellido">
+                    <label for="exampleInputApellido">Apellido </label>
+                    <input type="text" class="form-control" name="apellido" id="exampleInputApellido" aria-describedby="emailHelp"
+                    name="apellido" value="<%= locals.old && locals.old.apellido ? old.apellido : null%>">
                   </div>
                   <div class="mb-3">
                     <label for="fechadenacimiento">Fecha de nacimiento </label>
                     <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechaDeNacimiento">
                   </div>
                   <div class="mb-3 itemmail">
-                    <label for="email">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="exampleInputEmail1" id="email">
+                    <label for="exampleInputEmail1">Direccion de correo electronico </label>
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" id="exampleInputEmail1">
                   </div>
                   <div class="mb-3">
-                    <label for="pass">Contraseña </label>
+                    <label for="exampleInputPassword1">Contraseña </label>
                     <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
                     <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
                   </div>
+                  
                   <div class="mb-3">
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
                     <label><input type="checkbox" value="recibir" id="recibir" name="AceptoRecibir"> Quiero recibir notificaciones </label>
                   </div>
+
+                  <span class="text-danger small my-2"><%= locals.errores && locals.errores.acepta ? errores.acepta.msg : null %> </span>
                   <button class="btn btn-primary w-100 mt-4" type="submit">Crear cuenta</button>
                 </form>
               </div>
@@ -52,7 +56,7 @@
                 <form action="" method="POST">
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email"id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
@@ -70,6 +74,7 @@
                   
 
                   <button class="btn btn-primary w-100 mt-4" type="submit">Iniciar Sesión</button>
+                  <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
                 </form>
               </div>
             </div>
