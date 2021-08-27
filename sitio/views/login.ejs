@@ -14,10 +14,12 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="/register" method="POST">
+                <form action="" method="POST" novalidate>
                   <div class="mb-3">
-                    <label for="name">Nombre </label>
-                    <input type="text" class="form-control" name="nombre" id="nombre">
+                    <label for="exampleInputName">Nombre</label>
+                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                    name="nombre"value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="apellido">Apellido </label>
@@ -29,11 +31,12 @@
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="email">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email" id="email">
+                    <input type="email" class="form-control" name="exampleInputEmail1" id="email">
                   </div>
                   <div class="mb-3">
                     <label for="pass">Contraseña </label>
-                    <input type="password" class="form-control" name="password" id="password">
+                    <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
@@ -43,22 +46,30 @@
                   <button class="btn btn-primary w-100 mt-4" type="submit">Crear cuenta</button>
                 </form>
               </div>
+
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
-                <form action="/users/login" method="POST">
+                <form action="" method="POST">
                   <div class="mb-3">
-                    <label for="email">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email"id="email">
+                    <label for="exampleInputEmail1">Direccion de correo electronico </label>
+                    <input type="email" class="form-control" name="email"id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
-                    <label for="pass">Contraseña </label>
-                    <input type="password" class="form-control" name="password" id="pass">
+                    <label for="exampleInputPassword1">Contraseña </label>
+                    <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
                   </div>
+                  <div class="d-flex justify-content-end">
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
+                        <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                      </div>
+                </div>
                   <div class="mb-3">
                     <a href="#" class="text-secondary">¿Te olvidaste la contraseña?</a>
                   </div>
+                  
 
-                  <button class="btn btn-primary w-100 mt-4">Iniciar Sesión</button>
+                  <button class="btn btn-primary w-100 mt-4" type="submit">Iniciar Sesión</button>
                 </form>
               </div>
             </div>

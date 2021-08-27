@@ -1,4 +1,4 @@
-const productos = require('../data/products_db');
+const {productos} = require('../data/products_db');
 const {usuarios,guardar} = require('../data/users_db');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
@@ -11,6 +11,7 @@ module.exports = {
         })
     },
     processRegister : (req,res) => {
+        //return res.send(req.body)
         
         let errors = validationResult(req);
         let {nombre,apellido,email,AceptoRecibir,contrasenia} = req.body;
@@ -35,7 +36,7 @@ module.exports = {
             }
             return res.redirect('/')
         }else{
-            return res.render('register',{
+            return res.render('login',{
                 productos,
                 old : req.body,
                 errores : errors.mapped()
@@ -44,7 +45,7 @@ module.exports = {
         
     },
     processLogin : (req,res) => {
-        return res.send(req.body)
+        //return res.send(req.body)
         let errors = validationResult(req);
         const {email, recordar} = req.body;
         if(errors.isEmpty()){
@@ -59,12 +60,13 @@ module.exports = {
                 res.cookie('craftsyForEver',req.session.userLogin,{maxAge: 1000 * 60})
             }
             return res.redirect('/')
+            //si sale bien al home sino no hace nada
         }else{
             return res.render('login',{
                 productos,
                 errores : errors.mapped()
             })
-        }
+        }/**/
     },
     logout : (req,res) => {
         req.session.destroy();
@@ -74,4 +76,3 @@ module.exports = {
 
     
 }
-
