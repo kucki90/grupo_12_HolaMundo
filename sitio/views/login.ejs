@@ -14,7 +14,7 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="" method="POST" novalidate>
+                <form action="users/register" method="POST" novalidate>
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
@@ -51,9 +51,12 @@
                 </form>
               </div>
 
+
+
+
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
-                <form action="" method="POST">
+                <form action="users/login" method="POST">
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">

@@ -9,7 +9,7 @@ const loginValidator =require('../validations/loginValidator');
 const registeValidator = require('../validations/registerValidator');
 
 router.get('/login', login);
-router.post('/login', registerValidator, processRegister)
+router.post('/register', registerValidator, processRegister)
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
