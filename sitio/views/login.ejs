@@ -14,7 +14,7 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="users/register" method="POST" novalidate>
+                <form action="/users/register" method="POST" novalidate>
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
@@ -41,12 +41,12 @@
                   </div>
                   
                   <div class="mb-3">
+                    <label><input type="checkbox" value="recibir" id="recibir" name="quieroRecibir"> Quiero recibir notificaciones </label>
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
-                    <label><input type="checkbox" value="recibir" id="recibir" name="AceptoRecibir"> Quiero recibir notificaciones </label>
                   </div>
 
-                  <span class="text-danger small my-2"><%= locals.errores && locals.errores.acepta ? errores.acepta.msg : null %> </span>
+                  <span class="text-danger small my-2"><%= locals.errores && locals.errores.AceptoRecibir ? errores.AceptoRecibir.msg : null %> </span>
                   <button class="btn btn-primary w-100 mt-4" type="submit">Crear cuenta</button>
                 </form>
               </div>
@@ -56,7 +56,7 @@
 
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
-                <form action="users/login" method="POST">
+                <form action="/users/login" method="POST">
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
                     <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">

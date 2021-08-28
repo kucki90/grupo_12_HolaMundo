@@ -12,6 +12,7 @@ module.exports = {
     },
     processRegister : (req,res) => {
         //return res.send(req.body)
+        //return res.send(errors)
         
         let errors = validationResult(req);
         let {nombre,apellido,email,AceptoRecibir,contrasenia} = req.body;
@@ -45,8 +46,8 @@ module.exports = {
         
     },
     processLogin : (req,res) => {
-        //return res.send(req.body)
         let errors = validationResult(req);
+        
         const {email, recordar} = req.body;
         if(errors.isEmpty()){
             let usuario = usuarios.find(usuario => usuario.email === email)

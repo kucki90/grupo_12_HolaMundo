@@ -26,6 +26,6 @@ module.exports = [
         max : 12
     }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
 
-    check('acepta')
+    check('AceptoRecibir')
     .isString('on').withMessage('Debes aceptar los términos y condiciones')
 ]

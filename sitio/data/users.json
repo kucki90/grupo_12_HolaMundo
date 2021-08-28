@@ -1,11 +1,12 @@
 [
-    {
-        "id": "",
-        "nombre": "",
-        "apellido": "",
-        "fechaDeNacimientO":"",
-        "email": "",
-        "password": ""
-    }
-
+  {
+    "id": 1,
+    "nombre": "sdfsdfsdfsdf",
+    "apellido": "dsfsdfsdf",
+    "email": "david@gmail.com",
+    "contrasenia": "$2a$10$7W4src03ZZIJznh6j/vEF.ntR1giaTm7MZ/lN5WDiiUfUwqVmTWsu",
+    "AceptoRecibir": [
+      "acepto"
+    ]
+  }
 ]
