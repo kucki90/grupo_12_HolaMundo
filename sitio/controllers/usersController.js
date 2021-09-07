@@ -73,7 +73,10 @@ module.exports = {
         req.session.destroy();
         res.cookie('craftsyForEver',null,{maxAge:-1})
         return res.redirect('/')
-    }
+    },
+    profile : (req,res) => res.render('profile',{
+        usuario : usuario.find(usuario => usuario.id === req.session.userLogin.id)
+        }),
 
     
 }
