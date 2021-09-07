@@ -8,5 +8,15 @@
     "AceptoRecibir": [
       "acepto"
     ]
+  },
+  {
+    "id": 2,
+    "nombre": "jenni",
+    "apellido": "antunez",
+    "email": "jenniferantunez4@gmail.com",
+    "contrasenia": "$2a$10$v6iw4EL7Q12Bv2g5yQKHf.N77xMJZuEiBrclD5EZWxNJ5yj7CtkaK",
+    "AceptoRecibir": [
+      "acepto"
+    ]
   }
 ]

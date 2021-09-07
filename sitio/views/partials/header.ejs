@@ -13,13 +13,27 @@
           <span><i class="fas fa-bars"></i></span>
         </button>
         <a href="/"><img class="logo" src="/images/Logo.jpg" alt="" /></a>
+        
 
         <ul class="logos">
+          <% if(locals.userLogin) { %> 
+            <li class="nav-item">
+              <a class="nav-link" href="/users/profile">
+                <i class="fas fa-user-circle"></i>
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/logout">
+              <i class="fas fa-sign-out-alt"></i>
+              ></a>
+            </li>
+            <% }else{  %> 
           <li class="nav-item">
-            <a class="nav-link" href="/users/login"
-              ><i class="far fa-user-circle"></i
+            <a class="nav-link" href="/users/login">
+              <i class="far fa-user-circle"></i
             ></a>
           </li>
+          <% } %> 
           <li class="nav-item">
             <a class="nav-link" href="/carrito"
               ><i class="fas fa-shopping-cart"></i

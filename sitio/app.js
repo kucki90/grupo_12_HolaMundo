@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 
-
+const localsUserCheck = require('./middlewares/localsUserCheck');
 
 
 
@@ -30,7 +30,8 @@ app.use(session({
   secret : "my secret",
   resave: false,
   saveUninitialized: true
-}))
+}));
+app.use(localsUserCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
