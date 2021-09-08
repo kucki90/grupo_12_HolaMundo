@@ -79,7 +79,7 @@ module.exports = {
         return res.redirect('/')
     },
     profile : (req, res) => res.render('profile' ,{
-        usuaio : usuarios.fins(usuario.id === req.session.userLogin.id)
+        usuaio : usuarios.find(usuario => usuario.id === req.session.userLogin.id)
     }),
     update : (req, res) => {
         res.send(res.body)

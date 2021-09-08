@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <%-include('./partials/head') %>
+
+<body>
+    <!-- encabezado -->
+    <%-include('./partials/header') %>
+
+    <!-- main -->
+
+    <main class="detail">
+        <div class="container">
+
+            <div class="card border rounded shadow my-5">
+                <h2>Profile</h2>
+                <form class="row" action="/users/update?-method=PUT" method="POST" enctype="multipart/form-data" >
+                        <div class="mb-3 col-12 col-md-6">
+                          <label for="exampleInputName">Nombre</label>
+                          <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                          name="nombre" value="<%= user.nombre %>">
+                          <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="exampleInputApellido">Apellido </label>
+                          <input type="text" class="form-control" name="apellido" id="exampleInputApellido" aria-describedby="emailHelp"
+                          name="apellido" value="<%= user.apellido %>">
+                          <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="fechadenacimiento">Fecha de nacimiento </label>
+                          <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechaDeNacimiento" value=<%= user.fecha %>>
+                          <span class="text-danger small"><%= locals.errores && locals.errores.fecha ? errores.fecha.msg : null %> </span>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="exampleInputEmail1">Direccion de correo electronico </label>
+                          <input type="email" class="form-control" name="email" value="<%= user.email %>" aria-describedby="emailHelp" id="exampleInputEmail1" readonly>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="exampleInputPassword1"> Nueva contraseña </label>
+                          <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
+                          <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
+                        </div>
+                        <div class="mb-3 col-12 col-md-6">
+                            <label for="exampleInputPassword1">Confirmar contraseña </label>
+                            <input type="password" class="form-control" name="contrasenia2" id="exampleInputPassword">
+                            <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia2.msg : null %> </span>
+                          </div>
+                          <div class="mb-3 col-12 col-md-6">
+                            <label for="exampleInputPassword1">Contraseña anterior</label>
+                            <input type="password" class="form-control" name="passOld" id="exampleInputPassword1">
+                            <span class="text-danger small"><%= locals.errores && locals.errores.passOld ? errores.passOld.msg : null %> </span>
+                          </div>
+                          <div class="mb-3 col-12 col-md-6">
+                            <label for="" class="btn btn-primary w-100 mt-3"> <input type="file" name="avatar" class="examinar"
+                                >Subir imagen</label>
+                          </div>
+                        <button class="btn btn-primary w-100 mt-4" type="submit">Guardar cambios</button>
+                      </form>
+                </form>
+            </div>
+        </div>
+    </main>
+
+  <!-- Pie de la página -->
+  <%-include('./partials/footer') %>
+
+   <!-- scripts -->
+  <%-include('./partials/scripts') %>
+
+</body>
+
+</html>
