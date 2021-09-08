@@ -14,11 +14,11 @@ module.exports = {
     },
     processRegister : (req,res) => {
         //return res.send(req.body)
-        //return res.send(errors)
+        
         
         let errors = validationResult(req);
         let {nombre,apellido,email,notifica, fecha,AceptoRecibir,contrasenia} = req.body;
-     
+     //return res.send(errors)
         if(errors.isEmpty()){
             let usuario = {
                 id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
@@ -29,7 +29,7 @@ module.exports = {
                 rol : 'user',
                 notifica: notifica ? true :false,
                 contrasenia : bcrypt.hashSync(contrasenia,10),
-                AceptoRecibir : typeof AceptoRecibir === 'undefined' ? [] : AceptoRecibir
+                avatar : "user.png",
             }
             usuarios.push(usuario);
             guardar(usuarios);
@@ -58,12 +58,14 @@ module.exports = {
             req.session.userLogin = {
                 id : usuario.id,
                 nombre : usuario.nombre,
-                rol : usuario.rol
+                rol : usuario.rol,
+                avatar : usuario.avatar
             }
 
             if(recordar){
                 res.cookie('craftsyForEver',req.session.userLogin,{maxAge: 1000 * 60})
             }
+            console.log(req.session.userLogin)
             return res.redirect('/')
             //si sale bien al home sino no hace nada
         }else{
@@ -79,7 +81,7 @@ module.exports = {
         return res.redirect('/')
     },
     profile : (req, res) => res.render('profile' ,{
-        usuaio : usuarios.find(usuario => usuario.id === req.session.userLogin.id)
+        user : usuarios.find(usuario => usuario.id === req.session.userLogin.id)
     }),
     update : (req, res) => {
         res.send(res.body)

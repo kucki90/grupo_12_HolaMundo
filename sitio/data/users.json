@@ -1,21 +1,13 @@
 [
   {
     "id": 1,
-    "nombre": "sdfsdfsdfsdf",
-    "apellido": "dsfsdfsdf",
-    "email": "david@gmail.com",
-    "contrasenia": "$2a$10$7W4src03ZZIJznh6j/vEF.ntR1giaTm7MZ/lN5WDiiUfUwqVmTWsu",
-    "AceptoRecibir": [
-      "acepto"
-    ]
-  },
-  {
-    "id": 2,
-    "nombre": "david",
-    "apellido": "ruiz",
-    "email": "david@gmail.com",
+    "nombre": "Cecilia",
+    "apellido": "Kuckiewicz",
+    "email": "c.kuckiewicz@hotmail.com",
+    "fecha": "1990-05-29",
+    "rol": "user",
     "notifica": true,
-    "contrasenia": "$2a$10$Jk7vyvrkVW0v7FCzvCa8JOSJsZ5ccH8xwgektmrITlT2lN0MQlkJG",
-    "AceptoRecibir": "acepto"
+    "contrasenia": "$2a$10$Biwi2rGiplPNhTNPr48uiO3oKbBkQQHWnN6nwDK7zs1Y3ctpMCOlK",
+    "avatar": "user.png"
   }
 ]
