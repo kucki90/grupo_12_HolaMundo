@@ -28,20 +28,25 @@
                   </div>
                   <div class="mb-3">
                     <label for="fechadenacimiento">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechaDeNacimiento">
+                    <input type="date" class="form-control fechainput" name="fechaDeNacimientO" id="fechaDeNacimiento"value="<%= locals.old && locals.old.fecha ? old.fecha : null%>">
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" id="exampleInputEmail1">
+                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" id="exampleInputEmail1" value="<%= locals.old && locals.old.email ? old.email : null%>">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
                     <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
                     <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
                   </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword2">Confirma la contraseña </label>
+                    <input type="password" class="form-control" name="contrasenia2" id="exampleInputPassword2">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia2 ? errores.contrasenia2.msg : null %> </span>
+                  </div>
                   
                   <div class="mb-3">
-                    <label><input type="checkbox" value="recibir" id="recibir" name="quieroRecibir"> Quiero recibir notificaciones </label>
+                    <label><input type="checkbox" value="recibir" id="recibir" name="notifica"> Quiero recibir notificaciones </label>
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
                   </div>
