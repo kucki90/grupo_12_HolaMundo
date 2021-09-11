@@ -1,4 +1,4 @@
-const {check} = require('express-validator');
+const {check,body} = require('express-validator');
 
 module.exports = [
     check('nombre')
@@ -25,6 +25,15 @@ module.exports = [
         min : 6,
         max : 12
     }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+
+    body('contrasenia2')
+    .custom((value,{req}) => {
+        if(value != req.body.contrasenia){
+            return false
+        }
+        return true
+
+    }).withMessage('Las contraseñas no coinciden'), 
 
     check('AceptoRecibir')
     .isString('on').withMessage('Debes aceptar los términos y condiciones')
