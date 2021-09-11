@@ -13,7 +13,13 @@
         <div class="container">
 
             <div class="card border rounded shadow my-5">
-                <h2>Profile</h2>
+              <img src="/images/usuarios/<%= user.avatar %> " alt="avatar" class="pic-avatar">
+              <div class="mb-3 col-12 col-md-2 mx-auto">
+                <label for="" class="btn btn-primary w-100 mt-3"> <input type="file" name="avatar" class="examinar"
+                    >Subí tu nuevo avatar</label>
+              </div>
+              <h2>¡ Bienvenid@ <%= user.nombre %> ! </h2>
+              <h5>Información de perfil:</h5>
                 <form class="row" action="/users/update?-method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-12 col-md-6">
                           <label for="exampleInputName">Nombre</label>
