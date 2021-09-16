@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-<<<<<<< HEAD
     "nombre": "sdfsdfsdfsdf",
     "apellido": "dsfsdfsdf",
     "email": "david@gmail.com",
@@ -19,15 +18,5 @@
     "AceptoRecibir": [
       "acepto"
     ]
-=======
-    "nombre": "Cecilia",
-    "apellido": "Kuckiewicz",
-    "email": "c.kuckiewicz@hotmail.com",
-    "fecha": "1990-05-29",
-    "rol": "user",
-    "notifica": true,
-    "contrasenia": "$2a$10$Biwi2rGiplPNhTNPr48uiO3oKbBkQQHWnN6nwDK7zs1Y3ctpMCOlK",
-    "avatar": "user.png"
->>>>>>> ccc7dc0147e84503a8c50f35c08a3449f5059bd0
   }
 ]
