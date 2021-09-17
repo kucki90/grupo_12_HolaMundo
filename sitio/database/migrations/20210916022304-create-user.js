@@ -26,6 +26,9 @@ module.exports = {
       notify: {
         type: Sequelize.BOOLEAN
       },
+      avatar :{
+        type: Sequelize.STRING
+      },
       rolId: {
         type: Sequelize.INTEGER,
         references: {
