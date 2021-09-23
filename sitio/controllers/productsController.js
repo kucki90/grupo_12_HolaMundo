@@ -7,47 +7,62 @@ const categorias = require('../data/categories_db');
 
 module.exports = {
     create : (req,res) => {
-        return res.render('productAdd',{
-            categorias,
-            productos
+        db.Category.findAll()
+        .then(categorias => {
+            return res.render('productAdd',{
+            categorias
+        })
+        .catch(error => console.log(error))
         })
     },
     
     store : (req, res) => {
-        let imagenes = [];
-        if (req.files){
-            req.files.forEach(imagen => {
-                imagenes.push(imagen.filename)
-            })
-        }
-        
-		let producto = {
-			id:productos[productos.length-1].id+1,
-			title: req.body.title,
-			price: +req.body.price,
-			images: imagenes,
-			category: req.body.category,
-			description:req.body.description,
-		};
-		productos.push(producto)
-		fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos))
-		res.redirect('/')
+        const {title, price, description, category} = req.body
+        db.Product.create({
+            name : title,
+            price,
+            description,
+            categoryId : category
+        })
+        .then(product => {
+            if(req.files.lenght != 0){
+                let images = req.files.map(image => {
+                    let img = {
+                        file : image.filename,
+                        productId : product.id
+                    }
+                    return img
+                })
+                db.Image.bulkCreate(images, {validate : true})
+                .then( () => console.log('imagenes agregadas'))
+            }
+            return res.redirect('/products/detail/' + product.id)
+        })
+        .catch(error => console.log(error))
 	},
     detail : (req,res) => {
-        let producto = productos.find(producto => producto.id === +req.params.id);
-
-        return res.render('productDetail',{
-            producto,
-            productos
+        db.Product.findByPk(req.params.id,{
+            include : ['images']
+        })
+        .then(producto => {
+            return res.render('productDetail', {
+                producto
+            })
         })
     },
     edit : (req, res) => {
-        let producto = productos.find(producto => producto.id === +req.params.id);
-
-        return res.render('productEdit',{
+        const producto = db.Product.findByPk(req.params.id,{
+            include : ['category']
+        })
+        const categorias = db.Product.findAll()
+        Promise.all([producto,categorias])
+        .then(([producto,categorias]) => {
+            return res.render('productEdit',{
             categorias,
             producto
         })
+        })
+        
     },
     update : (req, res) => {
         // res.send(req.body)

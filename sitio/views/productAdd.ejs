@@ -31,8 +31,8 @@
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria%>">
-                                                <%= categoria %>
+                                            <option value="<%= categoria.id%>">
+                                                <%= categoria.name %>
                                             </option>
                                             <% }) %>
                                     </select>

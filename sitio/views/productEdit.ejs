@@ -16,7 +16,7 @@
                                 <div class="ctrl-input">
                                     <label for="titulo" class="items-label">Título</label>
                                     <input type="text" name="title" class="items-input" id="titulo"
-                                        value="<%= producto.title %>">
+                                        value="<%= producto.name %>">
                                 </div>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
@@ -33,15 +33,10 @@
                                     <select name="category" class="category" id="">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria%> ">
-                                                <%= categoria %>
-                                                    <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria %>" <%=categoria==producto.category
-                                                ? 'selected' : null %> ><%= categoria %>
+                                            <option value="<%= categoria.id %>" <%=categoria.name==producto.category.name
+                                                ? 'selected' : null %> ><%= categoria.name %>
                                             </option>
                                             <% }) %>
-                                                </option>
-                                                <% }) %>
                                     </select>
                                 </div>
                                 <div class="ctrl-input">
