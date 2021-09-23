@@ -3,50 +3,51 @@ const {usuarios,guardar} = require('../data/users_db');
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
-const path = require ('path') 
+const path = require ('path'); 
+const db = require('../database/models');
 
 module.exports = {
 
     login : (req,res) => {
-        return res.render('login', {
-            productos
-        })
+        return res.render('login')
+       
     },
     processRegister : (req,res) => {
-        //return res.send(req.body)
-        
+        //return res.send(req.body)       
         
         let errors = validationResult(req);
-        let {nombre,apellido,email,notifica, fecha,AceptoRecibir,contrasenia} = req.body;
-     //return res.send(errors)
+        let {name,surname,birthdate,email,password} = req.body;
+     return res.send(errors)
+     //return res.send(req.body) 
         if(errors.isEmpty()){
-            let usuario = {
-                id : usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1,
-                nombre,
-                apellido,
-                email,
-                fecha,
-                rol : 'user',
-                notifica: notifica ? true :false,
-                contrasenia : bcrypt.hashSync(contrasenia,10),
-                avatar : "user.png",
-            }
-            usuarios.push(usuario);
-            guardar(usuarios);
 
-            req.session.userLogin = {
-                id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol
-            }
-            return res.redirect('/')
+            db.User.create({
+                name: name.trim(),
+                surname : surname.trim(),
+                birthdate : birthdate.trim(),
+                email : email.trim(),
+                password : bcrypt.hashSync(password,10),
+                rolId : 1
+            }).then(user => {
+                req.session.userLogin = {
+                    id : user.id,
+                    name : user.name,
+                    rol : user.rol
+                }
+                return res.send(errors)
+                return res.redirect('/')
+
+            }).cath(error => console.log(error))
+
         }else{
             return res.render('login',{
-                productos,
                 old : req.body,
                 errores : errors.mapped()
             })
         }
+            
+            
+       
         
     },
     processLogin : (req,res) => {
@@ -54,23 +55,22 @@ module.exports = {
         
         const {email, recordar} = req.body;
         if(errors.isEmpty()){
-            let usuario = usuarios.find(usuario => usuario.email === email)
-            req.session.userLogin = {
-                id : usuario.id,
-                nombre : usuario.nombre,
-                rol : usuario.rol,
-                avatar : usuario.avatar
-            }
-
-            if(recordar){
-                res.cookie('craftsyForEver',req.session.userLogin,{maxAge: 1000 * 60})
-            }
-            console.log(req.session.userLogin)
-            return res.redirect('/')
-            //si sale bien al home sino no hace nada
+            db.User.findOne({
+                where : {
+                    email
+                }
+            }).then(user => {
+                req.session.userLogin = {
+                    id : user.id,
+                    name : user.name,
+                    rol : user.rolId,
+                    avatar : user.avatar
+                }
+                recordar && res.cookie('HolaMundo',req.session.userLogin,{maxAge: 1000 * 60})
+                return res.redirect('/')
+            })
         }else{
             return res.render('login',{
-                productos,
                 errores : errors.mapped()
             })
         }/**/
