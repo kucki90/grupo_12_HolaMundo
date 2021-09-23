@@ -14,23 +14,23 @@
 
             <div class="card border rounded shadow my-5">
                 <h2>Profile</h2>
-                <form class="row" action="/users/update?-method=PUT" method="POST" enctype="multipart/form-data" >
+                <form class="row" action="/users/update/<% user.id %> ?-method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-12 col-md-6">
                           <label for="exampleInputName">Nombre</label>
                           <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                          name="nombre" value="<%= user.nombre %>">
-                          <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
+                          name="name" value="<%= user.name %>">
+                          <span class="text-danger small"><%= locals.errores && locals.errores.name ? errores.name.msg : null %> </span>
                         </div>
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputApellido">Apellido </label>
-                          <input type="text" class="form-control" name="apellido" id="exampleInputApellido" aria-describedby="emailHelp"
-                          name="apellido" value="<%= user.apellido %>">
-                          <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? errores.apellido.msg : null %> </span>
+                          <input type="text" class="form-control" id="exampleInputApellido" aria-describedby="emailHelp"
+                          name="surname" value="<%= user.surname %>">
+                          <span class="text-danger small"><%= locals.errores && locals.errores.surname ? errores.surname.msg : null %> </span>
                         </div>
                         <div class="mb-3 col-12 col-md-6">
                             <label for="fechadenacimiento">Fecha de nacimiento </label>
-                          <input type="date" class="form-control fechainput" name="birthday" id="birthday" value=<%= user.birthday %>>
-                          <span class="text-danger small"><%= locals.errores && locals.errores.birthday ? errores.birthday.msg : null %> </span>
+                          <input type="date" class="form-control fechainput" name="birthdate" id="birthdate" value=<%= user.birthdate %>>
+                          <span class="text-danger small"><%= locals.errores && locals.errores.birthdate ? errores.birthdate.msg : null %> </span>
                         </div>
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputEmail1">Direccion de correo electronico </label>
@@ -39,12 +39,12 @@
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1"> Nueva contraseña </label>
                           <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
-                          <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
+                          <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                         </div>
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1">Confirmar contraseña </label>
-                            <input type="password" class="form-control" name="contrasenia2" id="exampleInputPassword">
-                            <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia2.msg : null %> </span>
+                            <input type="password" class="form-control" name="password2" id="exampleInputPassword">
+                            <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password2.msg : null %> </span>
                           </div>
                           <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1">Contraseña anterior</label>

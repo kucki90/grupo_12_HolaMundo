@@ -16,24 +16,39 @@
         
 
         <ul class="logos">
-          <% if(locals.userLogin) { %> 
+          <% if(locals.userLogin) { %>
+            ><% if (locals.userLogin.rol === 2) { %>
             <li class="nav-item">
               <a class="nav-link" href="/users/profile">
                 <i class="fas fa-user-circle"></i>
-              ></a>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/logout">
-              <i class="fas fa-sign-out-alt"></i>
-              ></a>
-            </li>
+            <% } %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= locals.userLogin.name %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="drodown-item" href="/users/profile">Mi Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/logout">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <li><a class="dropdown-item" href="/users/logout">cerrar sesión</a></li>
+                  </a>
+                </li>
+
+
+              </ul>
+
+            
             <% }else{  %> 
           <li class="nav-item">
-            <a class="nav-link" href="/users/login">
-              <i class="far fa-user-circle"></i
-            ></a>
+            <a class="nav-link" href="/users/login"><i class="far fa-user-circle"></i></a>
           </li>
-          <% } %> 
+          <% } %>
+
           <li class="nav-item">
             <a class="nav-link" href="/carrito"
               ><i class="fas fa-shopping-cart"></i

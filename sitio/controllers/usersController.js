@@ -1,9 +1,7 @@
 const {productos} = require('../data/products_db');
 const {usuarios,guardar} = require('../data/users_db');
 const {validationResult} = require('express-validator');
-const bcrypt = require('bcryptjs');
-const fs = require('fs');
-const path = require ('path'); 
+const bcrypt = require('bcryptjs'); 
 const db = require('../database/models');
 
 module.exports = {
@@ -17,7 +15,7 @@ module.exports = {
         
         let errors = validationResult(req);
         let {name,surname,birthdate,email,password} = req.body;
-     return res.send(errors)
+     //return res.send(errors)
      //return res.send(req.body) 
         if(errors.isEmpty()){
 
@@ -34,7 +32,7 @@ module.exports = {
                     name : user.name,
                     rol : user.rol
                 }
-                return res.send(errors)
+                
                 return res.redirect('/')
 
             }).cath(error => console.log(error))
@@ -52,8 +50,8 @@ module.exports = {
     },
     processLogin : (req,res) => {
         let errors = validationResult(req);
-        
-        const {email, recordar} = req.body;
+        //return res.send('login')        
+        const {email,recordar} = req.body;
         if(errors.isEmpty()){
             db.User.findOne({
                 where : {
@@ -69,22 +67,38 @@ module.exports = {
                 recordar && res.cookie('HolaMundo',req.session.userLogin,{maxAge: 1000 * 60})
                 return res.redirect('/')
             })
+
         }else{
             return res.render('login',{
                 errores : errors.mapped()
             })
-        }/**/
+        }
+    },
+    
+    profile : (req,res) => {
+        db.User.findByPk(req.session.userLogin.id)
+        .then(user => res.render('profile',{
+            user
+        })).catch(error => console.log(error))
+    },
+    update : (req,res) => {
+        const {name,password} = req.body;
+        db.User.update(
+            {
+                name : name.trim(),
+                avatar : req.file && req.file.filename,
+                password :  password != " " && bcrypt.hashSync(password,10)
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
+            }).then( () => res.redirect('/users/profile'))
     },
     logout : (req,res) => {
         req.session.destroy();
-        res.cookie('craftsyForEver',null,{maxAge:-1})
+        res.cookie('HolaMundo',null,{maxAge:-1})
         return res.redirect('/')
-    },
-    profile : (req, res) => res.render('profile' ,{
-        user : usuarios.find(usuario => usuario.id === req.session.userLogin.id)
-    }),
-    update : (req, res) => {
-        res.send(res.body)
     }
 
     

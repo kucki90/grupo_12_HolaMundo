@@ -7,7 +7,7 @@ const db =require('../database/models')
 module.exports = [
     body('email')
     .custom((value,{req}) => {
-
+        console.log(req.body)
         return db.User.findOne({
             where : {
                 email :value
@@ -16,7 +16,7 @@ module.exports = [
             if(!user || !bcrypt.compareSync(req.body.password,user.password)){
                 return Promise.reject()
             }
-        }).cath( () => Promise.reject('Credenciales invalidas'))
+        }).catch( () => Promise.reject('Credenciales invalidas'))
        
         
     })
