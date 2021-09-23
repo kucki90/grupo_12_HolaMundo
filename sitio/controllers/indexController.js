@@ -1,17 +1,55 @@
-let productos = require('../data/products_db');
-const fs = require('fs');
-const path = require('path');
+const db = require ('../database/models');
 module.exports = {
     home: (req, res) => {
-
-        productos = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', "products.json"), 'utf-8'));
-        return res.render('home', {
-
-            productos,
-            oferta: productos.filter(producto => producto.category === "oferta"),
-            destacado: productos.filter(producto => producto.category === "destacado"),
-            muebles: productos.filter(producto => producto.category === "muebles")
-        })
+         const oferta = db.Category.findOne({
+            where : {
+                name : 'oferta'
+            }, 
+            include : [
+                {
+                    association : 'products',
+                    include : [
+                        {association : 'images'}
+                    ]
+                }
+            ]
+         })
+         const destacado = db.Category.findOne({
+            where : {
+                name : 'destacado'
+            }, 
+            include : [
+                {
+                    association : 'products',
+                    include : [
+                        {association : 'images'}
+                    ]
+                }
+            ]
+         })
+         const muebles = db.Category.findOne({
+            where : {
+                name : 'muebles'
+            }, 
+            include : [
+                {
+                    association : 'products',
+                    include : [
+                        {association : 'images'}
+                    ]
+                }
+            ]
+         })
+         Promise.all([oferta,destacado,muebles])
+         .then(([oferta,destacado,muebles]) => {
+           /*  return res.send(destacado) */
+            return res.render('home', {
+                oferta,
+                destacado,
+                muebles,
+            })
+         })
+         .catch(error => console.log (error))
     },
     carrito: (req, res) => {
         return res.render('carrito', {

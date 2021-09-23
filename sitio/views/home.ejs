@@ -46,19 +46,19 @@
         <section class="ofertas" id="ofertas">
           <h2 class="my-3 text-center">¡Ofertas de la semana!</h2>
           <div class="row gx-2">
-            <% oferta.forEach(producto=> { %>
+            <% oferta.products.forEach(producto=> { %>
               <div class="col-12 col-md-4 col-lg-3 my-3">
 
                 <article class="p-3 mx-2 border rounded shadow">
 
                   <a href="/products/detail/<%= producto.id %>">
-                    <img src="/images/productos/<%= producto.images[0] %>" alt="" class="img-fluid" />
+                    <img src="/images/productos/<%= producto.images[0].file %>" alt="" class="img-fluid" />
                   </a>
 
                   <h3>
                     <%= producto.title %>
                   </h3>
-                  <p>$ <%= producto.price.toFixed(2) %>
+                  <p>$ <%= producto.price%>
                   </p>
                   <br>
                   <a class="btn btn-success" href="/products/edit/<%= producto.id %>">editar</a>
@@ -71,19 +71,19 @@
         <section class="destacados" id="destacados">
           <h2 class="my-3 text-center">Destacados de Deco</h2>
           <div class="row gx-2">
-            <% destacado.forEach(producto=> { %>
+            <% destacado.products.forEach(producto=> { %>
               <div class="col-12 col-md-4 col-lg-3 my-3">
 
                 <article class="p-3 mx-2 border rounded shadow">
 
                   <a href="/products/detail/<%= producto.id %>">
-                    <img src="/images/productos/<%= producto.images[0] %>" alt="" class="img-fluid" />
+                    <img src="/images/productos/<%= producto.images[0].file %>" alt="" class="img-fluid" />
                   </a>
 
                   <h3>
                     <%= producto.title %>
                   </h3>
-                  <p>$ <%= producto.price.toFixed(2) %>
+                  <p>$ <%= producto.price%>
                   </p>
                   <br>
                   <a class="btn btn-success" href="/products/edit/<%= producto.id %>">editar</a>
@@ -100,19 +100,19 @@
         <section class="muebles" id="muebles">
           <h2 class="my-3 text-center">Muebles</h2>
           <div class="row gx-2">
-            <% muebles.forEach(producto=> { %>
+            <% muebles.products.forEach(producto=> { %>
               <div class="col-12 col-md-4 col-lg-3 my-3">
 
                 <article class="p-3 mx-2 border rounded shadow">
 
                   <a href="/products/detail/<%= producto.id %>">
-                    <img src="/images/productos/<%= producto.images[0] %>" alt="" class="img-fluid" />
+                    <img src="/images/productos/<%= producto.images[0].file %>" alt="" class="img-fluid" />
                   </a>
 
                   <h3>
                     <%= producto.title %>
                   </h3>
-                  <p>$ <%= producto.price.toFixed(2) %>
+                  <p>$ <%= producto.price%>
                   </p>
                   <br>
                   <a class="btn btn-success" href="/products/edit/<%= producto.id %>">editar</a>
