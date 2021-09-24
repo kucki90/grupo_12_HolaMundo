@@ -87,13 +87,13 @@ module.exports = {
             {
                 name : name.trim(),
                 avatar : req.file && req.file.filename,
-                password :  password != " " && bcrypt.hashSync(password,10)
+                password : password != "" && bcrypt.hashSync(password,10)
             },
             {
                 where : {
-                    id : req.params.id
+                    id : req.session.userLogin.id
                 }
-            }).then( () => res.redirect('/users/profile'))
+            }).then( () => res.redirect('/users/profile')).catch(error => res.send(error))
     },
     logout : (req,res) => {
         req.session.destroy();

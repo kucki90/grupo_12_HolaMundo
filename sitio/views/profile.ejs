@@ -12,9 +12,11 @@
     <main class="detail">
         <div class="container">
 
+          <img class="img-fluid rounded-start" src="/images/users/<%= user.avatar %> " alt="">
+
             <div class="card border rounded shadow my-5">
                 <h2>Profile</h2>
-                <form class="row" action="/users/update/<% user.id %> ?-method=PUT" method="POST" enctype="multipart/form-data" >
+                <form class="row" action="/users/update/<% userLogin.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-12 col-md-6">
                           <label for="exampleInputName">Nombre</label>
                           <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
