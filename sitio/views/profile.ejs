@@ -12,11 +12,11 @@
     <main class="detail">
         <div class="container">
 
-          <img class="img-fluid rounded-start" src="/images/users/<%= user.avatar %> " alt="">
+         <img class="img-fluid rounded-start" src="/images/users/<%= user.avatar %> " alt="">
 
             <div class="card border rounded shadow my-5">
                 <h2>Profile</h2>
-                <form class="row" action="/users/update/<% userLogin.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                <form class="row" action="/users/update/<%= userLogin.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-12 col-md-6">
                           <label for="exampleInputName">Nombre</label>
                           <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
@@ -29,20 +29,18 @@
                           name="surname" value="<%= user.surname %>">
                           <span class="text-danger small"><%= locals.errores && locals.errores.surname ? errores.surname.msg : null %> </span>
                         </div>
-                        <div class="mb-3 col-12 col-md-6">
-                            <label for="fechadenacimiento">Fecha de nacimiento </label>
-                          <input type="date" class="form-control fechainput" name="birthdate" id="birthdate" value=<%= user.birthdate %>>
-                          <span class="text-danger small"><%= locals.errores && locals.errores.birthdate ? errores.birthdate.msg : null %> </span>
-                        </div>
-                        <div class="mb-3 col-12 col-md-6">
-                            <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                          <input type="email" class="form-control" name="email" value="<%= user.email %>" aria-describedby="emailHelp" id="exampleInputEmail1" readonly>
-                        </div>
+                      
+                        
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1"> Nueva contraseña </label>
-                          <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
+                          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                           <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                         </div>
+
+                        <!-- <div class="mb-3 col-12 col-md-6">
+                          <label for="exampleInputEmail1">Direccion de correo electronico </label>
+                        <input type="email" class="form-control" name="email" value="<%= user.email %>" aria-describedby="emailHelp" id="exampleInputEmail1" readonly>
+                      </div>
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1">Confirmar contraseña </label>
                             <input type="password" class="form-control" name="password2" id="exampleInputPassword">
@@ -52,13 +50,13 @@
                             <label for="exampleInputPassword1">Contraseña anterior</label>
                             <input type="password" class="form-control" name="passOld" id="exampleInputPassword1">
                             <span class="text-danger small"><%= locals.errores && locals.errores.passOld ? errores.passOld.msg : null %> </span>
-                          </div>
+                          </div> -->
                           <div class="mb-3 col-12 col-md-6">
                             <label for="" class="btn btn-primary w-100 mt-3"> <input type="file" name="avatar" class="examinar"
                                 >Subir imagen</label>
                           </div>
                         <button class="btn btn-primary w-100 mt-4" type="submit">Guardar cambios</button>
-                      </form>
+                    
                 </form>
             </div>
         </div>
