@@ -1,8 +1,5 @@
-const fs = require('fs');
-const path = require('path')
-const {productos, guardar} = require('../data/products_db');
-const categorias = require('../data/categories_db');
-
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
 
 module.exports = {
@@ -64,40 +61,61 @@ module.exports = {
         })
         
     },
-    update : (req, res) => {
-        // res.send(req.body)
-        const {title, description,price, category} = req.body;
-        
-        if(req.files.length !=0){
-            var imagenes = req.files.map(imagen => imagen.filename)
-        }
-        let producto = productos.find(producto => producto.id === +req.params.id)
-        let productoEditado = {
-            id : +req.params.id,
-            title,
-            description,
-            category,
-            price : +price,
-            images : req. files.length !=0 ? imagenes : producto.images
-            
-        }
+    update : (req,res) => {
+        const {name, description,price,categoryId} = req.body;
 
-        let productosModificados = productos.map(producto => producto.id === +req.params.id ? productoEditado : producto)
-
-        guardar(productosModificados)
-        res.redirect('/')
-        },
-
-    destroy :(req,res) => {
-        let productoModificado = productos.filter(producto => producto.id != +req.params.id)
-        guardar(productoModificado)
-     res.redirect('/')
+        db.Product.update(
+            {
+                name : name.trim(),
+                description : description.trim(),
+                price,
+                categoryId
+            },
+            {
+                where : {
+                    id : req.params.id
+                }
+            }
+        ).then( () => res.redirect('/products/detail/' + product.id))
+        .catch(error => console.log(error))
     },
-    search : (req, res) => {
-        let resultado = productos.filter(producto => producto.title.toLowerCase().includes(req.query.keywords.toLowerCase())||producto.description.toLowerCase().includes(req.query.keywords.toLowerCase()))
-        return res.render('resultado',{
-            productos : resultado,
-            keywords : req.query.keywords
+
+    destroy : (req,res) => {
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        }).then( () => res.redirect('/'))
+        .catch(error => console.log(error))
+    },
+
+    search : (req,res) => {
+
+        db.Product.findAll({
+            where : {
+                [Op.or] : [
+                    {
+                        name :  {
+                            [Op.substring] : req.query.keywords
+                        }
+                    },
+                    {
+                        description : {
+                            [Op.substring] : req.query.keywords
+                        }
+                    }
+                ]
+            },
+            include : [
+                {association : 'images'}
+            ]
+        }).then(result => {
+            return res.render('resultSearch',{
+            result,
+            busqueda : req.query.keywords
         })
+            
+        }).catch(error => console.log(error))
+
     }
 }
