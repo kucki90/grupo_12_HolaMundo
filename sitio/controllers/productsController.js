@@ -16,9 +16,9 @@ module.exports = {
     store : (req, res) => {
         const {title, price, description, category} = req.body
         db.Product.create({
-            name : title,
+            name : title.trim(),
             price,
-            description,
+            description : description.trim(),
             categoryId : category
         })
         .then(product => {
@@ -62,14 +62,14 @@ module.exports = {
         
     },
     update : (req,res) => {
-        const {name, description,price,categoryId} = req.body;
+        const {title, description,price,category} = req.body;
 
         db.Product.update(
             {
-                name : name.trim(),
+                title : title.trim(),
                 description : description.trim(),
                 price,
-                categoryId
+                category
             },
             {
                 where : {
