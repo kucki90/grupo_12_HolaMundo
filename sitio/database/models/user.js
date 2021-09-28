@@ -12,16 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsTo(models.Rol,{
+
         as : 'rol'
+
       })
     }
   };
   User.init({
     name: DataTypes.STRING,
     surname: DataTypes.STRING,
-    birthday: DataTypes.DATE,
+    birthdate: DataTypes.DATE,
     email: DataTypes.STRING,
-    AVATAR: DataTypes.STRING,
+    avatar: DataTypes.STRING,
     password: DataTypes.STRING,
     notify: DataTypes.BOOLEAN,
     rolId: DataTypes.INTEGER
