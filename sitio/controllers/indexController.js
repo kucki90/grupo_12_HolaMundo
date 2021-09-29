@@ -55,6 +55,17 @@ module.exports = {
         return res.render('carrito', {
             productos
         })
-    }
+    },
+
+admin : (req,res) => {
+    db.Product.findAll({
+        include : [
+            {association : 'category'},
+            {association : 'images'}
+        ]
+    }).then(productos => res.render('admin/index',{
+        productos
+    }))
 }
 
+}

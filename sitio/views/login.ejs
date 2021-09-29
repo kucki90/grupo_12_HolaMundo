@@ -18,17 +18,17 @@
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                    name="nombre" value="<%= locals.old && locals.old.nombre ? old.nombre : null%>">
-                    <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? errores.nombre.msg : null %> </span>
+                    name="name" value="<%= locals.old && locals.old.name ? old.name : null%>">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.name ? errores.name.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputApellido">Apellido </label>
-                    <input type="text" class="form-control" name="apellido" id="exampleInputApellido" aria-describedby="emailHelp"
-                    name="apellido" value="<%= locals.old && locals.old.apellido ? old.apellido : null%>">
+                    <input type="text" class="form-control"  id="exampleInputApellido" aria-describedby="emailHelp"
+                    name="surname" value="<%= locals.old && locals.old.surname ? old.surname : null%>">
                   </div>
                   <div class="mb-3">
-                    <label for="fechadenacimiento">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" name="fecha" id="fechaDeNacimiento"value="<%= locals.old && locals.old.fecha ? old.fecha : null%>">
+                    <label for="birthdate">Fecha de nacimiento </label>
+                    <input type="date" class="form-control fechainput" name="birthdate" id="birthdate"value="<%= locals.old && locals.old.birthdate ? old.birthdate : null%>">
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
@@ -36,17 +36,17 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
-                    <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia ? errores.contrasenia.msg : null %> </span>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword2">Confirma la contraseña </label>
-                    <input type="password" class="form-control" name="contrasenia2" id="exampleInputPassword2">
-                    <span class="text-danger small"><%= locals.errores && locals.errores.contrasenia2 ? errores.contrasenia2.msg : null %> </span>
+                    <input type="password" class="form-control" name="password2" id="exampleInputPassword2">
+                    <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? errores.password2.msg : null %> </span>
                   </div>
                   
                   <div class="mb-3">
-                    <label><input type="checkbox" value="recibir" id="recibir" name="notifica"> Quiero recibir notificaciones </label>
+                    <label><input type="checkbox" value="recibir" id="recibir" name="notify"> Quiero recibir notificaciones </label>
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
                   </div>
@@ -68,7 +68,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="contrasenia" id="exampleInputPassword1">
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                   </div>
                   <div class="d-flex justify-content-end">
                     <div class="mb-3 form-check">

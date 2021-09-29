@@ -7,15 +7,15 @@ const {register,login, processRegister, processLogin, logout, profile, update} =
 const registerValidator = require('../validations/registerValidator');
 const loginValidator =require('../validations/loginValidator');
 
-const registeValidator = require('../validations/registerValidator');
-
 const multerUserImage = require('../middlewares/multerUserimage');
+const userSessionCheck = require('../middlewares/userSessionCheck');
+const upFileAvatar = require('../middlewares/upFileAvatar')
 
 router.get('/login', login);
 router.post('/register', registerValidator, processRegister)
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
-router.put('/update',multerUserImage.single('avatar') , update)
-router.get('/profile', profile);
+router.get('/profile',userSessionCheck, profile);
+router.put('/update/:id',upFileAvatar.single('avatar'),update);
 
 module.exports = router;
