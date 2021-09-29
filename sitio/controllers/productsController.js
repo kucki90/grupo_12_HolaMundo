@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const {Op} = require('sequelize');
 
@@ -14,29 +15,43 @@ module.exports = {
     },
     
     store : (req, res) => {
-        const {title, price, description, category} = req.body
-        db.Product.create({
-            name : title.trim(),
-            price,
-            description : description.trim(),
-            categoryId : category
-        })
-        .then(product => {
-            if(req.files.lenght != 0){
-                let images = req.files.map(image => {
-                    let img = {
-                        file : image.filename,
-                        productId : product.id
-                    }
-                    return img
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()){
+
+            const {title, price, description, category} = req.body
+            db.Product.create({
+                name : title.trim(),
+                price,
+                description : description.trim(),
+                categoryId : category
+            })
+            .then(product => {
+                if(req.files.lenght != 0){
+                    let images = req.files.map(image => {
+                        let img = {
+                            file : image.filename,
+                            productId : product.id
+                        }
+                        return img
+                    })
+                    db.Image.bulkCreate(images, {validate : true})
+                    .then( () => console.log('imagenes agregadas'))
+                }
+                return res.redirect('/products/detail/' + product.id)
+            })
+            .catch(error => console.log(error))
+	    }else{
+            db.Category.findAll()
+            .then(categorias => {
+                return res.render('productAdd',{
+                    categorias,
+                    errores : errors.mapped(),                        
+                    old : req.body
                 })
-                db.Image.bulkCreate(images, {validate : true})
-                .then( () => console.log('imagenes agregadas'))
-            }
-            return res.redirect('/products/detail/' + product.id)
-        })
-        .catch(error => console.log(error))
-	},
+            }).catch(error => console.log(error))
+        }
+    },
     detail : (req,res) => {
         db.Product.findByPk(req.params.id,{
             include : ['images']
