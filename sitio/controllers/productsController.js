@@ -66,7 +66,7 @@ module.exports = {
 
         db.Product.update(
             {
-                title : title.trim(),
+                name : title.trim(),
                 description : description.trim(),
                 price,
                 category
@@ -76,7 +76,7 @@ module.exports = {
                     id : req.params.id
                 }
             }
-        ).then( () => res.redirect('/products/detail/' + product.id))
+        ).then( () => res.redirect('/products/detail/' + req.params.id))
         .catch(error => console.log(error))
     },
 
