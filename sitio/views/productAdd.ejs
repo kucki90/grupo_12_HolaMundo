@@ -11,32 +11,36 @@
                     <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto p-5">
                         <div class="row">
                             <form action="" class="formulario" enctype="multipart/form-data" method="POST">
-                                <label for="" class="btn-fotos"> <input type="file" name="imagen" class="examinar"
+                                <label for="" class="btn-fotos"> <input type="file" name="imagen" id="imagen" class="examinar"
                                         multiple>Agregar fotos</label>
+                                        <p><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="titulo" class="items-label">Título</label>
-                                    <input type="text" name="title" class="items-input" id="titulo">
+                                    <input type="text" name="title" class="items-input" id="title" value="<%= locals.old && old.title ? old.title : null %>">
                                 </div>
+                                <p><%= locals.errores && errores.title ? errores.title.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
-                                    <input type="text" name="price" class="items-input" id="precio">
+                                    <input type="text" name="price" class="items-input" id="price" value="<%= locals.old && old.price ? old.price : null %>">
                                 </div>
-                                
+                                <p><%= locals.errores && errores.price ? errores.price.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="descripcion" class="items-label">Descripción</label>
-                                    <textarea name="description" class="items-textarea" id="descripcion"></textarea>
+                                    <textarea name="description" class="items-textarea" id="description" value="<%= locals.old && old.description ? old.description : null %>"></textarea>
                                 </div>
+                                <p><%= locals.errores && errores.description ? errores.description.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="category" class="items-label">Categoría</label>
-                                    <select name="category" class="category" id="">
+                                    <select name="categoryId" class="category" id="categoryId" value="categoryId">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria.id%>">
+                                            <option value="<%= categoria.id%>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%>>
                                                 <%= categoria.name %>
                                             </option>
                                             <% }) %>
                                     </select>
                                 </div>
+                                <p><%= locals.errores && errores.categoryId ? errores.categoryId.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Cargar producto</button>
                                 </div>
