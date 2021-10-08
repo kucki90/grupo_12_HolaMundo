@@ -16,45 +16,41 @@
         
 
         <ul class="logos">
-          <% if(locals.userLogin) { %>
-            ><% if (locals.userLogin.rol === 2) { %>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/profile">
-                <i class="fas fa-user-circle"></i>
-              </a>
-            </li>
-            <% } %>
+          <% if (locals.userLogin) { %>
+
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <%= locals.userLogin.name %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="drodown-item" href="/users/profile">Mi Perfil</a></li>
-                <li><hr class="dropdown-divider"></li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="/users/logout">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <li><a class="dropdown-item" href="/users/logout">cerrar sesión</a></li>
-                  </a>
-                </li>
-
-
+                <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
+                <% if (locals.userLogin.rol===2) { %>
+                  <li><a class="dropdown-item" href="/admin">Administración</a></li>
+                  <% } %>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+              </ul>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/login"><i class="fas fa-user-circle"></i> </a>
+              </li>
+              <% } %>
+              <li class="nav-item">
+                <a class="nav-link" href="/carrito"
+                  ><i class="fas fa-shopping-cart"></i
+                ></a>
+              </li>
+           
               </ul>
 
             
-            <% }else{  %> 
-          <li class="nav-item">
-            <a class="nav-link" href="/users/login"><i class="far fa-user-circle"></i></a>
-          </li>
-          <% } %>
+          
 
-          <li class="nav-item">
-            <a class="nav-link" href="/carrito"
-              ><i class="fas fa-shopping-cart"></i
-            ></a>
-          </li>
-        </ul>
+         
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">

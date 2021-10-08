@@ -35,7 +35,7 @@ module.exports = {
 
                 return res.redirect('/')
 
-            }).cath(error => console.log(error))
+            }).catch(error => console.log(error))
 
         } else {
             return res.render('login', {
