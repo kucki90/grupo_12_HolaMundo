@@ -12,7 +12,7 @@
     <main class="detail">
         <div class="container">
 
-         <img class="img-fluid rounded-start" src="/images/users/<%= user.avatar %> " alt="">
+         <!-- <img class="img-fluid rounded-start" src="/images/users/<%= user.avatar %> " alt=""> -->
 
             <div class="card border rounded shadow my-5">
                 <h2>Profile</h2>
@@ -37,20 +37,7 @@
                           <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                         </div>
 
-                        <!-- <div class="mb-3 col-12 col-md-6">
-                          <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                        <input type="email" class="form-control" name="email" value="<%= user.email %>" aria-describedby="emailHelp" id="exampleInputEmail1" readonly>
-                      </div>
-                        <div class="mb-3 col-12 col-md-6">
-                            <label for="exampleInputPassword1">Confirmar contraseña </label>
-                            <input type="password" class="form-control" name="password2" id="exampleInputPassword">
-                            <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password2.msg : null %> </span>
-                          </div>
-                          <div class="mb-3 col-12 col-md-6">
-                            <label for="exampleInputPassword1">Contraseña anterior</label>
-                            <input type="password" class="form-control" name="passOld" id="exampleInputPassword1">
-                            <span class="text-danger small"><%= locals.errores && locals.errores.passOld ? errores.passOld.msg : null %> </span>
-                          </div> -->
+                     
                           <div class="mb-3 col-12 col-md-6">
                             <label for="" class="btn btn-primary w-100 mt-3"> <input type="file" name="avatar" class="examinar"
                                 >Subir imagen</label>

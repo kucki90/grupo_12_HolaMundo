@@ -82,18 +82,36 @@ module.exports = {
         })).catch(error => console.log(error))
     },
     update: (req, res) => {
-        const {name,password} = req.body;
-        db.User.update(
-            {
-                name : name.trim(),
-                avatar : req.file && req.file.filename,
-                password :  password != " " && bcrypt.hashSync(password,10)
-            },
-            {
-                where : {
-                    id : req.params.id
-                }
-            }).then( () => res.redirect('/'))
+        let errors = validationResult(req);
+        //return res.send(errors)
+        //return res.send(req.body) 
+        let {name,surname,password} = req.body;
+        //return res.send(errors)
+        //return res.send(req.body) 
+         
+        if (errors.isEmpty()) {
+            db.User.update(
+                {
+                    name : name.trim(),
+                    //surname : surname.trim(),
+                    //avatar : req.file && req.file.filename,
+                    password :  password != " " && bcrypt.hashSync(password,10)
+                },
+                {
+                    where : {
+                        id : req.params.id
+                    }
+                }).then( () => res.redirect('/'))
+
+        }else{
+            return res.render('profile', {
+                errores: errors.mapped()
+            })
+
+        }
+
+       
+        
        
     },
     logout: (req, res) => {
