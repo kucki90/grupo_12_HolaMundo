@@ -1,0 +1,8 @@
+.pic-avatar {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px lightblue;
+    border-radius: 50%;
+  }
+  

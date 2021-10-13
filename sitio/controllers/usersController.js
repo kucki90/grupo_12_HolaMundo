@@ -3,6 +3,7 @@ const { usuarios, guardar } = require('../data/users_db');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
+const moment = require('moment');
 
 module.exports = {
 
@@ -78,36 +79,46 @@ module.exports = {
     profile: (req, res) => {
         db.User.findByPk(req.session.userLogin.id)
         .then(user => res.render('profile',{
-            user
+            user,
+            date : moment(user.birthdate).add(1, 'days').format('YYY-MM-DD'),
         })).catch(error => console.log(error))
     },
     update: (req, res) => {
         let errors = validationResult(req);
         //return res.send(errors)
         //return res.send(req.body) 
-        let {name,surname,password} = req.body;
+        let {name,surname,password, birthdate} = req.body;
         //return res.send(errors)
         //return res.send(req.body) 
          
         if (errors.isEmpty()) {
-            db.User.update(
-                {
-                    name : name.trim(),
-                    //surname : surname.trim(),
-                    //avatar : req.file && req.file.filename,
-                    password :  password != " " && bcrypt.hashSync(password,10)
-                },
-                {
-                    where : {
-                        id : req.params.id
-                    }
-                }).then( () => res.redirect('/'))
+            db.User.findByPk(req.session.userLogin.id)
+                .then(user => {
+                    db.User.update(
+                        {
+                            name : name.trim(),
+                            surname : surname.trim(),
+                            birthdate,
+                            avatar : req.file && req.file.filename,
+                            password :  password != " " ? bcrypt.hashSync(password,10) : user.password
+                        },
+                        {
+                            where : {
+                                id : req.params.id
+                            }
+                        }).then( () => res.redirect('/users/profile'))
+                })
+
 
         }else{
-            return res.render('profile', {
+            db.User.findByPk(req.session.userLogin.id)
+            .then(user => res.render('profile',{
+                user,
+                date : moment(user.birthdate).add(1, 'days').format('YYY-MM-DD'),
                 errores: errors.mapped()
-            })
 
+            })).catch(error => console.log(error))
+           
         }
 
        

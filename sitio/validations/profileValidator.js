@@ -1,14 +1,28 @@
-const {check} = require('express-validator');
+const {check, body} = require('express-validator');
+const db = require('../database/models');
+const bcrypt = require('bcryptjs');
 
 module.exports = [
     
     check('name')
-    .notEmpty().withMessage('Añade las fotos del producto'),
+    .notEmpty().withMessage('se requiere nombre'),
 
     check('surname')
-    .notEmpty().withMessage('Indica el nombre del producto'),
+    .notEmpty().withMessage('se require apellido'),
 
     check('password')
-    .notEmpty().withMessage('ingrese su contraseña por favor'),
+    .notEmpty().withMessage('Se requiere la contraseña').bail(),
+    
+    body('password')
+    .custom((value,{req}) => {
+        
+        return db.User.findByPk(req.session.userLogin.id)
+            .then(user => {
+                if(!bcrypt.compareSync(value,user.password)){
+                    return Promise.reject()
+                }
+            }).catch( () => Promise.reject('Contraseña incorrecta'))
+        })
+
 
 ]

@@ -17,6 +17,6 @@ router.post('/register', registerValidator, processRegister)
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile',userSessionCheck, profile);
-router.put('/update/:id',/*upFileAvatar.single('avatar'),*/profileValidator,update);
+router.put('/update/:id',upFileAvatar.single('avatar'),profileValidator,update);
 
 module.exports = router;
