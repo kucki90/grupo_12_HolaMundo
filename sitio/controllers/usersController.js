@@ -80,7 +80,7 @@ module.exports = {
         db.User.findByPk(req.session.userLogin.id)
         .then(user => res.render('profile',{
             user,
-            date : moment(user.birthdate).add(1, 'days').format('YYY-MM-DD'),
+            date : moment(user.birthdate).add(1, 'days').format('YYYY-MM-DD'),
         })).catch(error => console.log(error))
     },
     update: (req, res) => {
@@ -106,8 +106,23 @@ module.exports = {
                             where : {
                                 id : req.params.id
                             }
-                        }).then( () => res.redirect('/users/profile'))
-                })
+                        }).then( () => {
+                            db.User.findByPk(req.session.userLogin.id)
+                             .then(user =>{
+                                req.session.userLogin = {
+                                    id: user.id,
+                                    name: user.name,
+                                    rol: user.rolId,
+                                    avatar: user.avatar
+                                }
+                                res.locals.userLogin = req.session.userLogin                      
+                                return res.redirect('/users/profile') 
+
+                             })
+                            
+                                
+                        })
+                }).catch(error => console.log(error))
 
 
         }else{

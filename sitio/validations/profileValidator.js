@@ -11,9 +11,7 @@ module.exports = [
     .notEmpty().withMessage('se require apellido'),
 
     check('password')
-    .notEmpty().withMessage('Se requiere la contraseña').bail(),
-    
-    body('password')
+    .notEmpty().withMessage('Se requiere la contraseña').bail()
     .custom((value,{req}) => {
         
         return db.User.findByPk(req.session.userLogin.id)
