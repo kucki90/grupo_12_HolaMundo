@@ -1,23 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const multer = require('multer');
+
 const productAddValidator = require('../validations/productAddValidator');
 
 const {create,store,detail,edit,update,destroy,search} = require('../controllers/productsController');
 
-const storage = multer.diskStorage({
-    destination : (req,file,callback) => {
-        callback(null,'public/images/productos')
-    },
-    filename : (req,file,callback) => {
-        callback(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-
-const upload = multer({
-    storage,
-})
+const upload = require('../middlewares/upFileProduct');
 
 
 /* router.get('/add',add); */
