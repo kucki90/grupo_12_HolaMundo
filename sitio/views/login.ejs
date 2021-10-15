@@ -14,34 +14,46 @@
               <div class="register col-12 col-lg-6 mt-5">
                 <h2>¿Sos nuevo?</h2>
                 <h4 class="mb-5">Registrate en pocos pasos...</h4>
-                <form action="/users/register" method="POST" novalidate>
+                <form action="/users/register" method="POST" class="form-reg" >
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                    name="name" value="<%= locals.old && locals.old.name ? old.name : null%>">
+                    name="name" title="Coloque un nombre" required data-span="name-reg"
+                    pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$"   
+                     value="<%= locals.old && locals.old.name ? old.name : null%>">
                     <span class="text-danger small"><%= locals.errores && locals.errores.name ? errores.name.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputApellido">Apellido </label>
                     <input type="text" class="form-control"  id="exampleInputSurname" aria-describedby="emailHelp"
-                    name="surname" value="<%= locals.old && locals.old.surname ? old.surname : null%>">
+                    name="surname"title="Coloque un apellido" required data-span="app-reg"
+                    pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$"   
+                     value="<%= locals.old && locals.old.surname ? old.surname : null%>">
                   </div>
                   <div class="mb-3">
                     <label for="birthdate">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" name="birthdate" id="birthdate"value="<%= locals.old && locals.old.birthdate ? old.birthdate : null%>">
+                    <input type="date" class="form-control fechainput" name="birthdate" data-span="date-reg" title="Ingrese una fecha valida" required
+                    pattern="^[1-2][0-9]{3}-[0-9]{2}-[0-9]{2}$" 
+                     id="birthdate"value="<%= locals.old && locals.old.birthdate ? old.birthdate : null%>">
                   </div>
                   <div class="mb-3 itemmail">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" id="exampleInputEmail1" value="<%= locals.old && locals.old.email ? old.email : null%>">
+                    <input type="email" class="form-control" name="email" title="Ingrese un mail"required 
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                     aria-describedby="emailHelp" data-span="email-reg" id="exampleInputEmail1" value="<%= locals.old && locals.old.email ? old.email : null%>">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <input type="password" class="form-control" name="password" title="Ingresa una contraseña"required
+                    pattern="^(.){8,30}$" 
+                     id="exampleInputPassword1"data-span="pass1-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword2">Confirma la contraseña </label>
-                    <input type="password" class="form-control" name="password2" id="exampleInputPassword2">
+                    <input type="password" class="form-control" name="password2" title="Ingresa una contraseña"required
+                    pattern="^(.){8,30}$" 
+                     id="exampleInputPassword2" data-span="pass2-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? errores.password2.msg : null %> </span>
                   </div>
                   
@@ -61,14 +73,17 @@
 
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
-                <form action="/users/login" method="POST">
+                <form action="/users/login" method="POST" class="form-log">
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Direccion de correo electronico </label>
-                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" name="email" title="Ingrese un mail"required
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                     id="exampleInputEmail1" aria-describedby="emailHelp" data-span="email-log">
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    <input type="password" class="form-control" name="password" title="Ingresa la contraseña"required
+                    pattern="^(.){8,30}$" id="exampleInputPassword1" data-span="pass-log">
                   </div>
                   <div class="d-flex justify-content-end">
                     <div class="mb-3 form-check">
@@ -104,7 +119,7 @@
       <!-- Pie de la página -->
       <%-include('./partials/footer') %>
         <%-include('./partials/scripts') %>
-
+<script src="/javascripts/login.js" type="module"></script>
   </body>
 
 </html>
