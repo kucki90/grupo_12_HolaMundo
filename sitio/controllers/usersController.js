@@ -26,6 +26,7 @@ module.exports = {
                 birthdate: birthdate.trim(),
                 email: email.trim(),
                 password: bcrypt.hashSync(password, 10),
+                avatar : 'default.png',
                 rolId: 1
             }).then(user => {
                 req.session.userLogin = {
@@ -99,7 +100,7 @@ module.exports = {
                             name : name.trim(),
                             surname : surname.trim(),
                             birthdate,
-                            avatar : req.file && req.file.filename,
+                            avatar : req.file && req.file.filename ,
                             password :  password != " " ? bcrypt.hashSync(password,10) : user.password
                         },
                         {
