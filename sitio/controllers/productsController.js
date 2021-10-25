@@ -8,7 +8,7 @@ module.exports = {
         db.Category.findAll()
         .then(categorias => {
             return res.render('productAdd',{
-            categorias
+            categorias,
         })
         .catch(error => console.log(error))
         })
@@ -17,7 +17,7 @@ module.exports = {
     store : (req, res) => {
         let errors = validationResult(req);
         
-        if(errors.isEmpty()){
+        if(errors.isEmpty()) {
 
             const {title, price, description, category} = req.body
             db.Product.create({
@@ -27,6 +27,7 @@ module.exports = {
                 categoryId : category
             })
             .then(product => {
+
                 if(req.files.lenght != 0){
                     let images = req.files.map(image => {
                         let img = {
@@ -63,12 +64,12 @@ module.exports = {
         })
     },
     edit : (req, res) => {
-        const producto = db.Product.findByPk(req.params.id,{
+        let categorias = db.Category.findAll();        
+        let producto = db.Product.findByPk(req.params.id,{
             include : ['category']
-        })
-        const categorias = db.Product.findAll()
-        Promise.all([producto,categorias])
-        .then(([producto,categorias]) => {
+        });        
+        Promise.all([categorias, producto])
+        .then(([categorias,producto]) => {
             return res.render('productEdit',{
             categorias,
             producto
@@ -77,14 +78,18 @@ module.exports = {
         
     },
     update : (req,res) => {
-        const {title, description,price,category} = req.body;
+        let errors = validationResult(req);
+        const {title, description,price,categoryId } = req.body;
 
+       // return res.send(errors)
+        //return res.send(req.body) 
+        if (errors.isEmpty()) {
         db.Product.update(
             {
                 name : title.trim(),
                 description : description.trim(),
                 price,
-                category
+                categoryId
             },
             {
                 where : {
@@ -93,6 +98,13 @@ module.exports = {
             }
         ).then( () => res.redirect('/products/detail/' + req.params.id))
         .catch(error => console.log(error))
+    }else{
+        return res.render('products/edit',{
+            old : req.body,
+            errores : errors.mapped()
+        })
+    }
+
     },
 
     destroy : (req,res) => {
