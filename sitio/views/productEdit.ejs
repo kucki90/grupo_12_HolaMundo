@@ -36,7 +36,7 @@
                                     <select name="categoryId" class="category" id="categoryId" value="categoryId">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria.id%>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%>>
+                                            <option value="<%= categoria.id%>"<%= producto.categoryId === categoria.id ? 'selected' : null%>>
                                                 <%= categoria.name %>
                                             </option>
                                             <% }) %>

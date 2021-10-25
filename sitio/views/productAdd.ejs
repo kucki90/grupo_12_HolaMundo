@@ -29,6 +29,8 @@
                                     <textarea name="description" class="items-textarea" id="description" value="<%= locals.old && old.description ? old.description : null %>"></textarea>
                                 </div>
                                 <p><%= locals.errores && errores.description ? errores.description.msg : null %> </p>
+                     
+
                                 <div class="ctrl-input">
                                     <label for="category" class="items-label">Categoría</label>
                                     <select name="categoryId" class="category" id="categoryId" value="categoryId">
@@ -38,9 +40,10 @@
                                                 <%= categoria.name %>
                                             </option>
                                             <% }) %>
+                                            <span class="text-danger small"><%= locals.errores && locals.errores.categoryId ? errores.categoryId.msg : null %> </span>
                                     </select>
                                 </div>
-                                <p><%= locals.errores && errores.categoryId ? errores.categoryId.msg : null %> </p>
+                               
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Cargar producto</button>
                                 </div>

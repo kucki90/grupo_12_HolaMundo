@@ -8,13 +8,14 @@ module.exports = {
         db.Category.findAll()
         .then(categorias => {
             return res.render('productAdd',{
-            categorias,
+            categorias
         })
         .catch(error => console.log(error))
         })
     },
     
     store : (req, res) => {
+        //return res.send(req.files)
         let errors = validationResult(req);
         
         if(errors.isEmpty()) {

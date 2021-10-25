@@ -15,13 +15,13 @@
             <div class="card border rounded shadow my-5">
               <div class=" text-center">
                 
-                  <img class="rounded-circle w-50" src="/images/users/<%= user.avatar %> " alt="">
+                  <img id='img-preview' class="rounded-circle w-25" src="/images/users/<%= user.avatar %> " alt="">
 
             </div>
               
               <h2>¡ Bienvenid@ <%= user.name %> ! </h2>
               <h5>Información de perfil:</h5>
-              <form class="row" action="/users/update/<%= userLogin.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+              <form id="form-profile" class="row" action="/users/update/<%= userLogin.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
                         <div class="mb-3 col-12 col-md-6">
                           <label for="exampleInputName">Nombre</label>
                           <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
@@ -46,7 +46,7 @@
            
                         <div class="mb-3 col-12 col-md-6">
                             <label for="exampleInputPassword1">Ingrese su Contreseña </label>
-                            <input type="password" class="form-control" name="password" id="exampleInputPassword">
+                            <input type="password" class="form-control" name="password" id="input-pass">
                             <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                           </div>
 
@@ -61,6 +61,38 @@
             </div>
         </div>
     </main>
+
+    
+      <script>
+      let formSearch = document.getElementById('form-profile');
+      let inputPass = document.getElementById('input-pass');
+      let imgPreview = document.getElementById('img-preview');
+      let avatar = document.getElementById('avatar');
+      
+
+      avatar.addEventListener('change', (e) => {
+          // Creamos el objeto de la clase FileReader
+          let reader = new FileReader();
+                // Leemos el archivo subido y se lo pasamos a nuestro fileReader
+                reader.readAsDataURL(e.target.files[0]);
+                // Le decimos que cuando este listo ejecute el código interno
+                reader.onload = function(){
+                  imgPreview.src = reader.result;
+                };
+
+      })
+
+      formSearch.addEventListener('submit', e => {
+        e.preventDefault();
+        inputPass.value && formSearch.submit();
+      })
+  
+
+    <script> 
+ avatar.addEventListener('chage'), (e) =>{
+        let 
+      }
+    </script>
 
   <!-- Pie de la página -->
   <%-include('./partials/footer') %>

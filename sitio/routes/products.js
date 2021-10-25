@@ -24,11 +24,11 @@ const upload = multer({
 /* router.get('/add',add); */
 router.get('/detail/:id',detail);
 router.get('/edit/:id',edit);
-router.put('/edit/:id',productEditValidator, upload.array('images'), update);
+router.put('/edit/:id', upload.array('images'),productEditValidator,update);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create', create);
-router.post('/create', upload.array('images'), productAddValidator, store);
+router.post('/create',upload.array('imagen'),productAddValidator,store);
 
 
 router.delete('/delete/:id',destroy);
