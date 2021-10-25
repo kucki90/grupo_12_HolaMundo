@@ -10,12 +10,13 @@ const loginValidator =require('../validations/loginValidator');
 const multerUserImage = require('../middlewares/multerUserimage');
 const userSessionCheck = require('../middlewares/userSessionCheck');
 const upFileAvatar = require('../middlewares/upFileAvatar')
+const profileValidator = require('../validations/profileValidator');
 
 router.get('/login', login);
 router.post('/register', registerValidator, processRegister)
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/profile',userSessionCheck, profile);
-router.put('/update/:id',upFileAvatar.single('avatar'),update);
+router.put('/update/:id',upFileAvatar.single('avatar'),profileValidator,update);
 
 module.exports = router;

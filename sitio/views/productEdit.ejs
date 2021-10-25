@@ -17,31 +17,38 @@
                                     <label for="titulo" class="items-label">Título</label>
                                     <input type="text" name="title" class="items-input" id="titulo"
                                         value="<%= producto.name %>">
+                                        <span class="text-danger small"><%= locals.errores && locals.errores.title ? errores.title.msg : null %> </span>
                                 </div>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
-                                    <input type="text" name="price" class="items-input" id="precio"
-                                        value="<%= producto.price %>">
+                                    <input type="number" name="price" class="items-input" id="price" value="<%= producto.price %>">
+                                    <span class="text-danger small"><%= locals.errores && locals.errores.price ? errores.price.msg : null %> </span>
                                 </div>
+
                                 <div class="ctrl-input">
                                     <label for="descripcion" class="items-label">Descripción</label>
                                     <textarea name="description" class="items-textarea"
                                         id="descripcion"><%= producto.description %></textarea>
+                                        <span class="text-danger small"><%= locals.errores && locals.errores.description ? errores.description.msg : null %> </span>
                                 </div>
                                 <div class="ctrl-input">
                                     <label for="category" class="items-label">Categoría</label>
-                                    <select name="category" class="category" id="">
+                                    <select name="categoryId" class="category" id="categoryId" value="categoryId">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
-                                            <option value="<%= categoria.id %>" <%=categoria.name==producto.category.name
-                                                ? 'selected' : null %> ><%= categoria.name %>
+                                            <option value="<%= categoria.id%>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%>>
+                                                <%= categoria.name %>
                                             </option>
                                             <% }) %>
+                                            <span class="text-danger small"><%= locals.errores && locals.errores.categoryId ? errores.categoryId.msg : null %> </span>
                                     </select>
                                 </div>
+                               
                                 <div class="ctrl-input">
-                                    <button type="submit" class="items-button">Guardar cambios</button>
+                                    <button type="submit" class="items-button">Guardar Cambios</button>
                                 </div>
+
+                              
                             </form>
                         </div>
                     </div>
