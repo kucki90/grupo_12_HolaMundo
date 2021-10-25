@@ -99,10 +99,22 @@ module.exports = {
         ).then( () => res.redirect('/products/detail/' + req.params.id))
         .catch(error => console.log(error))
     }else{
-        return res.render('products/edit',{
+        let categorias = db.Category.findAll();        
+        let producto = db.Product.findByPk(req.params.id,{
+            include : ['category']
+        });        
+        Promise.all([categorias, producto])
+        .then(([categorias,producto]) => {
+            return res.render('productEdit',{
+            categorias,
+            producto,
             old : req.body,
             errores : errors.mapped()
         })
+        })
+        
+           
+        
     }
 
     },
