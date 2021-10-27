@@ -15,7 +15,7 @@
             <div class="card border rounded shadow my-5">
               <div class=" text-center">
                 
-                  <img id='img-preview' class="rounded-circle w-25" src="/images/users/<%= user.avatar %> " alt="">
+                  <img id="img-preview" class="rounded-circle w-25" src="/images/users/<%= user.avatar %> " alt="">
 
             </div>
               
@@ -54,45 +54,17 @@
                             <label for="avatar" class="btn btn-primary mt-3">Subir Imagen<label>
                               <input type="file" name="avatar" id="avatar" hidden>
                           </div>
-                          <!-- <a href="/" class="btn btn-secondary w-50 mt-4" type="button">Cancelar</a> -->
-                        <button class="btn btn-primary w-50 mt-4" type="submit">Guardar cambios</button>
+                          <div class="mb-3 col-12 mx-auto">
+                            <a href="/" class="btn btn-primary w-25 mt-4" type="button">Volver al inicio</a>
+                            <button class="btn btn-primary w-25 mt-4" type="submit">Guardar cambios</button>
+                            </div>
                       </form>
                 </form>
             </div>
         </div>
     </main>
 
-    
-      <script>
-      let formSearch = document.getElementById('form-profile');
-      let inputPass = document.getElementById('input-pass');
-      let imgPreview = document.getElementById('img-preview');
-      let avatar = document.getElementById('avatar');
-      
-
-      avatar.addEventListener('change', (e) => {
-          // Creamos el objeto de la clase FileReader
-          let reader = new FileReader();
-                // Leemos el archivo subido y se lo pasamos a nuestro fileReader
-                reader.readAsDataURL(e.target.files[0]);
-                // Le decimos que cuando este listo ejecute el código interno
-                reader.onload = function(){
-                  imgPreview.src = reader.result;
-                };
-
-      })
-
-      formSearch.addEventListener('submit', e => {
-        e.preventDefault();
-        inputPass.value && formSearch.submit();
-      })
-  
-
-    <script> 
- avatar.addEventListener('chage'), (e) =>{
-        let 
-      }
-    </script>
+<script src="/javascripts/profile.js"></script>
 
   <!-- Pie de la página -->
   <%-include('./partials/footer') %>
