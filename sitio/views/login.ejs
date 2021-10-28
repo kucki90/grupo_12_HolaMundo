@@ -18,7 +18,7 @@
                   <div class="mb-3">
                     <label for="exampleInputName">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                    name="name" title="Coloque un nombre" required data-span="name-reg"
+                    name="name" title="El nombre debe tener un minimo de 3 caracteres" required data-span="name-reg"
                     pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$"   
                      value="<%= locals.old && locals.old.name ? old.name : null%>">
                     <span class="text-danger small"><%= locals.errores && locals.errores.name ? errores.name.msg : null %> </span>
@@ -26,13 +26,13 @@
                   <div class="mb-3">
                     <label for="exampleInputApellido">Apellido </label>
                     <input type="text" class="form-control"  id="exampleInputSurname" aria-describedby="emailHelp"
-                    name="surname"title="Coloque un apellido" required data-span="app-reg"
+                    name="surname"title="El apellido debe tener un minimo de 3 caracteres" required data-span="app-reg"
                     pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$"   
                      value="<%= locals.old && locals.old.surname ? old.surname : null%>">
                   </div>
                   <div class="mb-3">
                     <label for="birthdate">Fecha de nacimiento </label>
-                    <input type="date" class="form-control fechainput" name="birthdate" data-span="date-reg" title="Ingrese una fecha valida" required
+                    <input type="date" class="form-control fechainput" name="birthdate" data-span="date-reg" title="debe ingresar una fecha valida" required
                     pattern="^[1-2][0-9]{3}-[0-9]{2}-[0-9]{2}$" 
                      id="birthdate"value="<%= locals.old && locals.old.birthdate ? old.birthdate : null%>">
                   </div>
@@ -44,15 +44,15 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="password" title="Ingresa una contraseña"required
-                    pattern="^(.){8,30}$" 
+                    <input type="password" class="form-control" name="password" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$" 
                      id="exampleInputPassword1"data-span="pass1-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword2">Confirma la contraseña </label>
-                    <input type="password" class="form-control" name="password2" title="Ingresa una contraseña"required
-                    pattern="^(.){8,30}$" 
+                    <input type="password" class="form-control" name="password2" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$" 
                      id="exampleInputPassword2" data-span="pass2-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? errores.password2.msg : null %> </span>
                   </div>
@@ -82,8 +82,8 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
-                    <input type="password" class="form-control" name="password" title="Ingresa la contraseña"required
-                    pattern="^(.){8,30}$" id="exampleInputPassword1" data-span="pass-log">
+                    <input type="password" class="form-control" name="password" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$"  id="exampleInputPassword1" data-span="pass-log">
                   </div>
                   <div class="d-flex justify-content-end">
                     <div class="mb-3 form-check">

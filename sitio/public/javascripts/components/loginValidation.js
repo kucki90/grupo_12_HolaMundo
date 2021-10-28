@@ -14,7 +14,7 @@ export default function loginValidation(form){
   })
 
   // Creo un evento a la escucha para el cambio de los valores del input
-  d.addEventListener('change', e => {
+  d.addEventListener('keyup', e => {
     // Me fijo que input (required) saltó el evento
     if(e.target.matches(`${form} [required]`)){
       // Guardo el input y el pattern, para el caso del textarea, el data-pattern
