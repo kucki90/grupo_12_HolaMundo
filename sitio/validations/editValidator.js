@@ -3,8 +3,6 @@ const db = require('../database/models');
 
 module.exports = [
     
-    // check('imagen')
-    // .notEmpty().withMessage(' Fotos en vacio ¿? '),
 
     check('title')
     .notEmpty().withMessage('El nombre no puede quedar vacio'),

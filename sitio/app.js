@@ -11,6 +11,7 @@ const session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var apiRouter = require('./routes/api'); 
 
 const localsUserCheck = require('./middlewares/localsUserCheck');
 
@@ -38,6 +39,9 @@ app.use(localsUserCheck);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+
+app.use('/api', apiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

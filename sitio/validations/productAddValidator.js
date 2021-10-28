@@ -2,9 +2,6 @@ const {check} = require('express-validator');
 
 module.exports = [
     
-    check('imagen')
-    .notEmpty().withMessage('Añade las fotos del producto'),
-
     check('title')
     .notEmpty().withMessage('Indica el nombre del producto'),
 
