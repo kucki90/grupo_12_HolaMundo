@@ -1,0 +1,85 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span><i class="fas fa-bars"></i></span>
+        </button>
+        <a href="/"><img class="logo" src="/images/Logo.jpg" alt="" /></a>
+        
+
+        <ul class="logos">
+          <% if (locals.userLogin) { %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <%= locals.userLogin.name %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
+                <% if (locals.userLogin.rol===2) { %>
+                  <li><a class="dropdown-item" href="/admin">Administración</a></li>
+                  <% } %>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
+              </ul>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/login"><i class="fas fa-user-circle"></i> </a>
+              </li>
+              <% } %>           
+              </ul>
+              
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/admin">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% categorias.forEach(categoria => { %>
+                  <li><a class="dropdown-item" href="/products/filter?category=<%= categoria.id %>"><%= categoria.name %></a></li>
+                <% }) %>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Ordenar por
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/products?order=name&direction=ASC">Alfabéticamente</a></li>
+                <li><a class="dropdown-item" href="/products?order=price&direction=ASC">Por menor precio</a></li>
+                <li><a class="dropdown-item" href="/products?order=price&direction=DESC">Por mayor precio</a></li>
+                <li><a class="dropdown-item" href="/products?order=id&direction=ASC">Por defecto</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/products/create">+ Nuevo producto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <form id="form-search" action="/products/search-admin" class="form-search">
+      <input type="search" name="keywords"/>
+      <button class="btn-search" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </header>

@@ -4,6 +4,45 @@ const {Op} = require('sequelize');
 
 
 module.exports = {
+    list:(req,res) => {
+        let categorias = db.Category.findAll()
+        let productos = db.Product.findAll({
+            order : [
+                [req.query.order || 'id', req.query.direction || 'ASC']
+            ],
+            include : [
+                {association : 'category'},
+                {association : 'images'}
+            ]            
+        })
+        Promise.all([categorias,productos])
+            .then(([categorias, productos]) =>{
+                return res.render('admin/index',{
+                    productos,
+                    categorias
+                })
+            })
+    },
+    filter : (req,res) => {
+        let categorias = db.Category.findAll()
+        let productos = db.Product.findAll({
+            where : {
+                categoryId : req.query.category
+            },
+            include : [
+                {association : 'category'},
+                {association : 'images'}
+            ]            
+        })
+        Promise.all([categorias,productos])
+            .then(([categorias, productos]) =>{
+                return res.render('admin/index',{
+                    productos,
+                    categorias
+                })
+            })
+    },
+
     create : (req,res) => {
         db.Category.findAll()
         .then(categorias => {
@@ -153,6 +192,36 @@ module.exports = {
             return res.render('resultSearch',{
             result,
             busqueda : req.query.keywords
+        })
+            
+        }).catch(error => console.log(error))
+
+    },
+    searchAdmin : (req,res) => {
+        let categorias = db.Category.findAll()
+        let productos = db.Product.findAll({
+            where : {
+                [Op.or] : [
+                    {
+                        name :  {
+                            [Op.substring] : req.query.keywords
+                        }
+                    },
+                    {
+                        description : {
+                            [Op.substring] : req.query.keywords
+                        }
+                    }
+                ]
+            },
+            include : ['images', 'category']
+        })
+        
+        Promise.all([categorias, productos])
+        .then(([categorias, productos]) => {
+            return res.render('admin/index',{
+            productos,
+            categorias
         })
             
         }).catch(error => console.log(error))

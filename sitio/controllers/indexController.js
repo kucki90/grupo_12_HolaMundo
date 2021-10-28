@@ -57,15 +57,24 @@ module.exports = {
         })
     },
 
-admin : (req,res) => {
-    db.Product.findAll({
-        include : [
-            {association : 'category'},
-            {association : 'images'}
-        ]
-    }).then(productos => res.render('admin/index',{
-        productos
-    }))
-}
+    admin : (req,res) => {
+        let productos = db.Product.findAll({
+            include : [
+                {association : 'category'},
+                {association : 'images'}
+            ]
+        })
+        
+        let categorias = db.Category.findAll()
+
+        Promise.all([productos,categorias])
+
+        .then(([productos, categorias]) => {
+            return res.render('admin/index',{
+                productos,
+                categorias
+            })
+        })
+    }
 
 }
