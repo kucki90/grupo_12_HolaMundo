@@ -1,8 +1,10 @@
 const d = document;
 
-export default function searchValidation(){
-    d.addEventListener("submit" , e =>{
+export default function searchValidation(form){
+    const $form = d.querySelector(form)
+
+    $form.addEventListener("submit" , e =>{
         // Si el buscador esta vacio, no se envia.
-        d.querySelector('input[data-search="validation"]').value || e.preventDefault();
+        $form.querySelector('input[data-search="validation"]').value || e.preventDefault();
     })
 }
