@@ -75,6 +75,10 @@ module.exports = {
                 categorias
             })
         })
+    },
+
+    contact : (req,res) =>{
+        return res.render('contact')
     }
 
 }
