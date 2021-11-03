@@ -2,29 +2,32 @@
 .footer{
   width:100%;
   /* Ancho del header */
+  height: auto;
   background-color:#1400ff;
-  padding:15px;
+  padding:10px;
   color: #ffffff;
   font-size: 1.3rem;
   display: flex;
+  position: relative;
+  bottom: 0;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.footer div{
+  height: max-content;
 }
 .footer h4{
 font-size: 1.8rem;
 margin-left: 25px;
 }
 .footer ul{
-padding: 16px;
+padding-left: 30px;
 }
 .footer li{
 list-style:disc;
 }
 .footer .redes{
 font-size: 1.5rem;
-}
-.footer section{
-padding: 12px;
 }
 .footer .categorias{
 width: 50%;

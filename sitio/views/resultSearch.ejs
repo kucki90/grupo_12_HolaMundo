@@ -6,6 +6,12 @@
   <%- include('./partials/header')  %> 
     <!-- <div class="register"> -->
         <main class="container mt-5">
+          <form action="/products/search" class="form-search">
+            <input type="search" name="keywords"  data-search="validation">
+            <button class="btn-search" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
             <% if (result.length > 0) { %>
                 <h3>Resultados de la búsqueda: <%= busqueda %> </h3>
                 <table class="table">

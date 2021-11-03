@@ -17,6 +17,9 @@ a{
     text-decoration: none;
     color: #ffffff;
 }
+a:hover{
+    color: #000;
+}
 
 .fa-whatsapp:hover{
     color: #6df300;
