@@ -48,7 +48,9 @@
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$" 
                      id="exampleInputPassword1"data-span="pass1-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
+                    <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
                   </div>
+                  
                   <div class="mb-3">
                     <label for="exampleInputPassword2">Confirma la contraseña </label>
                     <input type="password" class="form-control" name="password2" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
@@ -85,6 +87,7 @@
                     <input type="password" class="form-control" name="password" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$"  id="exampleInputPassword1" data-span="pass-log">
                   </div>
+                 
                   <div class="d-flex justify-content-end">
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">
@@ -97,7 +100,7 @@
                   
 
                   <button class="btn btn-primary w-100 mt-4" type="submit">Iniciar Sesión</button>
-                  <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
+                  
                 </form>
               </div>
             </div>
