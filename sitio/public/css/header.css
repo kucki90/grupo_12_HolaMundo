@@ -22,7 +22,7 @@ header .logos{
     align-items: center;
 }
 
-header .form-search{
+ .form-search{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,24 +32,24 @@ header .form-search{
     position: relative;
 }
 
-header .form-search input{
+ .form-search input{
     width: 100%;
     border-radius: 20px;
-    background-color: #B2DAFF;
-    border: none;
+    background-color: #FFFFFF;
+    border: solid 3px #B2DAFF;
     margin: 20px 0;
     height: 40px;
     padding: 15px 40px 15px 15px;
 }
 
-header .form-search .btn-search{
+ .form-search .btn-search{
     background: none;
     position: absolute;
     right: 10px;
     border: none;
 }
 
-header .form-search .btn-search i{
+ .form-search .btn-search i{
     color: #1400ff;
 }
 
