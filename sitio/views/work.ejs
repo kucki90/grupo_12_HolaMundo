@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head -->
+<%-include('./partials/head') %>
+
+  <body class="home">
+
+    <!-- Header -->
+    <%-include('./partials/header') %>
+
+      <main class="container">
+        <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto">
+            <h1 class="row mx-auto my-4 text-center"><b>Trabajá con nosotros</b></h1>
+            <h3 class="row mx-auto col-10 my-4 text-center">Si querés formar parte de nuestro equipo, envianos tu CV a rrhh@holamundo.com o completá nuestro formulario de contacto.</h3>
+            <form action="" method="get" class="row mx-auto col-10 my-4">
+                <h5 for="">Nombre: </h5><input type="text" name="name-comentario" id="name-comentario" class="my-2" style="border: solid 3px #B2DAFF; border-radius: 3px;">
+                <h5 for="">E-mail de contacto: </h5><input type="email" name="mail-comentario" id="mail-comentario" class="my-2" style="border: solid 3px #B2DAFF; border-radius: 3px;">
+                <h5 for="">Teléfono de contacto: </h5><input type="tel" name="tel-comentario" id="tel-comentario" class="my-2" style="border: solid 3px #B2DAFF; border-radius: 3px;">
+                <h5 for="">Dejanos tu comentario: </h5><textarea name="comentario" id="comentario" cols="100" rows="5" class="my-2" style="border: solid 3px #B2DAFF; border-radius: 3px;"></textarea>
+            </form>
+        </div>
+      </main>
+      <!-- Footer -->
+      <%-include('./partials/footer') %>
+
+        <!-- scripts -->
+        <%-include('./partials/scripts') %>
+  </body>
+
+</html>

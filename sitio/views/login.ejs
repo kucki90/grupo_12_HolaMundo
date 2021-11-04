@@ -50,7 +50,6 @@
                     <span class="text-danger small"><%= locals.errores && locals.errores.password ? errores.password.msg : null %> </span>
                     <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
                   </div>
-                  
                   <div class="mb-3">
                     <label for="exampleInputPassword2">Confirma la contraseña </label>
                     <input type="password" class="form-control" name="password2" title="La contraseña debe tener una mayúscula, una minuscula y un numero."required
@@ -58,29 +57,23 @@
                      id="exampleInputPassword2" data-span="pass2-reg">
                     <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? errores.password2.msg : null %> </span>
                   </div>
-                  
                   <div class="mb-3">
                     <label><input type="checkbox" value="recibir" id="recibir" name="notify"> Quiero recibir notificaciones </label>
                     <label><input type="checkbox" value="acepto" id="acepto" name="AceptoRecibir"> Acepto las condiciones generales y la politica de
                       confidencialidad</label>
                   </div>
-
                   <span class="text-danger small my-2"><%= locals.errores && locals.errores.AceptoRecibir ? errores.AceptoRecibir.msg : null %> </span>
                   <button class="btn btn-primary w-100 mt-4" type="submit">Crear cuenta</button>
                 </form>
               </div>
-
-
-
-
               <div class="register col-12 col-lg-6 mt-5">
                 <h2 class="mb-5">Si ya estas registrado</h2>
                 <form action="/users/login" method="POST" class="form-log">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1">Direccion de correo electronico </label>
+                    <label for="exampleInputEmail2">Direccion de correo electronico </label>
                     <input type="email" class="form-control" name="email" title="Ingrese un mail"required
                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
-                     id="exampleInputEmail1" aria-describedby="emailHelp" data-span="email-log">
+                     id="exampleInputEmail2" aria-describedby="emailHelp" data-span="email-log">
                   </div>
                   <div class="mb-3">
                     <label for="password">Contraseña </label>
@@ -89,10 +82,6 @@
 
                     <button class="btn btn-primary" type="button" onclick="mostrarContrasena()"><i class="fas fa-eye-slash" id="icon-eye"></i></button>
                   </div>
-
-                  
-
-                 
                   <div class="d-flex justify-content-end">
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="recordar">

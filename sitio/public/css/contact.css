@@ -1,0 +1,30 @@
+.contact .container h2{
+    text-align: center;
+}
+.contact .container .info{
+    display: flex;
+    justify-content: space-between;
+}
+.contact .container .info .left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+.contact .container .info .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact .container .info .right .fa-arrow-alt-circle-down{
+    font-size: 1em;
+}
+
+.fa-whatsapp:hover{
+    color: #6df300;
+}
+
+.fa-instagram:hover{
+    color: #f342db;
+}

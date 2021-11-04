@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('/images/fondo.jpg');
+}
+
 li{
     list-style: none;
 }
@@ -12,4 +16,23 @@ li{
 a{
     text-decoration: none;
     color: #ffffff;
+}
+a:hover{
+    color: #000;
+}
+
+.fa-whatsapp:hover{
+    color: #6df300;
+}
+
+.fa-facebook:hover{
+    color: #246ffa;
+}
+
+.fa-twitter:hover{
+    color: #73c6fd;
+}
+
+.fa-instagram:hover{
+    color: #bd1db5;
 }
