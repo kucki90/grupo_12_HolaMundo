@@ -1,27 +1,13 @@
 function mostrarContrasena(){
+    const iconEye =document.querySelector("#icon-eye");
     var tipo = document.getElementById("password");
     if(tipo.type == "password"){
         tipo.type = "text";
+        iconEye.classList.remove("fa-eye-slash");
+        iconEye.classList.add("fa-eye");
     }else{
         tipo.type = "password";
+        iconEye.classList.add("fa-eye-slash");
+        iconEye.classList.remove("fa-eye");
     }
 }
-
-
-// const iconEye =document.querySelector(".icon-eye");
-
-//  iconEye.addEventListener("click", function() {
-//      const icon = this.querySelector("i");
-  
-//      if(this.nextElementSibling.type === "password") {
-//          this.nextElementSibling.type = "text";
-//          icon.classList.remove("fa-eye-slash");
-//          icon.classList.add("fa-eye");
-//      } else {
-//          this.nextElementSibling.type = "password";
-//          icon.classList.remove("fa-eye");
-//          icon.classList.add("fa-eye-slash");
-//      }
-
-
-//  });

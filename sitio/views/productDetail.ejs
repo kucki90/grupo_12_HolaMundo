@@ -17,17 +17,19 @@
                 <div class="contenido">
                   <section class="fotos">
                     <div class="maxi">
-                        <img class="img-fluid" src="/images/productos/<%= producto.images[0].file %>" alt="" >
+                        <img  id='img-principal' class="img-fluid" src="/images/productos/<%= producto.images[0].file %>" class="w-100"alt="" >
                     </div>
                 
                     <div class="mini">
-                        <i class="fas fa-chevron-left"></i>
+
                         <i class="fas fa-chevron-up"></i>
                         <% producto.images.forEach(image => { %>
-                            <img src="/images/productos/<%= image.file %>" alt="">
+                            <img onclick="document.getElementById('img-principal').setAttribute('src','/images/productos/<%=image.file%>')" src="/images/productos/<%= image.file %>" alt="">
                         <% }) %>
-                        <i class="fas fa-chevron-right"></i>
-                        <i class="fas fa-chevron-down"></i>
+
+                        
+                        <!-- <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-down"></i> -->
                     </div>
                 </section>
                 <section class="info">
@@ -63,6 +65,8 @@
 
    <!-- scripts -->
   <%-include('./partials/scripts') %>
+
+  <script src="/javascripts/productDetail.js"></script>
 
 </body>
 
