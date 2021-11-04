@@ -8,26 +8,34 @@
   color: #ffffff;
   font-size: 1.3rem;
   display: flex;
-  position: relative;
-  bottom: 0;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 .footer div{
   height: max-content;
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+}
+.footer section{
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
 }
 .footer h4{
 font-size: 1.8rem;
-margin-left: 25px;
 }
 .footer ul{
-padding-left: 30px;
+padding-left: 0;
 }
 .footer li{
 list-style:disc;
 }
 .footer .redes{
 font-size: 1.5rem;
+display: flex;
+flex-direction: row;
 }
 .footer .categorias{
 width: 50%;
@@ -79,7 +87,7 @@ padding: 20px;
 }
 @media (min-width:1024px) {
 .footer{
-  padding: 30px
+  padding: 10px
 }
 .footer .categorias{
   width: 20%;
