@@ -117,7 +117,7 @@ module.exports = {
                                     avatar: user.avatar
                                 }
                                 res.locals.userLogin = req.session.userLogin                      
-                                return res.redirect('/users/profile') 
+                                return res.redirect('/') 
 
                              })
                             

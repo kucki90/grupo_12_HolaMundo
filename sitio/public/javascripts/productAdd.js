@@ -1,11 +1,24 @@
-import productsValidation from "./components/productsValidation.js"
+//import productsValidation from "./components/productsValidation.js"
 
 document.addEventListener("DOMContentLoaded", e =>{
-  productsValidation(".formulario")
+  let formProductAdd = document.getElementById("form-product-add");
+  let btnSubmit = document.getElementById("btn-submit");
+  
+  btnSubmit.addEventListener('click', e => {
+    e.preventDefault();
+    if(!document.getElementById('imagen').value){
+      errorImagen.innerHTML = "Debes agregar por lo menos una imagen"
+    }else{
+      formProductAdd.submit();
+    }
+  })
+
+
+
 })
 
 
-/* let inputImage = document.getElementById('imagen');
+let inputImage = document.getElementById('imagen');
 
 
 inputImage.addEventListener('change', function () {
@@ -32,4 +45,4 @@ inputImage.addEventListener('change', function () {
     reader.readAsDataURL(file);
 
   }
-}) */
+})

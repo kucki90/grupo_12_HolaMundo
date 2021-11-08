@@ -59,16 +59,16 @@ module.exports = {
         
         if(errors.isEmpty()) {
 
-            const {title, price, description, category} = req.body
+            const {title, price, description, categoryId} = req.body
             db.Product.create({
                 name : title.trim(),
                 price,
                 description : description.trim(),
-                categoryId : category
+                categoryId,
             })
             .then(product => {
 
-                if(req.files.lenght != 0){
+                if(req.files.length != 0){
                     let images = req.files.map(image => {
                         let img = {
                             file : image.filename,

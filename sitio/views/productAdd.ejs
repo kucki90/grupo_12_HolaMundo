@@ -15,10 +15,12 @@
                             </div>
                           </div>
                         <div class="row">
-                            <form action="" class="formulario" enctype="multipart/form-data" method="POST">
-                                <label for=""> <input type="file" name="imagen" id="imagen" class="examinar"
+                            <form action="" class="formulario" enctype="multipart/form-data" method="POST" id="form-product-add">
+                                <div class="ctrl-input">
+                                <label class="btn btn-primary" for="imagen"> <input type="file" name="imagen" id="imagen" class="examinar"
                                         multiple>Agregar fotos</label>
-                                        <p><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </p>
+                                        <p class="text-danger" id="errorImagen"><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </p>
+                                </div>
                                 <div class="ctrl-input">
                                     <label for="titulo" class="items-label">Título</label>
                                     <input type="text" name="title" class="items-input"title="El producto debe contener un titulo"required
@@ -42,7 +44,7 @@
                                 <div class="ctrl-input">
                                     <label for="category" class="items-label">Categoría</label>
                                     <select name="categoryId" class="category" title="El producto debe contener una categoria"required
-                                    pattern="^[0-9]{1,3}$" id="categoryId" value="categoryId">
+                                    pattern="^[0-9]{1,3}$" id="categoryId">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
                                             <option value="<%= categoria.id%>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%>>
@@ -56,7 +58,7 @@
                                 <p class="text-danger"><%= locals.errores && locals.errores.categoryId ? errores.categoryId.msg : null %> </p>
                                
                                 <div class="ctrl-input">
-                                    <button type="submit" class="items-button">Cargar producto</button>
+                                    <button type="submit" class="items-button" id="btn-submit">Cargar producto</button>
                                 </div>
                             </form>
                         </div>
