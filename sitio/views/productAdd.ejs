@@ -16,24 +16,28 @@
                                         <p><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="titulo" class="items-label">Título</label>
-                                    <input type="text" name="title" class="items-input" id="title" value="<%= locals.old && old.title ? old.title : null %>">
+                                    <input type="text" name="title" class="items-input"title="El producto debe contener un titulo"required
+                                    pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$" id="title" value="<%= locals.old && old.title ? old.title : null %>">
                                 </div>
                                 <p><%= locals.errores && errores.title ? errores.title.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
-                                    <input type="text" name="price" class="items-input" id="price" value="<%= locals.old && old.price ? old.price : null %>">
+                                    <input type="text" name="price" title="El producto debe contener un precio"required
+                                    pattern="^[0-9]{1,6}(,[0-9]{2})?$" class="items-input" id="price" value="<%= locals.old && old.price ? old.price : null %>">
                                 </div>
                                 <p><%= locals.errores && errores.price ? errores.price.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="descripcion" class="items-label">Descripción</label>
-                                    <textarea name="description" class="items-textarea" id="description" value="<%= locals.old && old.description ? old.description : null %>"></textarea>
+                                    <textarea name="description" title="El producto debe contener una descripcion"required
+                                    data-pattern="^.{2,255}$" class="items-textarea" id="description" value="<%= locals.old && old.description ? old.description : null %>"></textarea>
                                 </div>
                                 <p><%= locals.errores && errores.description ? errores.description.msg : null %> </p>
                      
 
                                 <div class="ctrl-input">
                                     <label for="category" class="items-label">Categoría</label>
-                                    <select name="categoryId" class="category" id="categoryId" value="categoryId">
+                                    <select name="categoryId" class="category" title="El producto debe contener una categoria"required
+                                    pattern="^[0-9]{1,3}$" id="categoryId" value="categoryId">
                                         <option value="" hidden selected>Seleccione la categoría</option>
                                         <% categorias.forEach(categoria=> { %>
                                             <option value="<%= categoria.id%>"<%= locals.old && old.categoryId === categoria.id ? 'selected' : null%>>
@@ -52,6 +56,7 @@
                     </div>
                 </div>
             </main>
+            <script src="/javascripts/productAdd.js"type="module"></script>
     </body>
 
 </html>
