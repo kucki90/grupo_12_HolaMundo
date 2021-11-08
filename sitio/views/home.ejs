@@ -10,6 +10,12 @@
     <%-include('./partials/header') %>
 
       <main class="container">
+        <form action="/products/search" class="form-search">
+          <input type="search" name="keywords"  data-search="validation">
+          <button class="btn-search" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
         <section class="banner">
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -68,8 +74,8 @@
               <% }) %>
           </div>
         </section>
-        <section class="destacados" id="destacados">
-          <h2 class="my-3 text-center">Destacados de Deco</h2>
+        <section class="decoracion" id="decoracion">
+          <h2 class="my-3 text-center">Decoración</h2>
           <div class="row gx-2">
             <% destacado.products.forEach(producto=> { %>
               <div class="col-12 col-md-4 col-lg-3 my-3">

@@ -86,7 +86,7 @@
     }
     
     .detail .mini{
-        width: 100%;
+        width: 30%;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -111,6 +111,6 @@
         margin: 0 auto;
     }
     .detail .mini img{
-        width: 20%;
+        width: 30%;
     }
 }

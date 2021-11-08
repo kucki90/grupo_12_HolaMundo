@@ -8,10 +8,15 @@
         <%-include('./admin/partials/header') %>
             <main class="charge">
                 <div class="container">
+                   
                     <div class="card border rounded shadow my-5 col-md-8 col-lg-10 mx-auto p-5">
+                        <div class="col-12 col-md-8 mx-auto">
+                            <div class="m-1" id="preview">
+                            </div>
+                          </div>
                         <div class="row">
                             <form action="" class="formulario" enctype="multipart/form-data" method="POST">
-                                <label for="" class="btn-fotos"> <input type="file" name="imagen" id="imagen" class="examinar"
+                                <label for=""> <input type="file" name="imagen" id="imagen" class="examinar"
                                         multiple>Agregar fotos</label>
                                         <p><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </p>
                                 <div class="ctrl-input">
@@ -19,19 +24,19 @@
                                     <input type="text" name="title" class="items-input"title="El producto debe contener un titulo"required
                                     pattern="^[A-Za-zñÑÁáÉéíÍÓóÚúÜü\s]{3,20}$" id="title" value="<%= locals.old && old.title ? old.title : null %>">
                                 </div>
-                                <p><%= locals.errores && errores.title ? errores.title.msg : null %> </p>
+                                <p class="text-danger"><%= locals.errores && errores.title ? errores.title.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="precio" class="items-label">Precio</label>
                                     <input type="text" name="price" title="El producto debe contener un precio"required
                                     pattern="^[0-9]{1,6}(,[0-9]{2})?$" class="items-input" id="price" value="<%= locals.old && old.price ? old.price : null %>">
                                 </div>
-                                <p><%= locals.errores && errores.price ? errores.price.msg : null %> </p>
+                                <p class="text-danger"><%= locals.errores && errores.price ? errores.price.msg : null %> </p>
                                 <div class="ctrl-input">
                                     <label for="descripcion" class="items-label">Descripción</label>
                                     <textarea name="description" title="El producto debe contener una descripcion"required
                                     data-pattern="^.{2,255}$" class="items-textarea" id="description" value="<%= locals.old && old.description ? old.description : null %>"></textarea>
                                 </div>
-                                <p><%= locals.errores && errores.description ? errores.description.msg : null %> </p>
+                                <p class="text-danger"><%= locals.errores && errores.description ? errores.description.msg : null %> </p>
                      
 
                                 <div class="ctrl-input">
@@ -44,9 +49,11 @@
                                                 <%= categoria.name %>
                                             </option>
                                             <% }) %>
-                                            <span class="text-danger small"><%= locals.errores && locals.errores.categoryId ? errores.categoryId.msg : null %> </span>
+                                            
                                     </select>
+
                                 </div>
+                                <p class="text-danger"><%= locals.errores && locals.errores.categoryId ? errores.categoryId.msg : null %> </p>
                                
                                 <div class="ctrl-input">
                                     <button type="submit" class="items-button">Cargar producto</button>
@@ -56,7 +63,7 @@
                     </div>
                 </div>
             </main>
-            <script src="/javascripts/productAdd.js"type="module"></script>
+            <script src="/javascripts/productAdd.js"></script>
     </body>
 
 </html>

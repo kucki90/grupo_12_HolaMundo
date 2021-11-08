@@ -79,6 +79,18 @@ module.exports = {
 
     contact : (req,res) =>{
         return res.render('contact')
+    },
+
+    about : (req,res) =>{
+        return res.render('about')
+    },
+
+    history : (req,res) =>{
+        return res.render('history')
+    },
+
+    work: (req,res) =>{
+        return res.render('work')
     }
 
 }
