@@ -41,6 +41,7 @@
                     <input type="email" class="form-control" name="email" title="Ingrese un mail"required 
                     pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
                      aria-describedby="emailHelp" data-span="email-reg" id="exampleInputEmail1" value="<%= locals.old && locals.old.email ? old.email : null%>">
+                     <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null%> </span>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1">Contraseña </label>
